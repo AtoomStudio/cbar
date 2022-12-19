@@ -25,7 +25,6 @@
     "gsap": "^3.10.4",
     "just-validate": "^3.8.1",
     "mixitup": "^3.3.1",
-    "mixitupMultifilter": "file: public/libraries/mixitUp/mixitup-multifilter.js",
     "pickadate": "^5.0.0-alpha.3"
   },
   "devDependencies": {
