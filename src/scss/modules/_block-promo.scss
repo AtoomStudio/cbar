@@ -162,9 +162,17 @@
   &__tc {
     @extend %margin_top_small;
 
-    p {
+    p, li {
       color: setcolor("gray", "dark1");
-      padding-bottom: $sm;
     }
+    
+    p {
+      padding-bottom: $xs;      
+    }
+  }
+
+  hr {
+    border: solid 1px setcolor("black", "dark4");
+    margin: $sm 0;
   }
 }
