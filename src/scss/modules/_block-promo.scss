@@ -171,8 +171,19 @@
     }
   }
 
+  // Helpers for marketing staff
   hr {
     border: solid 1px setcolor("black", "dark4");
     margin: $sm 0;
   }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .caducada {
+    filter: grayscale(100%);
+    pointer-events: none;
+  }
+  
 }
