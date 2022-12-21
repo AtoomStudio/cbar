@@ -2,9 +2,34 @@
 @use "../helper" as *;
 @use "../tools" as *;
 
+
+
 .filterSlots {
   display: none;
+  
+  &__outer-container {
 
+    @include screen-sm{
+      
+      &--scroll-up{
+        overflow-y: auto;
+        position: sticky;
+        height: 100vh;
+        top:7.375rem;
+        color:red;
+        border:2px solid red;
+      }
+
+      &--scroll-down{
+        overflow-y: auto;
+        position: sticky;
+        height: 100vh;
+        top:7.375rem;
+        color:yellow;
+        border:2px solid yellow;
+      }
+    }
+  }
   @include screen-sm {
     display: block;
   }
