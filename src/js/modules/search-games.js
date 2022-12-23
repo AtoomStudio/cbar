@@ -5,7 +5,7 @@ import debounce from './debounce';
 function searchGames() {
 
     const searchClient = algoliasearch('USEUDCDIBW', '38b0b3d7c092d72b7336390dee953fc8');
-    const INDEX_NAME = 'prod_RoomSlots';
+    const INDEX_NAME = 'prod_Rooms';
     const searchBox = document.querySelector('[algolia-search-box]');
     const searchResults = document.querySelector('[algolia-search-results]');
     const searchResultsList = searchResults.querySelector('.search-results__content');
@@ -52,7 +52,7 @@ function searchGames() {
                                 data-insights-position="${arrayIndex + 1}"
                                 data-insights-query-id="${queryID}"
                                 href="${hit.link}" class="search-result">
-                                <img src="https://revamp.casinobarcelona.es${hit.thumb}" alt="${hit.name}" class="search-result__image">
+                                <img src="https://revamp.casinobarcelona.es${hit.image}" alt="${hit.name}" class="search-result__image">
                                 <div class="search-result__info">
                                     <div class="search-result__name">${hit._highlightResult.name.value}</div>
                                     <div class="search-result__provider">${hit._highlightResult.provider.value}</div>
