@@ -3,7 +3,7 @@
 @use "../tools" as *;
 
 .table {
-	margin-top: 30px;
+	
 	width: 100%;
 	border: none;
 	border-collapse: collapse;
@@ -11,10 +11,26 @@
 	border-radius: rem(5);
 	overflow: hidden;
 	min-width: rem(400);
-
+	
 	&__wrapper {
-		overflow-x: auto;
-		border-radius: 5px 5px 0 0;
+		// overflow-x: auto;
+		// border-radius: 5px 5px 0 0;
+		
+		margin-top: 30px;
+		overflow: auto;
+		max-width: 100%;
+		background:
+			linear-gradient(to right, #25292f 30%, rgba(255,255,255,0)),
+			linear-gradient(to right, rgba(255,255,255,0), #25292f 70%) 0 100%,
+			radial-gradient(farthest-side at 0% 50%, rgba(156, 199, 199, 0.2), rgba(0,0,0,0)),
+			radial-gradient(farthest-side at 100% 50%, rgba(156, 199, 199, 0.2), rgba(0,0,0,0)) 0 100%;
+		background-repeat: no-repeat;
+		background-color: setcolor('black');
+		background-size: 10px 100%, 10px 100%, 20px 100%, 20px 100%;
+	 	background-position: 0 0, 100%, 0 0, 100%;
+		background-attachment: local, local, scroll, scroll;
+
+	
 	}
 
 	thead {
@@ -26,27 +42,27 @@
 			color: setcolor("white");
 		}
 	}
-
-	tbody {
+	
+	tbody{
 		tr {
-			background-color: setcolor("black");
+			// background-color: setcolor("black");
 			color: setcolor("white");
 			border-top: setcolor("black", "dark1") 1px solid;
 			transition: all 200ms;
-
-			&:nth-of-type(odd) {
-				background-color: #282b31;
-			}
-
-			&:nth-of-type(even) {
-				background-color: #23272d;
-			}
+			
+			// &:nth-of-type(odd) {
+			// 	background-color: #282b31;
+			// }
+			
+			// &:nth-of-type(even) {
+			// 	background-color: #23272d;
+			// }
 		}
 	}
-
+	
 	td,
 	th {
-		padding: $sm;
+	padding: $sm;
 	}
 
 	.left {
@@ -57,3 +73,4 @@
 		text-align: right;
 	}
 }
+
