@@ -112,7 +112,7 @@ const gridHalfRight =
     ]
   }
 
-  const jackpotData = [
+const jackpotData = [
     {
       title: "Jackpot Giant",
       total: "987.654,32 €",
@@ -150,7 +150,60 @@ const gridHalfRight =
     }
   ]
 
-  const betsData = [
+const carouselDataProviders = [
+    {
+      logo     : "/providers/games-global.png",
+      btnLabel : "Slots Games Global",
+      btnHref  : "/slots/microgaming-slots.html"
+    },
+    {
+      logo     : "/providers/mga-games.svg",
+      btnLabel : "Slots MGA",
+      btnHref  : "/slots/mga-slots.html"
+    },
+    {
+      logo     : "/providers/netent.svg",
+      btnLabel : "Slots NetEnt",
+      btnHref  : "/slots/netent-slots.html"
+    },
+    {
+      logo     : "/providers/nextgen-games.svg",
+      btnLabel : "Slots NextGen",
+      btnHref  : "/slots/nextgen-slots.html"
+    },
+    {
+      logo     : "/providers/novomatic.svg",
+      btnLabel : "Slots Novomatic",
+      btnHref  : "/slots/novomatic-slots.html"
+    },
+    {
+      logo     : "/providers/playtech.svg",
+      btnLabel : "Slots Playtech",
+      btnHref  : "/slots/playtech-slots.html"
+    },
+    {
+      logo     : "/providers/pragmatic-play.svg",
+      btnLabel : "Slots Pragmatic Play",
+      btnHref  : "/slots/pragmatic-play-slots.html"
+    },
+    {
+      logo     : "/providers/thunderkick.svg",
+      btnLabel : "Slots Thunderkick",
+      btnHref  : "/slots/thunderkick-slots.html"
+    },
+    {
+      logo     : "/providers/yggdrasil.svg",
+      btnLabel : "Slots Yggdrasil",
+      btnHref  : "/slots/yggdrasil-slots.html"
+    },
+    {
+      logo     : "/providers/red-tiger.svg",
+      btnLabel : "Slots Red Tiger",
+      btnHref  : "/slots/red-tiger-slots.html"
+    }
+  ]
+
+const betsData = [
     {
       img: "img-carousel-bets-1.jpg",
       partido: "Real Madrid - Mallorca",
@@ -227,6 +280,9 @@ const gridHalfRight =
 
 <%- include ('layout/head', {title: "Home" , css: "home" }) %>
 
+<%- include ('layout/head', {title: 'Landing SEO' , css: 'landingSeo'}) %>
+
+
 <main class="pageContainer">
 
   <%- include ('layout/header', { mode: ""}) %>
@@ -254,6 +310,8 @@ const gridHalfRight =
     <%- include ('modules/grid-full', { data: "gridFullB"}) %>
 
     <%- include ('modules/carousel-jackpot', { data: jackpotData }) %>
+
+    <%- include ('modules/carousel-landing-seo', { data: carouselDataProviders }) %>
 
     <%- include ('modules/image-text') %>
 
