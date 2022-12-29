@@ -22,8 +22,7 @@
   background-color: setcolor("black", "dark2");
   border-radius: rem(5);
 
-  @include screen-sm {
-  }
+
   @include screen-md {
     width: 50%;
   }
@@ -35,10 +34,7 @@
     width: 100%;
 
     
-    @include screen-sm {
-      padding: 0 0 $sm;
-    }
-
+  
     .js-arrow__grid {
       cursor: pointer;
       transform: rotate(-90deg);
