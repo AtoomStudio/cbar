@@ -18,8 +18,7 @@
 .gridHalf {
   width: 100%;
   padding: $sm;
-  height: 100%;
-
+  
   background-color: setcolor("black", "dark2");
   border-radius: rem(5);
 
@@ -107,9 +106,7 @@
     overflow: hidden;
     padding-top: $sm;
 
-    height: 0;
-    opacity: 0;
-    
+       
     @include mobile-sm {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -120,7 +117,6 @@
 
     @include screen-sm {
       grid-template-columns: repeat(4, 1fr);
-      height: 100%;
       opacity: 1;
     }
     
@@ -175,6 +171,9 @@
           }
         }
       }
+    }
+    &--empty{
+      display: flex;
     }
   }
 }
