@@ -105,6 +105,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     overflow: hidden;
+    padding-top: $sm;
 
     height: 0;
     opacity: 0;

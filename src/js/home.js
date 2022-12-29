@@ -1,7 +1,7 @@
 import carouselBanner from "./modules/carouselBanner.js";
 import carouselJackpot from "./modules/carouselJackpot.js";
 // import carouselBets from "./modules/carouselBets.js";
-import collapseGrid from "./modules/collapseGridHalf.js";
+import accordion from "./modules/accordion.js";
 import carouselGrid from "./modules/carouselGrid.js";
 import favHeart from "./modules/favHeart.js";
 import searchGames from "./modules/search-games.js";
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   carouselLandingSEO();
   // carouselBets();
   favHeart().init();
-  collapseGrid();
+  accordion();
 
   document.querySelectorAll('.gridFull .splide').forEach(grid => {
     carouselGrid(grid);

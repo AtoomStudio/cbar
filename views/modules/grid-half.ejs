@@ -1,7 +1,7 @@
-<section class="gridHalf">
+<section class="gridHalf accordion--active" data-accordion>
     <nav class="gridHalf__navbar">
         <div class="gridHalf__navbar-wrapper">
-            <img src="img/icons/icon-grid-arrow.svg" alt="" class="js-arrow__grid">
+            <img src="img/icons/icon-grid-arrow.svg" alt="" class="js-arrow__grid accordion__arrow" data-accordion-trigger>
             <div class="icon__title">
                 <img src="img/icons/<%= data.icon %>.svg" alt="">
                 <p>
@@ -14,18 +14,33 @@
                 <p class="u-f--bold">VER TODOS</p>
                 <svg id="icon-arrow-red" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
                     <path id="indicator-right__red-circle__small" d="M14,7a7,7,0,1,0-7,7A7,7,0,0,0,14,7ZM5.29,10.71A1,1,0,0,1,5.284,9.3L5.29,9.29,7.41,7.18a.25.25,0,0,0,.007-.354L7.41,6.82,5.29,4.71A1,1,0,0,1,6.71,3.29l3,3A1,1,0,0,1,9.716,7.7L9.71,7.71l-3,3a1,1,0,0,1-1.414.006Z" fill="#ff293e"/>
-                  </svg>
+                </svg>
             </div>
         </a>
     </nav>
-    <div class="gridHalf__grid active">
-        <% let n = 1; %>
-        <% data.grid.forEach( item => { %>
-            <div class="gridHalf__grid-item" data-game-id="1">
-                <img src="img/images/img-grid-<%= n %>.jpg" alt="">
-                <%- include ('../components/hover') %>
+
+       
+    <% if (data.grid.length == 0) { %> 
+        <div class="body__wrapper" data-accordion-content>
+            <div class="gridHalf__grid gridHalf__grid--empty gridHalf__wrapper" >
+                <p class="gridHalf__subtitle">
+                    Por ahora no hay nada en <%= data.title %>
+                </p> 
             </div>
-            <% n++ %>
-        <% }) %>
-    </div>
+        </div>
+    <% } else { %>
+        <div class="body__wrapper" data-accordion-content>
+            <div class="gridHalf__grid">
+            <% let n = 1; %>
+            <% data.grid.forEach( item => { %>
+                <div class="gridHalf__grid-item" data-game-id="1">
+                        <img src="img/images/img-grid-<%= n %>.jpg" alt="">
+                        <%- include ('../components/hover') %>
+                </div>
+                <% n++ %>
+                <% }) %>
+            </div>
+        </div>
+    <% } %>  
+  
 </section>
