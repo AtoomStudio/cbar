@@ -1,7 +1,7 @@
 <section class="gridHalf accordion--active" data-accordion>
     <nav class="gridHalf__navbar">
         <div class="gridHalf__navbar-wrapper">
-            <img src="img/icons/icon-grid-arrow.svg" alt="" class="js-arrow__grid accordion__arrow" data-accordion-trigger>
+            <img src="img/icons/icon-grid-arrow.svg" alt="" class="accordion__arrow" data-accordion-trigger>
             <div class="icon__title">
                 <img src="img/icons/<%= data.icon %>.svg" alt="">
                 <p>
@@ -22,7 +22,7 @@
        
     <% if (data.grid.length == 0) { %> 
         <div class="body__wrapper" data-accordion-content>
-            <div class="gridHalf__grid gridHalf__grid--empty gridHalf__wrapper" >
+            <div class="gridHalf__grid gridHalf__grid--empty" >
                 <p class="gridHalf__subtitle">
                     Por ahora no hay nada en <%= data.title %>
                 </p> 

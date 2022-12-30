@@ -18,7 +18,7 @@
 .gridHalf {
   width: 100%;
   padding: $sm;
-  
+  height: 100%;
   background-color: setcolor("black", "dark2");
   border-radius: rem(5);
 
@@ -35,15 +35,6 @@
 
     
   
-    .js-arrow__grid {
-      cursor: pointer;
-      transform: rotate(-90deg);
-
-      @include screen-sm {
-        transform: rotate(0);
-      }
-    }
-
     &-wrapper {
       display: flex;
       align-items: center;
