@@ -92,18 +92,25 @@
         padding: rem(20);
         padding-bottom: 0;
       }
+
+         
       div{
+        max-width: 100%;
+        overflow: hidden;
         p {
           overflow: hidden;
-          text-overflow: ellipsis;
           white-space: nowrap;
           text-overflow: ellipsis;
-          width: 177px;
-          display: inline-block;
+          width: auto;
+          display: block;
+       
         }
         p:last-of-type {
           @extend .u-f--h4, .u-f--bold;
+          padding-top: rem(2);
+          width: auto;
         } 
+
       }
       
 
@@ -124,3 +131,4 @@
     }
   }
 }
+
