@@ -1,5 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="22.096" height="23.783" viewBox="0 0 22.096 23.783">
-  <g id="icon-menu-config" transform="translate(0.198 0.15)">
-    <path id="settings-menu__white-outline" d="M35.606,31.5l.721-1.86a1.676,1.676,0,0,1,1.558-1.072h1.374a1.676,1.676,0,0,1,1.558,1.072l.721,1.86,2.446,1.408,1.977-.3a1.676,1.676,0,0,1,1.676.821l.67,1.173a1.676,1.676,0,0,1-.134,1.893L46.95,38.055V40.87l1.257,1.558a1.676,1.676,0,0,1,.134,1.893l-.67,1.173a1.676,1.676,0,0,1-1.676.821l-1.977-.3-2.446,1.408-.721,1.86a1.676,1.676,0,0,1-1.558,1.072H37.885a1.676,1.676,0,0,1-1.558-1.072l-.721-1.86-2.446-1.408-1.977.3a1.676,1.676,0,0,1-1.676-.821l-.67-1.173a1.676,1.676,0,0,1,.134-1.893l1.223-1.558V38.055L28.937,36.5A1.676,1.676,0,0,1,28.8,34.6l.67-1.173a1.676,1.676,0,0,1,1.676-.821l1.977.3Zm-.385,7.959a3.351,3.351,0,1,0,3.351-3.351A3.351,3.351,0,0,0,35.22,39.463Z" transform="translate(-27.721 -27.721)" fill="none" stroke="#13171d" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="42.231" height="41.976" viewBox="0 0 42.231 41.976">
+  <g id="icon-menu-config" transform="translate(1.737 1.5)">
+    <path id="Trazado_5540" data-name="Trazado 5540" d="M19.482.5A18.982,18.982,0,0,0,3.683,30L.5,38.464l10.659-1.927A18.982,18.982,0,1,0,19.482.5Z" transform="translate(0 0)" fill="none" stroke="#13171d" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <line id="Línea_232" data-name="Línea 232" x2="17.522" transform="translate(10.721 15.102)" fill="none" stroke="#13171d" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <line id="Línea_233" data-name="Línea 233" x2="11.681" transform="translate(10.721 23.862)" fill="none" stroke="#13171d" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
   </g>
 </svg>

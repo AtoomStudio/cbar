@@ -130,7 +130,8 @@
           .nav__item-icon g,
           .nav__item-icon path,
           .nav__item-icon g path,
-          .nav__item-icon g circle {
+          .nav__item-icon g circle,
+          .nav__item-icon g line {
             stroke: setcolor("secondary");
           }
 

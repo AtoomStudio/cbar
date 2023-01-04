@@ -19,12 +19,10 @@
   width: 100%;
   padding: $sm;
   height: 100%;
-
   background-color: setcolor("black", "dark2");
   border-radius: rem(5);
 
-  @include screen-sm {
-  }
+
   @include screen-md {
     width: 50%;
   }
@@ -36,19 +34,7 @@
     width: 100%;
 
     
-    @include screen-sm {
-      padding: 0 0 $sm;
-    }
-
-    .js-arrow__grid {
-      cursor: pointer;
-      transform: rotate(-90deg);
-
-      @include screen-sm {
-        transform: rotate(0);
-      }
-    }
-
+  
     &-wrapper {
       display: flex;
       align-items: center;
@@ -105,10 +91,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     overflow: hidden;
+    padding-top: $sm;
 
-    height: 0;
-    opacity: 0;
-    
+       
     @include mobile-sm {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -119,7 +104,6 @@
 
     @include screen-sm {
       grid-template-columns: repeat(4, 1fr);
-      height: 100%;
       opacity: 1;
     }
     
@@ -174,6 +158,9 @@
           }
         }
       }
+    }
+    &--empty{
+      display: flex;
     }
   }
 }

@@ -34,6 +34,7 @@
     position: relative;
     z-index: 0;
     overflow: hidden;
+    background-image: linear-gradient(291deg, setcolor("primary") 23%, setcolor("black", "dark1") 67%);
 
     @include tablet {
         background-image: linear-gradient(45deg, setcolor("primary") 0%, setcolor("black", "dark1") 75%);
