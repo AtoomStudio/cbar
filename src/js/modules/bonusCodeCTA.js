@@ -2,7 +2,9 @@ const bonusCTAs = document.querySelectorAll('[data-bonus-cta]');
 
 function bindCTAs() {
     bonusCTAs.forEach((cta) => {
-        cta.addEventListener('click', async () => {
+        cta.addEventListener('click', async e => {
+            e.preventDefault();
+            
             const code = cta.dataset.bonusCtaCode;
             const redirect = cta.dataset.bonusCtaRedirect;
             const successText = cta.dataset.bonusCtaSuccess;
@@ -33,7 +35,7 @@ function bindCTAs() {
 async function sendCoupon(code) {
     const formData = new URLSearchParams();
     formData.append('bonusCode', code);
-    
+
     try {
         const response = await fetch('/members/bonusCode.jsp', { method: 'POST', body: formData });
         return response.json();
