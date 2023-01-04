@@ -31,8 +31,11 @@ function bindCTAs() {
 }
 
 async function sendCoupon(code) {
+    const formData = new URLSearchParams();
+    formData.append('bonusCode', code);
+    
     try {
-        const response = await fetch('/members/bonusCode.jsp', { method: 'POST', body: `bonusCode=${code}` });
+        const response = await fetch('/members/bonusCode.jsp', { method: 'POST', body: formData });
         return response.json();
     } catch (error) {
         console.log("Error fetching bonusCode", error);
