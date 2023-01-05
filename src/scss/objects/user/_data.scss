@@ -42,7 +42,17 @@
         filter: blur(6px);
       }
     }
-    
+    &--hiden{
+      &-container{
+        margin-top: $sm;
+        text-align:center;
+      }
+      &-text{
+        @extend .u-f--h2, .u-f--bold;
+        color: setcolor("black", "dark1");
+      }
+    }
+
     .data__card {
       padding: $sm;
 
