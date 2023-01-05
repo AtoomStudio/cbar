@@ -11,7 +11,7 @@ function bindCTAs() {
             const errorText = cta.dataset.optinCtaError;
             cta.classList.add('btn--loading');
             try {
-                await sendCoupon(code);
+                await sendOptin(group);
                 cta.classList.add('btn--disabled');
                 if (successText) {
                     cta.innerHTML = successText;
@@ -21,7 +21,7 @@ function bindCTAs() {
                     cta.classList.add('btn--disabled');
                     cta.innerHTML = errorText;
                 }
-                console.log("No se ha podido aplicar el código", "error");
+                console.log("No se ha podido aplicar el código", error);
             } finally {
                 cta.classList.remove('btn--loading');
             }
@@ -29,7 +29,7 @@ function bindCTAs() {
     });
 }
 
-async function sendCoupon(code) {
+async function sendOptin(group) {
     try {
         const response = await fetch(`/utils/groupAction.jsp?action=add&group=${group}&session=${session}`);
         return response.json();
