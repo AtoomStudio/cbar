@@ -32,6 +32,17 @@
       }
     }
 
+    .data__content{
+      filter: blur(0);
+      transition: filter 200ms ease-in;
+    }
+
+    &--blurred{
+      .data__content{
+        filter: blur(6px);
+      }
+    }
+    
     .data__card {
       padding: $sm;
 
@@ -63,7 +74,9 @@
 
       span {
         @extend .u-f--bold;
+        
       }
+
     }
 
     .data__modify-open {
@@ -212,5 +225,9 @@
         }
       }
     }
+  }
+
+  & > button {
+    margin-top: $sm;
   }
 }
