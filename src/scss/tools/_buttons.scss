@@ -80,6 +80,11 @@
       animation: spin 1s linear infinite;
     }
   }
+
+  &.btn--disabled {
+    pointer-events: none;
+    filter: grayscale(50%);
+  }
 }
 
 @keyframes spin {
