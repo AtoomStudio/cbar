@@ -11,7 +11,7 @@ function bindCTAs() {
             const errorText = cta.dataset.optinCtaError;
             cta.classList.add('btn--loading');
             try {
-                await sendOptin(group);
+                await sendOptin(group, session);
                 cta.classList.add('btn--disabled');
                 if (successText) {
                     cta.innerHTML = successText;
@@ -29,7 +29,7 @@ function bindCTAs() {
     });
 }
 
-async function sendOptin(group) {
+async function sendOptin(group, session) {
     try {
         const response = await fetch(`/utils/groupAction.jsp?action=add&group=${group}&session=${session}`);
         return response.json();
