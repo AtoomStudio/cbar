@@ -409,57 +409,6 @@
       }
     }
   }
-}
-
-.depositTransfer {
-  &__card {
-    background-color: setcolor("gray", "light1");
-    border-radius: rem(15);
-
-    p {
-      color: setcolor("black", "dark1") !important;
-      padding-bottom: $sm;
-    }
-  }
-
-  &--top {
-    align-items: flex-start !important;
-    padding: $md;
-    text-align: left !important;
-
-    &>p:first-of-type {
-      @extend .u-f--h5;
-      margin-top: $lg;
-    }
-
-    &>p:last-of-type {
-      @extend .u-f--h3, .u-f--bold;
-    }
-
-    .depositDetail__logo {
-      position: absolute;
-      top: rem(-60);
-      left: 50%;
-      transform: translateX(-50%);
-
-      background-color: white;
-      border-radius: rem(10);
-      padding: $md;
-
-      img {
-        width: 110px;
-        max-width: 100%;
-      }
-    }
-  }
-
-  &--bottom {
-    padding: $md;
-
-    p {
-      @extend .u-f--h5;
-    }
-  }
 
   &__table {
     width: 100%;
@@ -517,7 +466,7 @@
     }
   }
 
-  &__btn button {
-    width: 100% !important;
+  &__big-text {
+    @extend .u-f--h3, .u-f--bold;
   }
 }
