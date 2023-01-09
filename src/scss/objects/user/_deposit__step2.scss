@@ -39,6 +39,11 @@
         background-color: white;
         border-radius: rem(10);
         padding: $md;
+
+        img {
+          width: 110px;
+          max-width: 100%;
+        }
       }
 
       .depositDetail__hint {
