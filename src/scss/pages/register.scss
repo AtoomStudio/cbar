@@ -67,26 +67,23 @@
         align-self: stretch;
         display: flex;
         background: url("../../img/images/register/step-1-mobile.png") no-repeat bottom right transparent;
+        background-size: contain;
+        position: relative;
         
         [data-current-step="2"] & {
+            background-image: url("../../img/images/register/step-2-mobile.png");
             @include tablet {
-                background: none;
+                background-image: none;
             }
-            background: url("../../img/images/register/step-" + 2 + "-mobile.png") no-repeat bottom right transparent;
-            background-size: contain;
         }
 
         [data-current-step="3"] & {
+            background-image: url("../../img/images/register/step-3-mobile.png");
             @include tablet {
-                background: none;
+                background-image: none;
             }
-            background: url("../../img/images/register/step-" + 3 + "-mobile.png") no-repeat bottom right transparent;
-            background-size: contain;
         }
 
-        background-size: contain;
-        position: relative;
-       
         &::before {
             content: "";
             position: absolute;
@@ -102,8 +99,8 @@
         }
         
         @include tablet {
+            background: none;
             justify-content: center;
-            background-image: none;
         }
     }
     
