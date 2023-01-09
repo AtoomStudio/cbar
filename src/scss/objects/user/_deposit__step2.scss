@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  gap: $sm;
 
   &__card {
     width: 100%;
@@ -22,7 +23,7 @@
     &-top {
       position: relative;
       margin-bottom: $sm;
-      padding: rem(70) $sm $md;
+      padding: rem(70) $md $sm;
 
       display: flex;
       justify-content: center;
@@ -51,7 +52,8 @@
       .depositDetail__amount {
         @extend .u-f--h3, .u-f--bold;
 
-        width: 50%;
+        width: 20rem;
+        max-width: 100%;
         margin-top: $sm;
         padding: $sm 0;
 
@@ -61,6 +63,22 @@
         text-align: center;
 
         appearance: none;
+      }
+
+      .depositDetail__email {
+        margin-top: $md;
+        width: 20rem;
+        max-width: 100%;
+        input {
+          @extend .u-f--bold;
+  
+          width: 100%;
+          padding: $sm 0;
+  
+          text-align: center;
+          background-color: #eaedef;
+          color: #868b92;
+        }
       }
 
       .depositDetail__fixed {
@@ -150,7 +168,6 @@
   }
 
   &__select {
-    margin-top: $md;
 
     &>p {
       text-align: center;
@@ -178,6 +195,11 @@
         &:not(:last-of-type) {
           border-bottom: 1px solid #e7e7e8;
         }
+      }
+
+      a {
+        color: setcolor("black", "dark1");
+        text-decoration: underline;
       }
     }
 
@@ -213,25 +235,23 @@
       }
     }
 
-    &-save {
-      margin-top: $md;
-
-      p:first-of-type {
-        @extend .u-f--h5, .u-f--bold;
-        color: setcolor("black", "dark1");
-        margin-bottom: $sm;
-      }
-
-      p:last-of-type {
-        color: setcolor("gray", "mid");
-      }
-    }
-
     &-card {
       &>p {
         text-align: center;
       }
 
+    }
+  }
+
+  &__deposit-info {
+
+    p:first-of-type {
+      @extend .u-f--h5, .u-f--bold;
+      color: setcolor("black", "dark1");
+    }
+
+    p:last-of-type {
+      color: setcolor("gray", "mid");
     }
   }
 
