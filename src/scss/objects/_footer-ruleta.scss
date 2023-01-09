@@ -9,7 +9,7 @@
     padding-bottom: $sm;
     box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.9);
 
-    display: none;
+  
 
     @include screen-sm {
         display: flex;
@@ -20,13 +20,13 @@
         align-items: center;
 
         margin-right: $md;
-
+        margin-top: $xs;
         &-icon {
             margin-right: $sm;
         }
 
         &-title {
-            @extend .u-f--h3, .u-f--bold;
+            @extend .u-f--h4, .u-f--bold;
             color: setcolor('gray', 'mid');
         }
     }
