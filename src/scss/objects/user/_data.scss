@@ -32,6 +32,27 @@
       }
     }
 
+    .data__content{
+      filter: blur(0);
+      transition: filter 200ms ease-in;
+    }
+
+    &--blurred{
+      .data__content{
+        filter: blur(6px);
+      }
+    }
+    &--hidden{
+      &-container{
+        margin-top: $sm;
+        text-align:center;
+      }
+      &-text{
+        @extend .u-f--h2, .u-f--bold;
+        color: setcolor("black", "dark1");
+      }
+    }
+
     .data__card {
       padding: $sm;
 
@@ -63,7 +84,9 @@
 
       span {
         @extend .u-f--bold;
+        
       }
+
     }
 
     .data__modify-open {
@@ -212,5 +235,9 @@
         }
       }
     }
+  }
+
+  & > button {
+    margin-top: $sm;
   }
 }
