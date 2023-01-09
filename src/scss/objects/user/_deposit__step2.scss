@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  gap: $sm;
 
   &__card {
     width: 100%;
@@ -22,7 +23,7 @@
     &-top {
       position: relative;
       margin-bottom: $sm;
-      padding: rem(70) $sm $md;
+      padding: rem(70) $md $sm;
 
       display: flex;
       justify-content: center;
@@ -38,6 +39,11 @@
         background-color: white;
         border-radius: rem(10);
         padding: $md;
+
+        img {
+          width: 110px;
+          max-width: 100%;
+        }
       }
 
       .depositDetail__hint {
@@ -51,7 +57,8 @@
       .depositDetail__amount {
         @extend .u-f--h3, .u-f--bold;
 
-        width: 50%;
+        width: 20rem;
+        max-width: 100%;
         margin-top: $sm;
         padding: $sm 0;
 
@@ -61,6 +68,22 @@
         text-align: center;
 
         appearance: none;
+      }
+
+      .depositDetail__email {
+        margin-top: $md;
+        width: 20rem;
+        max-width: 100%;
+        input {
+          @extend .u-f--bold;
+  
+          width: 100%;
+          padding: $sm 0;
+  
+          text-align: center;
+          background-color: #eaedef;
+          color: #868b92;
+        }
       }
 
       .depositDetail__fixed {
@@ -119,7 +142,8 @@
             font-size: $body_font_size;
           }
 
-          ul, li {
+          ul,
+          li {
             margin-top: 0;
           }
         }
@@ -149,16 +173,19 @@
   }
 
   &__select {
-    margin-top: $md;
 
-    & > p {
+    &>p {
       text-align: center;
     }
 
     &-type {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
       gap: rem(10);
+      grid-template-columns: 1fr 1fr;
+
+      @include tablet {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
     }
 
     &-content {
@@ -173,6 +200,11 @@
         &:not(:last-of-type) {
           border-bottom: 1px solid #e7e7e8;
         }
+      }
+
+      a {
+        color: setcolor("black", "dark1");
+        text-decoration: underline;
       }
     }
 
@@ -208,23 +240,24 @@
       }
     }
 
-    &-save {
-      margin-top: $md;
-      p:first-of-type {
-        @extend .u-f--h5, .u-f--bold;
-        color: setcolor("black", "dark1");
-        margin-bottom: $sm;
-      }
-      p:last-of-type {
-        color: setcolor("gray", "mid");
-      }
-    }
-
     &-card {
-      & > p {
+      &>p {
         text-align: center;
       }
 
+    }
+  }
+
+  &__deposit-info {
+
+    p:first-of-type {
+      @extend .u-f--h5, .u-f--bold;
+      color: setcolor("black", "dark1");
+    }
+
+    p:last-of-type {
+      color: setcolor("gray", "mid");
+      font-size: 0.8rem;
     }
   }
 
@@ -238,7 +271,7 @@
     input {
       display: none;
 
-      &:checked ~ .item__wrapper {
+      &:checked~.item__wrapper {
         background-color: white;
         transition: all 0.3s ease;
 
@@ -250,6 +283,7 @@
         p {
           color: setcolor("black", "dark1");
         }
+
         .radio {
           transition: all 0.3s ease;
           border: 2px solid setcolor("black", "dark1");
@@ -267,9 +301,9 @@
       height: 100%;
       padding: $sm;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
-      flex-direction: column;
+      flex-direction: row;
 
       background-color: #f4f6f8;
       border-radius: rem(5);
@@ -285,7 +319,6 @@
 
       & .item__type {
         color: #868b92;
-        margin: $sm 0;
       }
 
       .radio {
@@ -318,10 +351,18 @@
         }
       }
     }
+
+    &__icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
   }
 
   .itemCard {
     margin-bottom: rem(5);
+
     .item__wrapper {
       flex-direction: row;
       justify-content: flex-start;
@@ -355,13 +396,14 @@
       }
     }
 
-    .btn__blue  {
+    .btn__blue {
       margin-left: rem(5);
       width: 70%;
 
       @include screen-sm {
         width: 80%;
       }
+
       span {
         color: white;
       }
@@ -386,11 +428,12 @@
     border-bottom: 1px solid setcolor("gray", "light2");
     text-align: left !important;
 
-    & > p:first-of-type {
+    &>p:first-of-type {
       @extend .u-f--h5;
       margin-top: $lg;
     }
-    & > p:last-of-type {
+
+    &>p:last-of-type {
       @extend .u-f--h3, .u-f--bold;
     }
 
@@ -403,6 +446,11 @@
       background-color: white;
       border-radius: rem(10);
       padding: $md;
+
+      img {
+        width: 110px;
+        max-width: 100%;
+      }
     }
   }
 
