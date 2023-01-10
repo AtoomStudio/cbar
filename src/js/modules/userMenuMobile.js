@@ -1,4 +1,4 @@
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 
 function userMenuMobile() {
   const userMenuMobileOpen = document.querySelectorAll(".userMenuMobile__open");
@@ -12,15 +12,14 @@ function userMenuMobile() {
     el.addEventListener("click", e => {
       if(window.innerWidth > 1280) return;
       e.preventDefault();
-      userMenuMobile.style.display = "flex";
-      gsap.to(userMenuMobile, { right: "0", opacity: 1, duration: 0.7 });
+      userMenuMobile.classList.add("userMenuMobile--right")
+    
     });
   });
 
   userMenuMobileClose.addEventListener("click", () => {
-    gsap
-      .to(userMenuMobile, { right: "-90vw", opacity: 0, duration: 0.3 })
-      .to(userMenuMobile, { display: "none", duration: 0 });
+    userMenuMobile.classList.remove("userMenuMobile--right")
+  
   });
 }
 

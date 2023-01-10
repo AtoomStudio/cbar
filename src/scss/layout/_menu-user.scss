@@ -5,18 +5,20 @@
 .userMenuMobile {
   position: absolute;
   top: 0;
-  right: 0;
   z-index: 10;
+
+  right:-90vw;
 
   height: 100vh;
   width: 90vw;
 
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   opacity: 0;
-
+  transition: right 0.7s, opacity 0.7s ease-out;
+  
   background-color: setcolor("gray", "light1");
   box-shadow: 0px 0px 60px rgb(0 0 0 / 40%);
 
@@ -147,4 +149,9 @@
       margin-left: $sm;
     }
   }
+}
+
+.userMenuMobile--right{
+  opacity: 1;
+  right: 0;
 }
