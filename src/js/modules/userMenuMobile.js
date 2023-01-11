@@ -1,4 +1,3 @@
-import { gsap } from "gsap";
 
 function userMenuMobile() {
   const userMenuMobileOpen = document.querySelectorAll(".userMenuMobile__open");
@@ -6,21 +5,20 @@ function userMenuMobile() {
     ".userMenuMobile__collapse"
   );
   const userMenuMobile = document.querySelector(".userMenuMobile");
+  
   if (!userMenuMobile) return;
 
-  userMenuMobileOpen.forEach((el) => {
-    el.addEventListener("click", e => {
+  userMenuMobileOpen.forEach((element) => {
+    element.addEventListener("click", event => {
       if(window.innerWidth > 1280) return;
-      e.preventDefault();
-      userMenuMobile.style.display = "flex";
-      gsap.to(userMenuMobile, { right: "0", opacity: 1, duration: 0.7 });
+      event.preventDefault();
+      userMenuMobile.classList.add("userMenuMobile--right")
+    
     });
   });
 
   userMenuMobileClose.addEventListener("click", () => {
-    gsap
-      .to(userMenuMobile, { right: "-90vw", opacity: 0, duration: 0.3 })
-      .to(userMenuMobile, { display: "none", duration: 0 });
+    userMenuMobile.classList.remove("userMenuMobile--right")
   });
 }
 
