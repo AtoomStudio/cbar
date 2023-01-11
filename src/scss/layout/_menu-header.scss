@@ -4,7 +4,7 @@
 
 .menuHeader {
   display: flex;
-  
+
   position: fixed;
   top: 0;
   left: -90vw;
@@ -13,22 +13,26 @@
   width: 90vw;
   height: 100vh;
   overflow: hidden;
-  
+
   opacity: 0;
   transition: 1s;
 
   padding: $sm;
   background-color: setcolor("black", "dark1");
-  
+
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0px 0px 60px rgb(0 0 0 / 80%);
+  transition: left 0.7s, opacity 0.7s ease-out;
 
-
-  
   @include tablet {
     width: auto;
     padding-right: $lg;
+  }
+
+  &.menu-toggle--open {
+    left: 0;
+    opacity: 1;
   }
 
   &__close {
@@ -37,12 +41,13 @@
 
   &__navItems {
     margin-top: $md;
+
     li {
-      list-style:none;
+      list-style: none;
     }
-    
+
     li a {
-      
+
       display: flex;
       align-items: center;
       padding-bottom: $sm;
@@ -61,16 +66,9 @@
   &--bottom {
     display: flex;
     flex-direction: row;
+
     a:not(:last-of-type) {
       margin-right: rem(10);
     }
   }
 }
-
-.menuHeader--left{
-  left: 0;
-  opacity: 1;
-  transition: left 0.7s, opacity 0.7s ease-out ;
-}
-
-

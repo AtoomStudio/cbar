@@ -28,6 +28,11 @@
     display: none;
   }
 
+  &.menu-toggle--open {
+    right: 0;
+    opacity: 1;
+  }
+
   .nav {
     &__title {
       display: flex;
@@ -151,7 +156,7 @@
   }
 }
 
-.userMenuMobile--right{
-  opacity: 1;
-  right: 0;
-}
+// .menu-toggle--open{
+//   opacity: 1;
+//   right: 0;
+// }

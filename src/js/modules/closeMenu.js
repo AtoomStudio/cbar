@@ -1,23 +1,27 @@
-const closeMenu = () => {
-    const menuHeader = document.querySelector('.menuHeader');
-    const userMenuMobile = document.querySelector('.userMenuMobile');
+const menus = document.querySelectorAll('.menu-toggle');
+const menuCloseBtns = document.querySelectorAll(".menu-toggle__closeBtn");
 
+function closeMenuEvent() {
+    menuCloseBtns.forEach(btn => {
+        btn.addEventListener("click", closeMenu);
+    });
 
-    document.addEventListener("click", (event) => {
-        if (!event.target.closest('.menuHeader__openBtn')) {
-            menuHeader.classList.remove('menuHeader--left')
-            }
-        },
-        false
-    )
-    
-    document.addEventListener("click", (event) => {
-        if (!event.target.closest('.userMenuMobile__open')) {
-            userMenuMobile.classList.remove('userMenuMobile--right')
-            }
-        },
-        false
-    )
+    setTimeout(() => {
+        document.addEventListener("click", closeMenOnClickOutside);
+    }, 500);
 }
 
-export default closeMenu;
+function closeMenOnClickOutside() {
+    if (!event.target.closest('.menu-toggle')) {
+        closeMenu();
+    }
+}
+
+function closeMenu() {
+    menus.forEach(menu => {
+        menu.classList.remove('menu-toggle--open')
+    });
+    document.removeEventListener("click", closeMenOnClickOutside);
+}
+
+export default closeMenuEvent;
