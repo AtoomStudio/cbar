@@ -1,4 +1,6 @@
-function menuHeaderMobile() {
+import closeMenu from "./closeMenu";
+
+const menuHeaderMobile = () => {
   const menuHeaderOpenBtn = document.querySelectorAll(".menuHeader__openBtn");
   const menuHeaderCloseBtn = document.querySelector(".menuHeader__closeBtn");
   const menuHeader = document.querySelector(".menuHeader");
@@ -11,10 +13,11 @@ function menuHeaderMobile() {
     });
   });
 
-    menuHeaderCloseBtn.addEventListener("click", () => {
-      menuHeader.classList.remove('menuHeader--left')
-    });
- 
+  menuHeaderCloseBtn.addEventListener("click", () => {
+  menuHeader.classList.remove('menuHeader--left')
+  });
+  
+  closeMenu();
 }
 
 export default menuHeaderMobile;
