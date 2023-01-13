@@ -1,7 +1,5 @@
 import historyNavBar from "./modules/historyNavBar.js";
-import loading from "./modules/loading.js";
 
-loading();
 
 function initSupportForm() {
   const theForm = document.querySelector("#supportForm")
