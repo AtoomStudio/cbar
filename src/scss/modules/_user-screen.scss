@@ -28,7 +28,7 @@
     background-color: setcolor("gray", "light2");
     overflow: hidden;
 
-    opacity: 0;
+   
 
     @include mobile {
       padding: $md $md 12vh $md;
@@ -60,7 +60,7 @@
     position: fixed;
     width: 20%;
     left: 0;
-    opacity: 0;
+    
 
     overflow: hidden;
 
