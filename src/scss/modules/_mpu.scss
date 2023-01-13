@@ -122,6 +122,11 @@ body.mpu-open {
         justify-content: center;
         align-items: center;
         gap: $sm;
+        position: sticky;
+        bottom: 0;
+        padding: $sm;
+        background-color: setcolor("gray", "light2");
+        width: 100%;
 
         &--open {
             display: flex;

@@ -55,6 +55,13 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     margin-bottom: $h1_margin;
+    font-size: rem(28);
+    @include tablet {
+        font-size: rem(36);
+    }
+    @include screen-sm {
+        font-size: rem(46);
+    }
 }
 
 h2 {
@@ -64,7 +71,7 @@ h2 {
     @include tablet {
         font-size: rem(32);
     }
-    @include tablet {
+    @include screen-sm {
         font-size: rem(42);
     }
 }
@@ -76,7 +83,7 @@ h3 {
     @include tablet {
         font-size: rem(24);
     }
-    @include tablet {
+    @include screen-sm {
         font-size: rem(30);
     }
 }
@@ -84,16 +91,23 @@ h3 {
 h4 {
     margin-top: $h4_margin;
     margin-bottom: $h4_margin;
-    font-size: rem(20);
+    font-size: rem(18);
     @include tablet {
-        font-size: rem(24);
+        font-size: rem(22);
     }
-    @include tablet {
-        font-size: rem(30);
+    @include screen-sm {
+        font-size: rem(28);
     }
 }
 
 h5 {
     margin-top: $h5_margin;
     margin-bottom: $h5_margin;
+    font-size: rem(16);
+    @include tablet {
+        font-size: rem(20);
+    }
+    @include screen-sm {
+        font-size: rem(26);
+    }
 }
