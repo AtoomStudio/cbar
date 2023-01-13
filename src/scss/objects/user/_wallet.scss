@@ -88,17 +88,19 @@
         }
       }
 
-      .bonds__table {
+      .bar {
+        margin-bottom: $sm;
+      }
+
+			.bonds__table {
         &-row {
           display: flex;
           justify-content: space-between;
 
           padding: $sm 0;
-
-          &:not(:last-of-type) {
-            border-bottom: 1px solid #dddfe2;
-          }
-
+          &:not(:last-of-type){
+          border-bottom: 1px solid setcolor('gray', 'dark1');
+          }       
           p {
             color: #868b92;
           }
@@ -107,7 +109,29 @@
             text-align: right;
           }
         }
-      }
+        
+				.btn__wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding-top: $sm;
+          border-top: 1px solid setcolor('gray', 'dark1');
+          cursor: pointer;
+				}
+			}
+
+			.accordion { 
+				&__arrow {
+					transform: rotate(0deg);
+					transition: transform 0.2s ease-in-out;
+				}
+
+				&--active {
+					img.accordion__arrow {
+						transform: rotate(-180deg);
+					}	
+				}
+			}
 
       .bonds__promo {
         margin-top: $sm;
