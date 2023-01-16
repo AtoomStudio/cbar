@@ -99,7 +99,7 @@
 
           padding: $sm 0;
           &:not(:last-of-type){
-          border-bottom: 1px solid setcolor('gray', 'dark1');
+          border-bottom: 1.2px solid rgba($color: #000000, $alpha: 0.1);
           }       
           p {
             color: #868b92;
@@ -115,7 +115,7 @@
           align-items: center;
           justify-content: center;
           padding-top: $sm;
-          border-top: 1px solid setcolor('gray', 'dark1');
+          border-top: 1.5px solid rgba($color: #000000, $alpha: 0.2);
           cursor: pointer;
 				}
 			}
