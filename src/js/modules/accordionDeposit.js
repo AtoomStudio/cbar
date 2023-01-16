@@ -1,5 +1,3 @@
-import { gsap } from "gsap";
-
 function accordionDeposit() {
   const accorWrapper = document.getElementsByClassName("depositDetail__card-tc");
   const accorArrows = document.getElementsByClassName("tc__header");
