@@ -1,5 +1,6 @@
+import closeMenuEvent from "./closeMenu";
+
 function popUpSaldo() {
-  const popUpCloseBtn = document.querySelector(".popUpBalance__closeBtn");
   const popUpOpenBtns = document.querySelectorAll(".popUpBalance__openBtn");
   const popUpMenu = document.querySelector(".popUpBalance");
 
@@ -10,14 +11,12 @@ function popUpSaldo() {
   popUpMenu.style.marginTop = `${header.offsetHeight}px`;
 
   popUpOpenBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        popUpMenu.classList.toggle('popUpBalance--openMenu')
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      popUpMenu.classList.add("menu-toggle--open");
+      closeMenuEvent();
+      
     })
-   
-  })
-
-  popUpCloseBtn.addEventListener("click", () => {
-    popUpMenu.classList.remove('popUpBalance--openMenu')
   })
 }
 
