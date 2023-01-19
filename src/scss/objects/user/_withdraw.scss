@@ -124,6 +124,7 @@
         @extend .u-f--bold;
       }
     }
+
     .withdrawDetail__amount {
       @extend .u-f--h3, .u-f--bold;
 
@@ -160,22 +161,31 @@
     display: flex;
     justify-content: center;
     margin-bottom: $sm;
+    gap: $sm;
+    align-items: stretch;
 
     @include screen-sm {
       padding: $lg;
     }
 
     .withdrawDetail__item {
-      &:nth-of-type(2) {
-        margin: 0 $md;
-      }
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: $sm;
 
       p {
         color: setcolor("black", "dark1");
         text-align: center;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
 
         &:last-of-type {
           @extend .u-f--h2, .u-f--bold;
+          flex-grow: 0;
         }
       }
     }
@@ -184,7 +194,7 @@
   &__select {
     margin-top: $md;
 
-    & > p {
+    &>p {
       text-align: center;
     }
 
@@ -243,18 +253,20 @@
 
     &-save {
       margin-top: $md;
+
       p:first-of-type {
         @extend .u-f--h5, .u-f--bold;
         color: setcolor("black", "dark1");
         margin-bottom: $sm;
       }
+
       p:last-of-type {
         color: setcolor("gray", "mid");
       }
     }
 
     &-card {
-      & > p {
+      &>p {
         text-align: center;
       }
 
@@ -272,6 +284,7 @@
       &:first-of-type {
         margin-right: rem(5);
       }
+
       &:last-of-type {
         margin-left: rem(5);
       }
@@ -292,7 +305,7 @@
     input {
       display: none;
 
-      &:checked ~ .item__wrapper {
+      &:checked~.item__wrapper {
         background-color: white;
         transition: all 0.3s ease;
 
@@ -304,6 +317,7 @@
         p {
           color: setcolor("black", "dark1");
         }
+
         .radio {
           transition: all 0.3s ease;
           border: 2px solid setcolor("black", "dark1");
@@ -373,7 +387,7 @@
   .itemCard {
     margin-bottom: rem(5);
     display: block;
-    
+
     .item__wrapper {
       flex-direction: row;
       justify-content: flex-start;
@@ -387,7 +401,7 @@
 }
 
 .withdraw__step3 {
-  & > section {
+  &>section {
     display: flex;
     flex-direction: column;
     align-items: center;
