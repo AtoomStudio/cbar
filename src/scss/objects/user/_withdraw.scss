@@ -156,6 +156,22 @@
 
   }
 
+  &__email {
+    margin-top: $md;
+    width: 20rem;
+    max-width: 100%;
+    input {
+      @extend .u-f--bold;
+
+      width: 100%;
+      padding: $sm 0;
+
+      text-align: center;
+      background-color: #eaedef;
+      color: #868b92;
+    }
+  }
+
   &--bottom {
     padding: $md $sm;
     display: flex;
