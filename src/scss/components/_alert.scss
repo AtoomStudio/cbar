@@ -13,6 +13,11 @@
   text-transform: uppercase;
   margin: $sm auto;
 
+  p {
+    font-size: .75rem;
+    color: setcolor("white", "base");
+  }
+
   &--error {
     background-color: setcolor("danger", "base");
     border: solid 4px setcolor("danger", "light");
