@@ -27,9 +27,27 @@
                 </div>
                 <div class="data__form-input">
                     <p>Contraseña</p>
-                    <input type="password" required placeholder="contraseña actual" class="user__input user__input--ghost">
-                    <input type="password" required placeholder="nueva contraseña" class="user__input user__input--ghost">
-                    <input type="password" required placeholder="confirmar nueva contraseña" class="user__input user__input--ghost">
+                    <div class="password__fields--wrapper">
+                        <input type="password" required placeholder="contraseña actual" class="user__input user__input--ghost" id="pwdField">
+                        <button class="pwdField__button--first-btn">
+                            <img  class="pwdField__icon--edit" src="/img/icons/icon-edit-view-grey.svg" alt="">
+                            <img  class="pwdField__icon--edit-off" src="/img/icons/icon-edit-view-off-grey.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="password__fields--wrapper">
+                        <input type="password" required placeholder="nueva contraseña" class="user__input user__input--ghost"  id="newPassword">
+                        <button class="pwdField__button">
+                            <img  class="pwdField__icon--edit" src="/img/icons/icon-edit-view-grey.svg" alt="">
+                            <img  class="pwdField__icon--edit-off" src="/img/icons/icon-edit-view-off-grey.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="password__fields--wrapper">
+                        <input type="password" required placeholder="confirmar nueva contraseña" class="user__input user__input--ghost" id="re_password">
+                        <button class="pwdField__button">
+                            <img  class="pwdField__icon--edit" src="/img/icons/icon-edit-view-grey.svg" alt="">
+                            <img  class="pwdField__icon--edit-off" src="/img/icons/icon-edit-view-off-grey.svg" alt="">
+                        </button>
+                    </div>
                     <button class="btn__blue data__saveBtn btn__fontSm btn__icons">
                         <img src="img/user/icon/icon-data-check-save.svg" alt="">
                         <span>GUARDAR</span>

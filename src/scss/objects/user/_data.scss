@@ -2,6 +2,8 @@
 @use "../helper" as *;
 @use "../tools" as *;
 
+@use "../objects/user/password-fields";
+
 .data {
   &__screen {
     width: 100%;
