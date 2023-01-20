@@ -1,32 +1,34 @@
 const showPassword = (passwordSelector, rePasswordSelector = null) => {
-    const btn = document.querySelector('.pwdField__button--first-btn')
-    const btns = document.querySelectorAll('.pwdField__button')    
-    
-    if (passwordSelector && rePasswordSelector) {
-        btns.forEach((item) => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                decriptPassword();
-            })
-        })
+    const password = document.querySelector(passwordSelector);
+    const passwordWrapper = password.closest('.password__fields--wrapper')
+    const btnPassword = passwordWrapper.querySelector('.pwdField__button')
 
-    } else {
-        btn.addEventListener('click', (e) => {
+    let re_password;
+    let rePasswordWrapper;
+    let btnRePassword;
+
+    btnPassword.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('click')
+
+        decriptPassword();
+    })
+
+    if (rePasswordSelector) {
+        re_password = document.querySelector(rePasswordSelector);
+        rePasswordWrapper = re_password.closest('.password__fields--wrapper')
+        btnRePassword = rePasswordWrapper.querySelector('.pwdField__button')
+        btnRePassword.addEventListener('click', (e) => {
             e.preventDefault();
             decriptPassword();
         })
     }
 
     const decriptPassword = () => {
-
-        const password = document.querySelector(passwordSelector);
-        const passwordWrapper = password.closest('.password__fields--wrapper')
         passwordWrapper.classList.toggle('visible');
         togglePasswordType(password);
 
-        if(rePasswordSelector ){
-            const re_password = document.querySelector(rePasswordSelector);
-            const rePasswordWrapper = re_password.closest('.password__fields--wrapper')
+        if (rePasswordSelector) {
             rePasswordWrapper.classList.toggle('visible');
             togglePasswordType(re_password);
         }
@@ -34,7 +36,7 @@ const showPassword = (passwordSelector, rePasswordSelector = null) => {
 }
 
 const togglePasswordType = (field) => {
-    if(field.type === 'password'){
+    if (field.type === 'password') {
         field.type = 'text'
     } else {
         field.type = 'password'
