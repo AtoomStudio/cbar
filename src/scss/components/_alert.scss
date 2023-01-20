@@ -3,56 +3,72 @@
 @use "../tools" as *;
 
 .alert {
-  
-    padding: $sm $md;
-    font-family: setfont("family", "secondary");
-    font-weight: setfont("weight", "bold");
+
+  padding: $sm $md;
+  font-family: setfont("family", "secondary");
+  font-weight: setfont("weight", "bold");
+  font-size: .75rem;
+  color: setcolor("white", "base");
+  border-radius: 25px;
+  text-transform: uppercase;
+  margin: $sm auto;
+
+  p {
     font-size: .75rem;
     color: setcolor("white", "base");
-    border-radius: 25px;
-    text-transform: uppercase;
-    margin: $sm auto;
+  }
 
-    &--error {
-        
-        background-color: setcolor("danger", "base");
-        border: solid 4px setcolor("danger", "light");
-    }
-    
-    &--warning {
-        
-        background-color: setcolor("warning", "base");
-        border: solid 4px setcolor("warning", "light");
-    }
+  &--error {
+    background-color: setcolor("danger", "base");
+    border: solid 4px setcolor("danger", "light");
+  }
 
-    &--success {
-        
-        background-color: setcolor("success", "base");
-        border: solid 4px setcolor("success", "light");
-        
-    }
+  &--warning {
+    background-color: setcolor("warning", "base");
+    border: solid 4px setcolor("warning", "light");
+  }
 
-    &--closed {
-      animation: fadeOut .5s;
-      @keyframes fadeOut {
-        0% {opacity: 100%;};
-        100% {opacity: 0%;};
+  &--success {
+    background-color: setcolor("success", "base");
+    border: solid 4px setcolor("success", "light");
+  }
+
+  &--info {
+    background-color: setcolor("info", "base");
+    border: solid 4px setcolor("info", "light");
+  }
+
+  &--closed {
+    animation: fadeOut .5s;
+
+    @keyframes fadeOut {
+      0% {
+        opacity: 100%;
       }
-    }
 
-    &--closable{
-      position:relative;
-      &__button{
-        height:1.37rem;
-        width:1.37rem;
-        background-image: url("/img/icons/icon-close-white.svg");
-        position:absolute;
-        right:1em;
-        top: .69rem;        
-        cursor: pointer;
+      ;
+
+      100% {
+        opacity: 0%;
       }
+
+      ;
     }
+  }
+
+  &--closable {
+    position: relative;
+
+    &__button {
+      height: 1.37rem;
+      width: 1.37rem;
+      background-image: url("/img/icons/icon-close-white.svg");
+      position: absolute;
+      right: 1em;
+      top: .69rem;
+      cursor: pointer;
+    }
+  }
 
 
-} 
-
+}

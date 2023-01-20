@@ -6,8 +6,11 @@
                 <img src="img/user/logo/logo-retirar-skrill.png" alt="">
             </div>
             <p>Indica la cantidad a retirar</p>
-            <p>(Mínimo: 20 €)</p>
+            <!-- <p>(Mínimo: 20 €)</p> -->
             <input type="number" placeholder="0€" class="withdrawDetail__amount">
+            <div class="withdrawDetail__email">
+                <input type="email" name="payoutAccountIdMoneybookers" required value="" placeholder="Introduce tu mail de Skrill">
+            </div>
         </div>
         <div class="withdrawDetail--bottom withdrawDetail__card">
             <div class="withdrawDetail__item">
@@ -23,16 +26,12 @@
                 <p>1€</p>
             </div>
         </div>
-        <div class="withdrawDetail__select-email">
-            <input type="email" name="payoutAccountIdMoneybookers" required value="" placeholder="Introduce tu mail de Skrill">
-        </div>
         <div class="withdrawDetail__btn">
             <button class="btn__white withdraw__step2BackBtn" data-url="/mpu-payout">
                 <img src="img/icons/icon-arrow-black.svg" alt="">
                 <span>ATRÁS</span>
             </button>
-            <button class="btn__grey--ghost btn__icons withdraw__step3Btn">
-                <img src="img/user/icon/icon-withdraw-btn.svg" alt="">
+            <button class="btn__blue withdraw__step3Btn">
                 <span>RETIRAR</span>
             </button>
         </div>
