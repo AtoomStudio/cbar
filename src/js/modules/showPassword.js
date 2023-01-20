@@ -9,8 +9,6 @@ const showPassword = (passwordSelector, rePasswordSelector = null) => {
 
     btnPassword.addEventListener('click', (e) => {
         e.preventDefault();
-        console.log('click')
-
         decriptPassword();
     })
 
