@@ -41,7 +41,7 @@ function searchGames() {
     }
 
     function parseResults({ hits, nbHits, query, queryID }) {
-        searchResultsCount.innerHTML = nbHits;
+        searchResultsCount.innerHTML = hits.length;
         searchResultsQuery.innerHTML = `"${query}"`;
         let output = `<ul data-insights-index="${INDEX_NAME}">`;
         hits.map((hit, arrayIndex) => {
