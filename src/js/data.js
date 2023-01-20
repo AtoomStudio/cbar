@@ -4,5 +4,5 @@ import showPassword from "./modules/showPassword.js";
 
 dataModify();
 dataBlur();
-showPassword('#pwdField');
-showPassword('#re_password', '#newPassword' );
+showPassword('#password-current');
+showPassword('#password-new-confirm', '#password-new' );
