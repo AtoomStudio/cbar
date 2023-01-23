@@ -50,10 +50,12 @@ function Session() {
                     mpu({
                         title: 'Sesión caducada',
                         body: 'Por tu seguridad hemos procedido a desconectarte debido al prolongado estado de inactividad.',
-                        onClose: () => {
-                            window.location.href = '/logout.jsp';
-                        }
-                    });
+                        closeBtn: false,
+                        confirmText: "Iniciar sesión",
+                        cancelText: "Cerrar",
+                        onConfirm: () => { window.location.href = "/login.html" },
+                        onCancel: () => { window.location.href = "/logout.jsp" }
+                    })
                 }
             })
             .catch(err => {
@@ -114,7 +116,7 @@ function Session() {
         lastSessionInfo,
         logout
     };
-    
+
 }
 
 export function bindLogoutButtons() {
