@@ -440,9 +440,9 @@ export default function validateRegister() {
         if(!value) return true;
 
         const isValid = await validateRegisterField(field.name)
-            .then(response => response.json())
+            .then(response => response.body)
             .catch(error => {
-                console.log(error)
+                console.error(error)
                 return "error"
             });
         console.log(isValid);
