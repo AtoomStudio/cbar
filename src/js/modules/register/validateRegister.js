@@ -67,7 +67,6 @@ export default function validateRegister() {
         let errorMessage = null;
         for (const validityType in field.validity) {
             if (field.validity[validityType]) {
-                console.log(validityType)
                 if (field.dataset[validityType]) {
                     errorMessage = field.dataset[validityType];
                 }
@@ -102,10 +101,8 @@ export default function validateRegister() {
                 }
             }).catch(error => {
                 console.log(error);
-                document.getElementById("registerLoader").style.display = "none";
             })
             .finally(() => setLoading(false));
-        setLoading(false);
     }
 
     function showErrors(field, errors) {
@@ -164,6 +161,10 @@ export default function validateRegister() {
                 validatePasswordRepeat(field);
                 break;
 
+            case "bonus":
+                if (isValidatingStep) await validateBonus(field);
+                break;
+
             default:
                 break;
         }
@@ -188,7 +189,6 @@ export default function validateRegister() {
     }
 
     async function validateEmail(field) {
-        console.log('validateEmail')
         field.setCustomValidity("");
         const value = field.value;
         if (!isValidatingStep || !field.validity.valid) {
@@ -430,6 +430,23 @@ export default function validateRegister() {
             }
             return false;
         }
+        return true;
+    }
+
+    async function validateBonus(field) {
+        field.setCustomValidity("");
+        const value = field.value;
+
+        if(!value) return true;
+
+        const isValid = await validateRegisterField(field.name)
+            .then(response => response.json())
+            .catch(error => "error");
+        if(isValid !== "success") {
+            field.setCustomValidity(`Codigo de bono no válido`);
+            return false;
+        }
+        
         return true;
     }
 

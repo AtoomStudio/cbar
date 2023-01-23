@@ -34,8 +34,8 @@
         }
 
         function register() {
-            var url = "/restapi/RegisterService/register";
-            var formData = new FormData(document.getElementById('register'));
+            var url = "https://atoom.space/testpost.php?register";
+            const formData = new FormData(document.getElementById('register'));
             var data = {};
             var suscriptions = [];
             formData.forEach((value, key) => {
@@ -52,6 +52,22 @@
                     'Content-Type': 'application/json'
                 }
             })
+        }
+
+        function validateRegisterField(field) {
+            const serializedData = getSerializedFormData();
+            return fetch("https://atoom.space/testpost.php?validateField", {
+                method: "post",
+                body: serializedData.toString() + "&action=" + field,
+                headers: {
+                    'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                }
+            })
+        }
+
+        function getSerializedFormData() {
+            const formData = new FormData(document.getElementById('register'));
+            return new URLSearchParams(formData);
         }
     </script>
 
@@ -419,7 +435,8 @@
                                     <div class="register__hint">De 3 a 16 letras. Por favor, no uses nada ofensivo</div>
                                     <div class="register__messages"></div>
                                 </fieldset>
-                                <fieldset class="register__fieldset register__fieldset--text register__fieldset--input" data-status="idle">
+                                <fieldset class="register__fieldset register__fieldset--text register__fieldset--input"
+                                    data-status="idle">
                                     <label for="pwdField" class="register__label">Contraseña</label>
                                     <div class="password__fields--wrapper">
                                         <input type="password" name="pwdField" id="pwdField" class="register__input"
@@ -428,8 +445,10 @@
                                             data-value-missing="Este campo es obligatorio"
                                             data-pattern-mismatch="La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, una minúscula y una mayúscula">
                                         <button class="pwdField__button">
-                                            <img  class="pwdField__icon--edit" src="/img/icons/icon-edit-view-light.svg" alt="">
-                                            <img  class="pwdField__icon--edit-off" src="/img/icons/icon-edit-view-off-light.svg" alt="">
+                                            <img class="pwdField__icon--edit" src="/img/icons/icon-edit-view-light.svg"
+                                                alt="">
+                                            <img class="pwdField__icon--edit-off"
+                                                src="/img/icons/icon-edit-view-off-light.svg" alt="">
                                         </button>
                                     </div>
                                     <div class="register__messages"></div>
@@ -437,13 +456,16 @@
                                 <fieldset class="register__fieldset register__fieldset--text" data-status="idle">
                                     <label for="re_password" class="register__label">Confirmación de contraseña</label>
                                     <div class="password__fields--wrapper">
-                                        <input type="password" name="re_password" id="re_password" class="register__input"
-                                            autocomplete="new-password" placeholder="Confirmación de contraseña" required
+                                        <input type="password" name="re_password" id="re_password"
+                                            class="register__input" autocomplete="new-password"
+                                            placeholder="Confirmación de contraseña" required
                                             data-value-missing="Este campo es obligatorio"
                                             data-pattern-mismatch="La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, una minúscula y una mayúscula">
                                         <button class="pwdField__button">
-                                            <img  class="pwdField__icon--edit" src="/img/icons/icon-edit-view-light.svg" alt="">
-                                            <img  class="pwdField__icon--edit-off" src="/img/icons/icon-edit-view-off-light.svg" alt="">
+                                            <img class="pwdField__icon--edit" src="/img/icons/icon-edit-view-light.svg"
+                                                alt="">
+                                            <img class="pwdField__icon--edit-off"
+                                                src="/img/icons/icon-edit-view-off-light.svg" alt="">
                                         </button>
                                     </div>
                                     <div class="register__messages"></div>
@@ -484,7 +506,8 @@
                         </div>
                     </div>
                     <div class="register__actions">
-                        <a href="#" tabindex="-1" class="btn register__action btn__white register__action--prev">Volver</a>
+                        <a href="#" tabindex="-1"
+                            class="btn register__action btn__white register__action--prev">Volver</a>
                         <button class="register__action register__action--next btn__red"><span>Continuar</span> <img
                                 src="img/icons/icon-btn-arrow.svg" /></button>
                         <button type="submit" class="register__action btn__red register__action--submit"
@@ -496,4 +519,4 @@
     </div>
 
     <%- include ('modules/mpu') %>
-    <%- include ('layout/scripts', { script: 'register' , screen: 'register' })%>
+        <%- include ('layout/scripts', { script: 'register' , screen: 'register' })%>
