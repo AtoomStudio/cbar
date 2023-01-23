@@ -441,7 +441,10 @@ export default function validateRegister() {
 
         const isValid = await validateRegisterField(field.name)
             .then(response => response.json())
-            .catch(error => "error");
+            .catch(error => {
+                console.log(error)
+                return "error"
+            });
         console.log(isValid);
         if(isValid !== "success") {
             field.setCustomValidity(`Codigo de bono no válido`);
