@@ -117,10 +117,9 @@
         @extend .u-f--bold;
       }
 
-      .accorArrowDepo {
-        transform: rotate(-90deg);
-      }
-
+      // .accorArrowDepo {
+      //   transform: rotate(-90deg);
+      // }
       .tc__header {
         cursor: pointer;
         display: flex;
@@ -131,22 +130,9 @@
 
       .tc__body {
         max-height: 0;
-        opacity: 0;
+        opacity: 1;
         transition: all 500ms linear;
         overflow: hidden;
-
-        &-content {
-          padding: $sm;
-
-          p {
-            font-size: $body_font_size;
-          }
-
-          ul,
-          li {
-            margin-top: 0;
-          }
-        }
 
         p {
           padding-bottom: rem(10);
@@ -159,14 +145,27 @@
         }
       }
 
-      &.active {
-        .accorArrowDepo {
+      .accordion {
+        &--active &__arrow {
           transform: rotate(0deg);
         }
 
-        .tc__body {
-          max-height: 100vh;
-          opacity: 1;
+        &__content {
+          padding: 0 $sm;
+
+          p {
+            font-size: $body_font_size;
+          }
+
+          ul,
+          li {
+            margin-top: 0;
+          }
+        }
+
+        &--active &__content {
+          max-height: initial;
+          padding: $sm;
         }
       }
     }
