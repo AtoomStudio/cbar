@@ -96,12 +96,11 @@
     overflow: hidden;
     gap: $sm;
 
-    // &.header__logged {
-    // }
-
+  
     .header__noLog-btn {
       margin: 0;
-      padding: $sm rem(40);
+      height: rem(40);
+    
 
       &:first-of-type span {
         color: black;
@@ -266,7 +265,7 @@
     a {
       width: 50%;
       margin: 0;
-      padding: $sm 0;
+      height: rem(40);
 
       img {
         width: rem(25);
