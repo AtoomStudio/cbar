@@ -74,13 +74,8 @@
 
 .btn__icons {
   position: relative;
+  padding: 0 $sm;
 
-  img {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: inline-block;
-  }
   img:first-of-type {
     left: rem(7);
   }
@@ -187,30 +182,46 @@
 .btn__icon--right {
   position: relative;
   padding: 0 $sm;
+  display: flex;
+  justify-content: space-between;
 
   span {
-
+    width: 70%;
     @include screen-md {
-      padding-right: rem(10);
+      padding-right: rem(8);
     }
   }
 
   img {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 7px;
     font-size: rem(14);
-
     @include screen-md {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      right: 7px;
       font-size: rem(14);
     }
   }
 }
+
+.btn__icon--left {
+  position: relative;
+  width: auto;
+  height: rem(40);
+  padding-left: rem(8);
+  padding-right: rem(30);
+
+  span {
+    width: 100%;
+    @include screen-md {
+      padding-left: rem(8);
+    }
+  }
+
+  img {
+    font-size: rem(14);
+    @include screen-md {
+      font-size: rem(14);
+    }
+  }
+}
+
 
 // button border
 .btn_border {

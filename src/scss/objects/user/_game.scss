@@ -61,10 +61,6 @@
         color: setcolor("gray", "mid");
       }
 
-      .game__limitBtn {
-        padding: $sm rem(40);
-      }
-
       a,
       button {
         transform: translateY(50%);
@@ -106,10 +102,7 @@
       width: 100%;
       border-top: 1px solid #d2d4d7;
       padding: $md $md 0;
-
-      .game__limit-saveBtn {
-        padding: $sm rem(45);
-      }
+     
     }
 
     &__exclusion {
@@ -144,8 +137,7 @@
 
         button {
           width: 100%;
-          padding: $sm rem(45);
-
+          
           @include screen-sm {
             width: max-content;
           }

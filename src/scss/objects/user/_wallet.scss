@@ -191,7 +191,6 @@
         }
 
         &-btn {
-          padding: $sm rem(45);
           height: rem(45);
           transform: translateY(50%);
         }
@@ -210,11 +209,11 @@
       display: flex;
 
       button {
-        display: block;
+        // display: block;
         height: rem(45);
         width: 50%;
 
-        padding: 0 rem(45);
+        // padding: 0 rem(45);
         margin-right: $sm;
 
         @include screen-sm {
