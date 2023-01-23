@@ -90,6 +90,7 @@ export default function validateRegister() {
                 if (response.redirected) {
                     window.location.href = response.url
                 } else {
+                    setLoading(false);
                     const data = await response.json();
 
                     if (data.fieldErrors == undefined) {
@@ -101,8 +102,8 @@ export default function validateRegister() {
                 }
             }).catch(error => {
                 console.log(error);
-            })
-            .finally(() => setLoading(false));
+                setLoading(false);
+            });
     }
 
     function showErrors(field, errors) {
