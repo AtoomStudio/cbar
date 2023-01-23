@@ -51,10 +51,8 @@ function Session() {
                         title: 'Sesión caducada',
                         body: 'Por tu seguridad hemos procedido a desconectarte debido al prolongado estado de inactividad.',
                         closeBtn: false,
-                        confirmText: "Iniciar sesión",
-                        cancelText: "Cerrar",
-                        onConfirm: () => { window.location.href = "/login.html" },
-                        onCancel: () => { window.location.href = "/logout.jsp" }
+                        confirmText: "Aceptar",
+                        onConfirm: () => { window.location.href = "/logout.jsp" }
                     })
                 }
             })
