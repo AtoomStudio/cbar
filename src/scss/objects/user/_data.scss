@@ -93,7 +93,6 @@
 
     .data__modify-open {
       width: 100%;
-      padding: $sm;
 
       @include screen-sm {
         width: 50%;
@@ -216,10 +215,7 @@
           }
 
           .data__saveBtn {
-            width: 100%;
-            padding: 0 rem(45);
-            height: rem(45);
-
+         
             @include screen-sm {
               width: fit-content;
             }
