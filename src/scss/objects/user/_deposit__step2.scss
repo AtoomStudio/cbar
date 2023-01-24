@@ -130,8 +130,6 @@
 
       .tc__body {
         max-height: 0;
-        opacity: 1;
-        transition: all 500ms linear;
         overflow: hidden;
 
         &-content {
@@ -139,13 +137,14 @@
         }
 
         p {
-          padding-bottom: rem(10);
+          padding-bottom: $sm;
           color: white;
-          font-family: $body_font_family;
+          font-family: setfont("family", "primary");
         }
 
         ul {
           margin-top: 0;
+          margin-bottom: $sm;
         }
 
         a {
@@ -156,8 +155,7 @@
 
       &.active {
         .tc__body {
-          max-height: auto;
-          opacity: 1;
+          max-height: none;
         }
       }
     }
