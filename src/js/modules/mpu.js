@@ -5,46 +5,48 @@ const ANIMATION_DELAY = 50;
 
 function Mpu() {
     let settings = {};
-    
+
     function mpu(params) {
-        if (typeof params === 'undefined') return;
-        if (typeof params === 'string') openMpuUrl(params);
-        if (typeof params === 'object') openMpuOptions(params);
+        if (typeof params === 'undefined') return false;
+        if (typeof params === 'string') return openMpuUrl(params);
+        if (typeof params === 'object') return openMpuOptions(params);
     }
 
     function openMpuUrl(url) {
         if (!url) return;
-        openMpuOptions({ url: url });
+        return openMpuOptions({ url: url });
     }
-    
-    async function openMpuOptions(options) {
+
+    function openMpuOptions(options) {
         let mpu = document.querySelector('.mpu');
         let animateEnter = true;
-        if(mpu) {
+        if (mpu) {
             animateEnter = false;
             mpu.remove();
-        } 
+        }
         mpu = getTemplate();
-        
+        console.log(mpu);
+
         if (!mpu) return;
-    
+
         const defaults = {
             url: '',
             fullscreen: true,
+            closeBtn: true,
             title: '',
             body: '',
             confirmText: '',
             cancelText: '',
             denyText: '',
-            onOpen: () => {},
-            onClose: () => {},
+            onOpen: () => { },
+            onClose: () => { },
             onConfirm: () => closeMpu(),
             onCancel: () => closeMpu(),
             onDeny: () => closeMpu()
         };
 
         settings = Object.assign({}, defaults, options);
-    
+
         if (settings.url) {
             fetchMpuContent(settings.url)
                 .then(content => {
@@ -53,8 +55,8 @@ function Mpu() {
                 });
         } else {
             mpu.querySelector('.mpu__title').innerHTML = settings.title;
-            mpu.querySelector('.mpu__body').innerHTML = settings.body; 
-            if(!settings.confirmText && !settings.cancelText && !settings.denyText) {
+            mpu.querySelector('.mpu__body').innerHTML = settings.body;
+            if (!settings.confirmText && !settings.cancelText && !settings.denyText) {
                 mpu.querySelector('.mpu__actions').classList.remove('mpu__actions--open');
             } else {
                 mpu.querySelector('.mpu__actions').classList.add('mpu__actions--open');
@@ -79,35 +81,41 @@ function Mpu() {
             }
 
         }
-        
-        if(animateEnter) {
+
+        if (animateEnter) {
             mpu.querySelector('.mpu').classList.add('mpu--animate-enter');
         }
-        mpu.querySelector('.mpu__btn-close').addEventListener('click', closeMpu);
-    
+        if (options.closeBtn) {
+            mpu.querySelector('.mpu__btn-close').addEventListener('click', closeMpu);
+        } else {
+            mpu.querySelector('.mpu__btn-close').remove();
+        }
+
         document.body.classList.toggle('mpu-open', true);
         document.body.appendChild(mpu);
         setTimeout(() => {
             document.querySelector('.mpu').classList.add('mpu--open');
             settings.onOpen();
         }, animateEnter ? ANIMATION_DELAY : 0);
+
+        return document.querySelector('.mpu');
     }
-    
+
     function getTemplate() {
         const mpuTpl = document.getElementById('mpu-tpl');
         if (!mpuTpl) return false;
         return mpuTpl.content.cloneNode(true);
     }
-    
+
     function fetchMpuContent(url) {
         return fetch(url)
             .then(response => response.text())
     }
-    
+
     function closeMpu() {
         const mpu = document.querySelector('.mpu');
         if (!mpu) return;
-    
+
         document.querySelector('.mpu').classList.remove('mpu--open');
         setTimeout(() => {
             mpu.remove();
@@ -115,7 +123,7 @@ function Mpu() {
             if (typeof settings.onClose === "function") settings.onClose();
         }, ANIMATION_DURATION);
     }
-    
+
     function mpuDataTriggers() {
         const mpuOpenBtns = document.querySelectorAll('[data-mpu-url]');
         mpuOpenBtns.forEach(btn => {

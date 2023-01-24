@@ -90,6 +90,7 @@ export default function validateRegister() {
                 if (response.redirected) {
                     window.location.href = response.url
                 } else {
+                    setLoading(false);
                     const data = await response.json();
 
                     if (data.fieldErrors == undefined) {
@@ -101,8 +102,8 @@ export default function validateRegister() {
                 }
             }).catch(error => {
                 console.log(error);
-            })
-            .finally(() => setLoading(false));
+                setLoading(false);
+            });
     }
 
     function showErrors(field, errors) {
@@ -440,8 +441,11 @@ export default function validateRegister() {
         if(!value) return true;
 
         const isValid = await validateRegisterField(field.name)
-            .then(response => response.json())
-            .catch(error => "error");
+            .then(response => response.text())
+            .catch(error => {
+                console.error(error)
+                return "error"
+            });
         console.log(isValid);
         if(isValid !== "success") {
             field.setCustomValidity(`Codigo de bono no válido`);
