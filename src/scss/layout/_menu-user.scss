@@ -7,8 +7,6 @@
   top: 0;
   z-index: 10;
 
-  right:-90vw;
-
   height: 100vh;
   width: 90vw;
 
@@ -16,23 +14,22 @@
   flex-direction: column;
   justify-content: space-between;
 
-  opacity: 0;
-  transition: right 0.7s, opacity 0.7s ease-out;
+  transform: translateX(112%);
+  transition: all 0.7s ease-out;
+  visibility: hidden;
+  
   
   background-color: setcolor("gray", "light1");
   box-shadow: 0px 0px 60px rgb(0 0 0 / 40%);
-
+  
   padding: $sm;
+  
 
   @include screen-sm {
     display: none;
   }
 
-  &.menu-toggle--open {
-    right: 0;
-    opacity: 1;
-  }
-
+ 
   .nav {
     &__title {
       display: flex;
@@ -155,7 +152,13 @@
   }
 }
 
-// .menu-toggle--open{
-//   opacity: 1;
-//   right: 0;
-// }
+.menu-toggle {
+  &--open {
+  right: 0;
+  transform: none;
+  visibility: visible;
+  transition: all 0.7s ease-out;
+
+
+  }
+}
