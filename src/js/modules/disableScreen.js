@@ -1,3 +1,5 @@
+import screensSizer from "./screens-sizer";
+
 function disableScreen({ title, message, ctaText = null, ctaLink = null }) {
   document.body.classList.add('screen--disabled');
   const screens = document.querySelectorAll('.screen');
@@ -19,6 +21,7 @@ function disableScreen({ title, message, ctaText = null, ctaLink = null }) {
   `;
   screens.forEach(screen => screen.remove());
   screensWrapper.prepend(disabledScreen);
+  screensSizer();
 }
 
 export default disableScreen;

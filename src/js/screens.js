@@ -6,5 +6,6 @@ import screensSizer from "./modules/screens-sizer";
 screensSizer();
 gameLauncher();
 new DemoBar();
+// disableScreen({ title: "test", message: "test"})
 
 window.disableScreen = disableScreen;
