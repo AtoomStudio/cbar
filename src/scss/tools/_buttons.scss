@@ -83,7 +83,8 @@
 
   &.btn--disabled {
     pointer-events: none;
-    filter: grayscale(50%);
+    filter: grayscale(100%);
+    box-shadow: none;
   }
 }
 

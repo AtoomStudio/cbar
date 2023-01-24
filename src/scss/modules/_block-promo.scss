@@ -24,17 +24,18 @@
   }
 
   &__bg {
-    margin-top: $md;
+    margin-top: $sm;
     width: 100%;
     display: flex;
     justify-content: center;
-
+    
     @include screen-sm {
-      margin-top: $xl;
+      margin-top: $md;
     }
 
     .image {
-      width: 50%;
+      width: 100%;
+      max-width: rem(600);
       position: relative;
 
       img {
@@ -47,10 +48,10 @@
 
   &__cta {
     display: flex;
-    margin: $lg auto;
-    padding: $sm $xl;
+    margin: $md auto;
+    padding: $sm;
     text-transform: uppercase;
-    width: fit-content;
+    max-width: 300px;
   }
 
   &__title {
@@ -63,16 +64,14 @@
 
     &-badge {
       transform: translateY(-50%);
-
-      width: rem(45);
-      height: rem(45);
+      width: $md;
+      aspect-ratio: 1;
       margin-bottom: rem(-30);
-
+      
       filter: drop-shadow(-2px 2px 15px rgba(0, 0, 0, 0.4));
-
-      @include screen-sm {
-        width: $xl;
-        height: $xl;
+      
+      @include mobile {
+        width: $lg;
       }
     }
 
@@ -84,24 +83,41 @@
   }
 
   &__features {
-    display: none;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: $xs;
     @extend %margin_top_small;
-
-    @include screen-sm {
-      display: flex;
+    
+    @include tablet {
+      flex-direction: row;
     }
 
     &-item {
       display: flex;
       align-items: center;
-
-      padding: 0 $lg;
+      padding: 0 $sm;
+      text-align: center;
 
       &:nth-of-type(2) {
-        border-left: 1px solid setcolor("primary");
-        border-right: 1px solid setcolor("primary");
+
+        @include tablet {
+          border-left: 1px solid setcolor("primary");
+          border-right: 1px solid setcolor("primary");
+        }
+      }
+
+      @include tablet {
+        padding: 0 $sm;
+      }
+
+      img {
+        display: none;
+
+        @include mobile {
+          display: inline-block;
+        }
       }
 
       span {
@@ -161,6 +177,8 @@
 
   &__tc {
     @extend %margin_top_small;
+
+    font-size: 1rem;
 
     p, li {
       color: setcolor("gray", "dark1");
