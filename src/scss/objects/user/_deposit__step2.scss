@@ -139,7 +139,7 @@
         p {
           padding-bottom: $sm;
           color: white;
-          font-family: setfont("family", "primary");
+          font-size: $body_font_size;
         }
 
         ul {
