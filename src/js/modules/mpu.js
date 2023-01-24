@@ -85,7 +85,7 @@ function Mpu() {
         if (animateEnter) {
             mpu.querySelector('.mpu').classList.add('mpu--animate-enter');
         }
-        if (options.closeBtn) {
+        if (settings.closeBtn) {
             mpu.querySelector('.mpu__btn-close').addEventListener('click', closeMpu);
         } else {
             mpu.querySelector('.mpu__btn-close').remove();
