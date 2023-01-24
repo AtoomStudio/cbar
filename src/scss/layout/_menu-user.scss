@@ -3,8 +3,9 @@
 @use "../tools" as *;
 
 .userMenuMobile {
-  position: absolute;
+  position: fixed;
   top: 0;
+  right: -100vw;
   z-index: 10;
 
   height: 100vh;
@@ -14,22 +15,21 @@
   flex-direction: column;
   justify-content: space-between;
 
-  transform: translateX(112%);
-  transition: all 0.7s ease-out;
-  visibility: hidden;
-  
-  
+  transition: all 0.2s ease-out;
+  opacity: 0;
+
+
   background-color: setcolor("gray", "light1");
   box-shadow: 0px 0px 60px rgb(0 0 0 / 40%);
-  
+
   padding: $sm;
-  
+
 
   @include screen-sm {
     display: none;
   }
 
- 
+
   .nav {
     &__title {
       display: flex;
@@ -39,24 +39,26 @@
       padding: 0 $sm $md;
 
       &--left {
-        & > p {
+        &>p {
           @extend .u-f--h3, .u-f--bold;
-          color: setcolor("black", "dark1");         
+          color: setcolor("black", "dark1");
         }
 
-        .nav__title-userid > p {
-           @extend .u-f--bold;
-           color: setcolor("black", "dark1");          
-           margin-bottom: rem(10);
+        .nav__title-userid>p {
+          @extend .u-f--bold;
+          color: setcolor("black", "dark1");
+          margin-bottom: rem(10);
         }
 
         .nav__title-verify {
           display: flex;
+
           img {
             margin-right: rem(10);
             width: rem(18);
             height: rem(18);
           }
+
           p {
             color: setcolor("secondary");
             @extend .u-f--bold;
@@ -154,11 +156,7 @@
 
 .menu-toggle {
   &--open {
-  right: 0;
-  transform: none;
-  visibility: visible;
-  transition: all 0.7s ease-out;
-
-
+    right: 0;
+    opacity: 1;
   }
 }
