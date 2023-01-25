@@ -49,9 +49,19 @@
   }
   
   &__btn {
+    position: relative;
     width: auto;
     height: rem(40);
-    padding-left: rem(8);
+    margin: 0;
+    padding: 0;
+    padding-left: rem(40);
     padding-right: rem(20);
+
+    img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: rem(7);
+    }
   }
 }

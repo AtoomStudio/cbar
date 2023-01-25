@@ -93,6 +93,7 @@
 
     .data__modify-open {
       width: 100%;
+      padding: $sm;
 
       @include screen-sm {
         width: 50%;
