@@ -1,0 +1,62 @@
+@use "../settings" as *;
+@use "../helper" as *;
+@use "../tools" as *;
+
+.table__wrapper {
+    overflow-x: auto;
+  
+    .table {
+      padding: rem(10) 0;
+      text-align: left;
+      margin-right: $sm;
+      width: -webkit-fill-available;
+      border: none;
+      
+      
+      @include mobile {
+        margin-right: $md;
+      }
+      @include tablet {
+        margin-right: $lg;
+      }
+      @include screen-sm {
+        margin-right: 0;
+      }
+      
+      &__head td {
+        @extend .u-f--bold;
+        color: setcolor("black", "dark1"); 
+        padding: rem(10);
+        background-color: #fafafb;
+        
+      }
+      
+      th {
+        padding: 0 rem(10);
+      }
+      
+      &__td {
+        color: #868b92;
+        padding: rem(10);
+      }
+      tr {
+        padding: rem(20) 0;
+        &:nth-of-type(odd) {
+        background-color: #f4f6f7;
+        
+        }
+        &:nth-of-type(even) {
+          background-color: #fafafb;
+        }
+
+        th {
+          color: setcolor("black", "dark1"); 
+          
+        }
+      }
+      .user__card {
+        padding: 0 0 1rem;
+        
+      }
+    }
+  }

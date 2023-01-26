@@ -61,6 +61,9 @@
         color: setcolor("gray", "mid");
       }
 
+      .game__limitBtn {
+        padding: $sm rem(40);
+      }
       a,
       button {
         transform: translateY(50%);
