@@ -10,9 +10,6 @@
 
   transform: translateY(100%);
   transition: all 0.7s ease-out;
-  opacity: 0;
-
-  pointer-events: none;
 
   z-index: 10;
 
@@ -45,7 +42,7 @@
     justify-content: space-between;
     align-items: center;
 
-    & > p {
+    &>p {
       @extend .u-f--bold, .u-f--h4;
     }
   }
@@ -89,7 +86,7 @@
       width: 80%;
       height: rem(12);
       appearance: none;
-      
+
       &::-webkit-progress-bar {
         border-radius: $xl;
         background-color: setcolor("black", "dark4");
@@ -101,13 +98,14 @@
         background: linear-gradient(to right, #2074fe, setcolor("secondary"));
       }
 
-      
+
     }
   }
 
   &__freespins {
     display: flex;
     align-items: center;
+
     svg {
       margin-right: rem(10);
     }
@@ -122,6 +120,34 @@
       color: setcolor("primary");
 
       padding-right: rem(5);
+    }
+  }
+
+  &.menu-toggle {
+    opacity: 0;
+    pointer-events: none;
+
+    &--open {
+      right: 10%;
+      opacity: 1;
+      bottom: $lg;
+      pointer-events: auto;
+
+      @include mobile-sm {
+        transform: translateY(0);
+      }
+
+      @include tablet-h {
+        bottom: auto;
+      }
+    }
+
+    &__closeBtn {
+      cursor: pointer;
+
+      path {
+        fill: setcolor("gray", "mid");
+      }
     }
   }
 }
@@ -142,30 +168,8 @@
     color: setcolor("black", "dark1");
   }
 
-  .popUpBalance__freespins svg g g path, .popUpBalance__detail svg path {
+  .popUpBalance__freespins svg g g path,
+  .popUpBalance__detail svg path {
     fill: setcolor("black", "dark1");
-  }
-}
-
-.menu-toggle {
-  &--open {
-    bottom: $lg;
-
-    @include mobile-sm {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.7s ease-out;
-    }
-
-    @include tablet-h {
-    top: $sm;
-    bottom: auto;
-    }
-  }
-  &__closeBtn{
-    cursor: pointer;
-    path {
-      fill: setcolor("gray", "mid");
-    }
   }
 }
