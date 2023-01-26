@@ -142,54 +142,12 @@
 
     .history__activity {
       overflow-x: auto;
-
-      @include screen-sm {
-        overflow-x: hidden;
-      }
-
-      .history__wrapper {
-        overflow-x: auto;
-        border-radius: rem(5);
-
-        @include screen-sm {
-          overflow-x: hidden;
-        }
-
-        .history__table {
-          padding: 0 !important;
-          width: max-content;
-
-          @include screen-sm {
-            width: 100%;
-          }
-
-          &-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-            align-items: center;
-
-            padding: $sm;
-          }
-          p {
-            color: #868b92;
-          }
-
-          .bold {
-            @extend .u-f--bold;
-            color: setcolor("black", "dark1");
-          }
-
-          &-row:nth-of-type(odd) {
-            background-color: #fafafb;
-          }
-          &-row:nth-of-type(even) {
-            background-color: #f4f6f7;
-          }
-        }
+      
       }
     }
-  }
 
+
+ 
   .block {
     display: none;
   }
