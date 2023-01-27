@@ -11,6 +11,7 @@
       margin-right: $sm;
       width: -webkit-fill-available;
       border: none;
+      background-color: #fafafb;
       
       
       @include mobile {
@@ -37,6 +38,9 @@
       &__td {
         color: #868b92;
         padding: rem(10);
+        a {
+        color: #868b92;
+        }
       }
       
       tbody{
