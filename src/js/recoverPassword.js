@@ -1,4 +1,5 @@
 import JustValidate from "just-validate";
+import showPassword from "./modules/showPassword";
 
 function recoverPassword() {
 
@@ -31,3 +32,4 @@ function recoverPassword() {
 }
 
 recoverPassword();
+showPassword('#pwdField', '#re_password')

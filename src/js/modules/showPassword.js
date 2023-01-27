@@ -1,5 +1,7 @@
 const showPassword = (passwordSelector, rePasswordSelector = null) => {
     const password = document.querySelector(passwordSelector);
+    if(!password) return;
+    
     const passwordWrapper = password.closest('.password__fields--wrapper')
     const btnPassword = passwordWrapper.querySelector('.pwdField__button')
 

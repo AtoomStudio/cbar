@@ -48,7 +48,8 @@
           width: 75%;
         }
 
-        input[type="text"] {
+        input[type="text"],
+        input[type="password"] {
           height: rem(45);
           width: 100%;
 

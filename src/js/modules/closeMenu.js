@@ -7,11 +7,12 @@ function closeMenuEvent() {
     });
 
     setTimeout(() => {
-        document.addEventListener("click", closeMenOnClickOutside);
+        document.addEventListener("click", closeMenuOnClickOutside);
     }, 500);
 }
 
-function closeMenOnClickOutside() {
+function closeMenuOnClickOutside() {
+    console.log('closeMenu');
     if (!event.target.closest('.menu-toggle')) {
         closeMenu();
     }
@@ -21,7 +22,7 @@ function closeMenu() {
     menus.forEach(menu => {
         menu.classList.remove('menu-toggle--open')
     });
-    document.removeEventListener("click", closeMenOnClickOutside);
+    document.removeEventListener("click", closeMenuOnClickOutside);
 }
 
 export default closeMenuEvent;
