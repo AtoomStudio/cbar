@@ -19,6 +19,7 @@
     margin: $md 0;
     display: flex;
     overflow-x: auto;
+    padding-bottom: 1rem;
    
     .history__nav {
       @extend .u-f--bold;
@@ -38,6 +39,10 @@
       &.is-active {
         color: setcolor("black", "dark1");
       }
+
+    }
+    a {
+      background-color: setcolor("gray", 'light1');
     }
   }
 
@@ -58,6 +63,7 @@
 
       @include mobile {
         margin-right: $md;
+        
       }
       @include tablet {
         margin-right: $lg;
@@ -69,6 +75,22 @@
       .history__content {
         padding: $md $sm;
 
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        margin-right: $sm;
+
+        @include tablet {
+          display: flex;
+          justify-content:left;
+          text-align: left;
+          margin-right: $lg;
+        }
+        @include screen-sm {
+          margin-right: 0;
+        }
+
         p:first-of-type {
           @extend .u-f--h3, .u-f--bold;
 
@@ -77,7 +99,9 @@
         }
         p:last-of-type {
           color: #868b92;
+          
         }
+
       }
 
       .history__inputs {
@@ -142,10 +166,25 @@
 
     .history__activity {
       overflow-x: auto;
-      
-      }
-    }
 
+    }
+  }
+  
+  .user__card-title {
+    display: flex;
+    justify-content: center;
+    margin-right: 1.9375rem;
+
+ 
+    @include tablet {
+      display: flex;
+      justify-content:left;
+      margin-right: $lg;
+    }
+    @include screen-sm {
+      margin-right: 0;
+    }
+  }
 
  
   .block {
@@ -160,5 +199,23 @@
     display: flex;
     justify-content: center;
     margin-top: $sm;
+    margin-right: $sm;
+
+    @include mobile {
+      display: flex;
+      justify-content: flex-start;
+      margin-right: $md;
+    }
+    @include tablet {
+      margin-right: $lg;
+    }
+    @include screen-sm {
+      margin-right: 0;
+    }
   }
 }
+
+
+
+
+   

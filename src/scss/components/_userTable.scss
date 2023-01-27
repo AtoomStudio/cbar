@@ -28,7 +28,6 @@
         color: setcolor("black", "dark1"); 
         padding: rem(10);
         background-color: #fafafb;
-        
       }
       
       th {
@@ -39,21 +38,27 @@
         color: #868b92;
         padding: rem(10);
       }
-      tr {
-        padding: rem(20) 0;
+      
+      tbody{
         &:nth-of-type(odd) {
-        background-color: #f4f6f7;
-        
+          background-color: #f4f6f7;
+          
         }
         &:nth-of-type(even) {
           background-color: #fafafb;
         }
+      }
 
+      tr {
+        padding: rem(20) 0;
+        height: 3.5rem;
+        
         th {
           color: setcolor("black", "dark1"); 
           
         }
       }
+     
       .user__card {
         padding: 0 0 1rem;
         
