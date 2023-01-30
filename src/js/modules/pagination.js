@@ -1,21 +1,19 @@
-
-
-
 function pagination () {
     const numberBtns = document.querySelectorAll('.paginator__btn');
     const prevBtn = document.querySelector('#rePage');
     const nextBtn = document.querySelector('#avPage');
-    prevBtn.addEventListener ('click', (e) => {
-        e.preventDefault();
-        hasIdAttribute (numberBtns);
-    })
-    
-    nextBtn.addEventListener ('click', (e) => {
-        e.preventDefault();
-        hasIdAttribute (numberBtns);
-    })
+
+    if(numberBtns){
+        prevBtn.addEventListener ('click', (e) => {
+            e.preventDefault();
+            hasIdAttribute (numberBtns);
+        })
         
-    
+        nextBtn.addEventListener ('click', (e) => {
+            e.preventDefault();
+            hasIdAttribute (numberBtns);
+        })
+    }
 }
 
 const hasIdAttribute = ((numbersList)  => {
