@@ -14,6 +14,7 @@
       background-color: #fafafb;
       
       
+      
       @include mobile {
         margin-right: $md;
       }
@@ -28,7 +29,6 @@
         @extend .u-f--bold;
         color: setcolor("black", "dark1"); 
         padding: rem(10);
-        background-color: #fafafb;
       }
       
       th {
@@ -39,17 +39,20 @@
         color: #868b92;
         padding: rem(10);
         a {
-        color: #868b92;
+          color: setcolor("black", "dark1");
         }
       }
-      
-      tbody{
-        &:nth-of-type(odd) {
-          background-color: #f4f6f7;
+
+      tbody {
+        tr:nth-child(odd) {
+          td, th {background-color: #f4f6f7;
           
         }
-        &:nth-of-type(even) {
-          background-color: #fafafb;
+      }
+      tr:nth-child(even) {
+          td, th {background-color: #fafafb;
+          
+          }
         }
       }
 
@@ -59,10 +62,9 @@
         
         th {
           color: setcolor("black", "dark1"); 
-          
         }
       }
-     
+      
       .user__card {
         padding: 0 0 1rem;
         
