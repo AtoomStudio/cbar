@@ -1,28 +1,28 @@
 function pagination () {
-    const numberBtns = document.querySelectorAll('.paginator__btn');
-    const prevBtn = document.querySelector('#rePage');
-    const nextBtn = document.querySelector('#avPage');
+    let numberBtns = document.querySelectorAll('.paginator__btn');
+   
+    numberBtns.forEach ((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            if (btn.getAttribute('id') !== null) {
+                resetValues();
+            }      
+            else {
+                resetValues();
+                btn.setAttribute ('id', 'currentPage');
+                btn.classList.toggle('is-active')
+            }
+        })
+    })
 
-    if(numberBtns){
-        prevBtn.addEventListener ('click', (e) => {
-            e.preventDefault();
-            hasIdAttribute (numberBtns);
+    const resetValues = () => {
+        numberBtns.forEach((button) => {
+            button.classList.remove('is-active')
+            button.removeAttribute('id');
         })
-        
-        nextBtn.addEventListener ('click', (e) => {
-            e.preventDefault();
-            hasIdAttribute (numberBtns);
-        })
+
     }
 }
-
-const hasIdAttribute = ((numbersList)  => {
-    numbersList.forEach(number => {
-        if(number.getAttribute('id') !== null){
-            number.classList.add('is-active')
-        } 
-        else number.classList.remove('is-active')
-    })
-})
 
 export default pagination;
