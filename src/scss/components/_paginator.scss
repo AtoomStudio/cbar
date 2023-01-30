@@ -16,7 +16,7 @@
         margin-right: 0;
     }
 
-    &__btn, &__arrow{
+    &__btn, &__arrow--prev, &__arrow--next {
         @extend .u-f--bold;
         color: setcolor("secondary");
         padding: rem(12) rem(22);
