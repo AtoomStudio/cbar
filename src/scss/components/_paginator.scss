@@ -3,12 +3,20 @@
 @use "../tools" as *;
 
 .paginator {
-    margin-top: rem(20);
     display: flex;
-    justify-content: flex-end;
-    margin-right: $lg;
 
-    &__btn {
+    margin-top: rem(20);
+    padding-bottom: rem(10);
+    @include tablet {
+        justify-content: right;
+        margin-right: $lg;
+    }
+
+    @include screen-sm {
+        margin-right: 0;
+    }
+
+    &__btn, &__arrow{
         @extend .u-f--bold;
         color: setcolor("secondary");
         padding: rem(12) rem(22);
@@ -26,9 +34,8 @@
         &.is-active {
             color: setcolor("black", "dark1");
         }
-
-        
     }
+    
     
     ul { 
         list-style: none;
@@ -37,6 +44,7 @@
     }
     
     a {
+        
         background-color: setcolor("gray", 'light1');
         
     }
