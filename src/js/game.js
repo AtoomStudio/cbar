@@ -54,6 +54,9 @@ function showConfirmation(form) {
         cancelText: 'Cancelar',
         onConfirm: () => {
             form.submit();
+        },
+        onCancel: () => {
+            window.location.href = "/members/depositlimits.html?error=true"
         }
     })
 }
