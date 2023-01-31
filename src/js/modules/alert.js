@@ -25,7 +25,7 @@ function Alert(options = {}) {
             imageX.addEventListener("click", () => remove(alertEl.dataset.index))
         }
         wrapperEl.append(alertEl);
-        wrapperEl.scrollIntoView({ behavior: "smooth" });
+        wrapperEl.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
         if (options.autoclose > 0) {
             setTimeout(() => {
                 remove(alertEl.dataset.index);
