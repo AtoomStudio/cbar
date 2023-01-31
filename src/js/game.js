@@ -1,4 +1,5 @@
 import Mpu from './modules/mpu';
+import Alert from './modules/alert';
 
 function initAutoexclusion() {
     const autoexclusionForm = document.getElementById('autoexclusion');
@@ -22,6 +23,8 @@ function initLimits({ questionarieUrl }) {
     const limitsForm = document.getElementById('limitsForm');
     if (!limitsForm) return;
 
+    const alertMgr = Alert();
+
     limitsForm.addEventListener('submit', (e) => {
         e.preventDefault();
         if (!limitsChanged()) {
@@ -29,10 +32,7 @@ function initLimits({ questionarieUrl }) {
             return;
         }
         if (!validValues()) {
-            Mpu().mpu({
-                title: 'Límites incorrectos',
-                body: "El límite diario debe ser menor que el semanal y el semanal menor que el mensual.",
-            });
+            alertMgr.add('El límite diario debe ser menor que el semanal y el semanal menor que el mensual.', 'error');
             console.log("Invalid values");
             return;
         }
@@ -54,6 +54,9 @@ function showConfirmation(form) {
         cancelText: 'Cancelar',
         onConfirm: () => {
             form.submit();
+        },
+        onCancel: () => {
+            window.location.href = "/members/depositlimits.html?error=true"
         }
     })
 }

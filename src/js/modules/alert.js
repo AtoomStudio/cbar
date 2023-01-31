@@ -1,6 +1,6 @@
 let alertGlobal = 0;
 
-function Alert(options = {}) { 
+function Alert(options = {}) {
     const defaultOptions = {
         wrapperSelector: '.alert__wrapper',
         itemTemplate: '<div class="alert alert--{type} alert--{closable}" data-index="{index}">{message}</div>',
@@ -18,14 +18,15 @@ function Alert(options = {}) {
             .replace("{index}", `${alertGlobal}-${alertIndex}`)
             .replace("{message}", message)
         const alertEl = stringToElement(alertStr);
-        if(closable) {          
+        if (closable) {
             const imageX = document.createElement("div");
             imageX.classList.add("alert--closable__button");
             alertEl.appendChild(imageX);
-            imageX.addEventListener("click", () => remove(alertEl.dataset.index))           
+            imageX.addEventListener("click", () => remove(alertEl.dataset.index))
         }
         wrapperEl.append(alertEl);
-        if(options.autoclose > 0) {
+        wrapperEl.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+        if (options.autoclose > 0) {
             setTimeout(() => {
                 remove(alertEl.dataset.index);
             }, options.autoclose);
@@ -35,10 +36,10 @@ function Alert(options = {}) {
 
     function remove(index) {
         const alert = wrapperEl.querySelector(`[data-index="${index}"]`);
-        if(!alert) return;
-        
+        if (!alert) return;
+
         alert.classList.add("alert--closed");
-        setTimeout(()=>{alert.remove();}, 450);
+        setTimeout(() => { alert.remove(); }, 450);
     }
 
     function removeAll() {
@@ -52,13 +53,13 @@ function Alert(options = {}) {
     }
 
     alertGlobal++;
-    
+
     return {
         add,
         remove,
         removeAll
     };
-    
+
 }
 
 export default Alert;
