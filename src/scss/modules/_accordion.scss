@@ -47,16 +47,7 @@
         p, li {
           color: #7f8285;
           max-width: 100%;
-
-          @include screen-sm {
-            max-width: 66%;
-          }
-          @include screen-md {
-            max-width: 50%;
-          }
-          @include screen-lg {
-            max-width: 33%;
-          }
+        
         }
 
         &--fullwidth {
