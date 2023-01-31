@@ -1,0 +1,66 @@
+@use "../settings" as *;
+@use "../helper" as *;
+@use "../tools" as *;
+
+.pokerTable {
+    overflow-x: auto;
+
+    .table {
+        padding:  0 rem(10) ;
+        text-align: left;
+        width: -webkit-fill-available;
+        background-color: rgb(196, 52, 52);
+        border-radius: rem(10);
+
+   
+    }   
+    thead {
+        tr{
+            padding: rem(40) 0;
+            color: #868b92;
+        }
+        
+    }
+
+    tbody {
+        // border-spacing: rem(10);
+        tr {
+            padding: rem(40) 0;
+            height: 3.5rem;
+            
+        }
+        // tr:nth-child(-n+5){
+        //     td {
+        //         text-align: right;
+        //     }
+        // }
+    }
+
+    &__title {
+        @extend .u-f--h1;
+        @extend .u-f--bold;
+        background-color: setcolor('black', 'dark2');
+        border-radius: rem(10);
+    }
+
+    &__subtitle {
+        margin-top: $sm;
+        margin-bottom: $sm;
+        @extend .u-f--h4;
+        @extend .u-f--bold;
+
+        @include screen-sm {
+            margin-top: $md;
+            margin-bottom: $md;
+        }
+
+        background-color: setcolor('black', 'dark2');
+        border-radius: rem(10);
+        
+    }
+
+   
+}
+
+	
+
