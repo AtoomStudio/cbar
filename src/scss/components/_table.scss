@@ -3,18 +3,24 @@
 @use "../tools" as *;
 
 .table {
-	margin-top: 30px;
+	margin: rem(20) 0;
 	width: 100%;
 	border: none;
 	border-collapse: collapse;
 	text-align: center;
 	border-radius: rem(5);
 	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 	min-width: rem(400);
 
 	&__wrapper {
 		overflow-x: auto;
 		border-radius: 5px 5px 0 0;
+
+		h3 {
+			margin-top: 0;
+		}
 	}
 
 	thead {
@@ -56,4 +62,6 @@
 	.right {
 		text-align: right;
 	}
+
 }
+
