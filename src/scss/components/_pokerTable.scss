@@ -1,0 +1,175 @@
+@use "../settings" as *;
+@use "../helper" as *;
+@use "../tools" as *;
+
+.pokerTable {
+    margin-top: rem(20);
+
+    &__wrapper {
+        overflow-x: auto;
+    }
+
+    &__subtitle {
+        margin-bottom: 5px;
+		padding: 40px 30px;
+		border-radius: rem(10);
+		background-color: setcolor('black', 'dark4');
+		background-image: linear-gradient(to right, setcolor('black', 'dark4') 50%, setcolor('black', 'dark2'));
+        @extend .u-f--bold;
+		text-transform: uppercase;
+    }
+
+    .table {
+        text-align: left;
+        width: -webkit-fill-available;
+        
+        &__head {
+            @extend .u-f--bold;
+            color: setcolor("black", "dark1"); 
+            color: #868b92;
+            padding:  rem(20) 0;
+        }
+        
+        thead {
+            background-color: setcolor('black', 'dark4');
+            th:first-child {
+                border-radius: rem(10) 0 0 0 ;
+                padding-left: rem(20);
+            }
+
+            th:last-child {
+                border-radius: 0 rem(10)  0 0 ;
+                text-align: right;
+                padding-right: rem(20);
+                
+            }
+
+            th {
+                padding-left: rem(40);
+
+                @include mobile {
+                padding-left: 0;
+
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                margin-top: 1px;
+                padding: rem(40) ;
+                height: 3.5rem;
+                background-color: setcolor('black');
+            }
+
+            th {
+                padding-left: rem(20);
+            }
+
+            td:last-child{
+                @extend .u-f--h3;
+                @extend .u-f--bold;
+                text-align: right;
+                padding-right: rem(20);
+
+                @include tablet {
+                    width: rem(360);
+                }
+            }
+
+            td {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding-left: rem(40);
+
+                @include mobile {
+                padding-left: 0;
+                }
+            }
+        }
+
+        .option {
+            &__heading {
+                text-align: right;  
+            } 
+            &__price {
+                @extend .u-f--h3;
+                @extend .u-f--bold;
+                text-align: right;
+            }
+        }
+        .spacer {
+          
+            @include screen-sm {
+                width: 28rem;
+            }
+            @include screen-lg {
+                width: 32rem;
+            }
+        }
+    }  
+}
+
+.tableBig {
+	margin-top: rem(20);
+
+
+	&__wrapper {
+		overflow-x: auto;
+	}
+
+
+	&__table {
+		width: max-content;
+		min-width: 100%;
+	}
+
+
+	&__row {
+		display: grid;
+		gap: rem(20);
+		grid-template-columns: repeat( 5, auto );
+		align-items: center;
+		padding: 35px 30px;
+		border-radius: rem(10);
+		background-color: setcolor('black', 'dark4');
+
+		@include screen-sm {
+			grid-template-columns: 2fr 1fr 1fr 5fr 6fr;
+		}
+
+		& + & {
+			margin-top: 5px;
+		}
+
+
+		span {
+
+			&:nth-of-type(1) {
+				@extend .u-f--h3;
+				@extend .u-f--bold;
+			}
+
+			&:nth-of-type(2) {
+				@extend .u-f--bold;
+			}
+
+			
+
+			&:nth-of-type(4) {
+				@extend .u-f--h3;
+				@extend .u-f--bold;
+				text-align: right;
+			}
+
+			&:nth-of-type(5) {
+				@extend .u-f--h3;
+				@extend .u-f--bold;
+				text-align: right;
+			}
+		}
+	}
+}
+	
+
