@@ -8,8 +8,17 @@
 .textBlock {
 	@extend %margin_horizontal_main, %margin_top_large;
 
+	h1 {
+		color: setcolor('white','base')
+	}
+
+	p:first-of-type {
+		color: setcolor('white','base')
+	}
+
 	p {
 		padding-bottom: $sm;
+		color: #939598;
 	}
 
 	a, li {
@@ -28,11 +37,5 @@
 		@extend .u-f--bold;
 	}
 
-	.margin-big {
-		padding-bottom: $md;
-	}
-
-	.gray {
-		color: #939598;
-	}
+	
 }
