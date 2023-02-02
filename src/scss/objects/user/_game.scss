@@ -61,19 +61,22 @@
         color: setcolor("gray", "mid");
       }
 
-      .game__limitBtn {
-        padding: $sm rem(40);
+      .game__limitBtn, .saveBtn {
+        padding-left: rem(45);
+        padding-right: rem(30);
       }
+
       a,
       button {
-        transform: translateY(50%);
-        width: 100%;
-
-        @include screen-sm {
-          width: max-content;
+        transform: translateY(23%);
+        width: auto;
+        @include mobile-sm {
+          width: 100%; 
+        }
+        @include tablet {
+          width: auto;
         }
       }
-
       &-limit {
         padding: 0 !important;
       }
@@ -105,8 +108,11 @@
       width: 100%;
       border-top: 1px solid #d2d4d7;
       padding: $md $md 0;
-     
+      button.saveBtn {
+        transform: translateY(45%);
+      }
     }
+  
 
     &__exclusion {
       width: 100%;
@@ -130,27 +136,15 @@
         width: 100%;
       }
 
-      &-saveBtn {
-        width: 100%;
-
-        display: flex;
-        justify-content: center;
-
-        padding: 0 $sm;
-
-        button {
-          width: 100%;
-          
-          @include screen-sm {
-            width: max-content;
-          }
-        }
+      button.saveBtn {
+        transform: translateY(80%);
       }
-
+      
+      
       .exclusion_input,
       .exclusion_select {
         width: 50%;
-
+        
         @include screen-sm {
           width: 25%;
         }
@@ -166,7 +160,8 @@
         background-position-y: 50%;
       }
     }
-
+    
+    
     .limit_input,
     .exclusion_input {
       background: transparent;
@@ -181,14 +176,18 @@
       color: setcolor("gray", "mid");
       border-radius: rem(30);
     }
-
+    
     &__backBtn {
       margin-top: $md;
       width: 100%;
-
+      
       img {
         transform: rotate(90deg);
       }
     }
+    
+    
   }
 }
+
+ 
