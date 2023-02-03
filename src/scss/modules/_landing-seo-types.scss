@@ -15,8 +15,14 @@
   &__grid {
     display: grid;
     column-gap: $sm;
-    row-gap: $lg;
-    grid-template-columns: repeat(2, 1fr);
+    row-gap: $sm;
+    grid-template-columns:  1fr;
+
+    @include mobile-sm {
+      row-gap: $lg;
+      grid-template-columns: repeat(2, 1fr);
+
+    }
 
     @include tablet {
       grid-template-columns: repeat(4, 1fr);
@@ -36,9 +42,30 @@
       &-title {
         margin-top: $md;
         margin-bottom: $sm;
-        @extend .u-f--h3;
-        @extend .u-f--bold;
         text-align: center;
+        
+        font-size: rem(18);
+        @extend .u-f--bold;
+        
+        @include mobile-sm {
+          font-size: rem(12);
+        }
+        
+        @include mobile {
+          font-size: rem(18);
+        }
+
+        @include tablet {
+          font-size: rem(12);
+        }
+
+        @media (min-width: 830px) {
+          font-size: rem(16);
+        }
+        
+        @include tablet-h {
+          font-size: rem(18);
+        }
       }
 
       &-button {
@@ -53,9 +80,14 @@
         }
 
         img {
+          display: none;
           width: 1em;
           height: 1em;
           font-size: 14px;
+        
+          @include screen-sm {
+            display: inline-block;
+          }
         }
       }
     }
