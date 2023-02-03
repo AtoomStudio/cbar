@@ -98,12 +98,16 @@
     &--left {
       grid-area: icons;
       justify-content: center;
-      
-      display: flex;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: $sm;
-      flex-wrap: wrap;
-      
+
+      @include mobile {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
       @include screen-sm {
         justify-content: flex-start;
       }
