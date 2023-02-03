@@ -12,10 +12,6 @@
 		color: setcolor('white','base')
 	}
 
-	p:first-of-type {
-		color: setcolor('white','base')
-	}
-
 	p {
 		padding-bottom: $sm;
 		color: #939598;
@@ -37,5 +33,8 @@
 		@extend .u-f--bold;
 	}
 
-	
+	.highlight {
+		color: setcolor('white','base')
+	}
+		
 }
