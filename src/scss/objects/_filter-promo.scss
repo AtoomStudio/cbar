@@ -2,74 +2,93 @@
 @use "../helper" as *;
 @use "../tools" as *;
 
-.filter__promo {
-  margin: $sm 0 $md;
+// .filter__promo {
+//   margin: $sm 0 $md;
 
+//   display: flex;
+//   align-items: center;
+//   flex-direction: column;
+
+//   @include screen-sm {
+//     margin-top: $sm;
+//     margin-bottom: $md;
+//   }
+
+//   .splide__track {
+//     width: 100%;
+//   }
+
+//   &-mobile {
+//     display: flex;
+
+//     @include screen-sm {
+//       display: none;
+//     }
+//   }
+
+//   &-desktop {
+//     display: none;
+
+//     @include screen-sm {
+//       display: flex;
+
+//       button, a:link, a:visited {
+//         padding: 0 $sm;
+//         margin: 0 rem(2);
+//       }
+//     }
+//   }
+
+//   &-wrapper {
+//     button, a:link, a:visited {
+//       cursor: pointer;
+//       background-color: setcolor("black");
+//       height: rem(45);
+
+//       display: flex;
+//       justify-content: center;
+//       align-items: center;
+
+//       font-size: rem(14);
+
+//       @extend .u-f--bold;
+//       color: setcolor("gray", "dark1");
+
+//       &:focus,
+//       &:active,
+//       &.mixitup-control-active {
+//         background-color: setcolor("black", "dark4");
+//         color: white;
+//         outline: none;
+//         border: none;
+//       }
+//     }
+
+//     button:first-of-type, a:first-of-type {
+//       border-radius: rem(5) 0 0 rem(5);
+//     }
+
+//     button:last-of-type, a:last-of-type {
+//       border-radius: 0 rem(5) rem(5) 0;
+//     }
+//   }
+// }
+
+.promo__navbar {
+  
+  margin: $sm 0 $md;
   display: flex;
   align-items: center;
-  flex-direction: column;
 
-  @include screen-sm {
-    margin-top: $sm;
-    margin-bottom: $md;
-  }
 
-  .splide__track {
-    width: 100%;
-  }
+  // @include screen-sm {
+  //   margin-top: $sm;
+  //   margin-bottom: $md;
+  // }
 
-  &-mobile {
-    display: flex;
-
-    @include screen-sm {
-      display: none;
-    }
-  }
-
-  &-desktop {
-    display: none;
-
-    @include screen-sm {
-      display: flex;
-
-      button, a:link, a:visited {
-        padding: 0 $sm;
-        margin: 0 rem(2);
-      }
-    }
-  }
-
-  &-wrapper {
-    button, a:link, a:visited {
-      cursor: pointer;
-      background-color: setcolor("black");
-      height: rem(45);
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      font-size: rem(14);
-
-      @extend .u-f--bold;
-      color: setcolor("gray", "dark1");
-
-      &:focus,
-      &:active,
-      &.mixitup-control-active {
-        background-color: setcolor("black", "dark4");
-        color: white;
-        outline: none;
-        border: none;
-      }
-    }
-
-    button:first-of-type, a:first-of-type {
-      border-radius: rem(5) 0 0 rem(5);
-    }
-
-    button:last-of-type, a:last-of-type {
-      border-radius: 0 rem(5) rem(5) 0;
-    }
+  &--item {
+    padding: $sm;
+    cursor: pointer;
+    background-color: setcolor("black");
   }
 }
