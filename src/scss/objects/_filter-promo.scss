@@ -39,5 +39,10 @@
     &:last-of-type, a:last-of-type {
       border-radius: 0 rem(5) rem(5) 0;
     }
+
+    .is-active {
+      color: setcolor("white", "base");
+      background-color: setcolor("black", "dark4");
+    }
   }
 }
