@@ -18,21 +18,30 @@
         margin-bottom: $lg;
       }
 
-      h4 {
+      h1 {
+        text-align: center;
+        @extend .u-f--h1;
+        color: setcolor('black', 'dark1')
+      }
+    
+      h2 {
         @extend .u-f--h4;
         color: black;
         text-align: center;
         max-width: 100%;
-
+        margin-top: $sm;
+        margin-bottom: $sm;
+        
         @include tablet {
           max-width: 75%;
         }
       }
-
+    
       p {
         color: #868b92;
         text-align: center;
         max-width: 100%;
+       
 
         @include tablet {
           max-width: 75%;
