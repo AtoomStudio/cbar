@@ -9,7 +9,7 @@ function initAutoexclusion() {
         e.preventDefault();
         Mpu().mpu({
             title: 'Estás a punto de autoexcluirte',
-            body: "La cuenta no podrá ser reabierta en ningún caso antes de que el periodo finalice.",
+            body: "La autoexclusión no se puede cancelar una vez confirmada. ¿Estás seguro que quieres autoexcluirte por el tiempo que has seleccionado?",
             confirmText: 'Autoexcluirme',
             cancelText: 'Cancelar',
             onConfirm: () => {
