@@ -13,7 +13,7 @@
       margin-right: $sm;
     }
 
-    & > div {
+    &>div {
       p:first-of-type {
         @extend .u-f--h2, .u-f--bold;
       }
@@ -22,9 +22,11 @@
     &--accept p {
       color: setcolor("secondary");
     }
+
     &--alert p {
       color: setcolor("danger");
     }
+
     &--warning p {
       color: setcolor("warning");
     }
@@ -41,6 +43,7 @@
 
   &__wrapper {
     width: 100%;
+
     @include screen-sm {
       width: 50%;
     }
@@ -94,7 +97,7 @@
             padding: rem(20) rem(25);
           }
 
-          & > div {
+          &>div {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -117,6 +120,7 @@
       @include screen-sm {
         padding: $md !important;
       }
+
       &-header {
         padding-bottom: $sm;
 
@@ -128,10 +132,12 @@
           color: setcolor("secondary");
         }
       }
+
       &-wrapper {
         display: flex;
         column-gap: rem(10);
       }
+
       &-left,
       &-right {
         width: 100%;
@@ -140,6 +146,7 @@
           width: 50%;
         }
       }
+
       &-left {
         display: none;
 
@@ -147,6 +154,7 @@
           display: block;
         }
       }
+
       &-right .docs__content-verify-titleBlack,
       &-right .docs__content-verify-bodyBlack {
         display: none;
@@ -155,10 +163,12 @@
           display: block;
         }
       }
+
       &-title {
         @extend .u-f--bold, .u-f--h2;
         padding-bottom: $sm;
       }
+
       &-titleBlack {
         @extend .u-f--bold, .u-f--h4;
         padding-bottom: rem(10);
@@ -169,6 +179,7 @@
           display: block;
         }
       }
+
       &-bodyBlack {
         padding-bottom: $sm;
         color: setcolor("gray", "mid");
@@ -178,6 +189,7 @@
           display: block;
         }
       }
+
       a {
         width: 100%;
         padding: $sm rem(45);
@@ -200,9 +212,11 @@
       @include screen-sm {
         padding: $md $md 0 !important;
       }
+
       p {
         color: setcolor("black", "dark1");
       }
+
       a {
         width: fit-content;
         transform: translateY(50%);
@@ -252,6 +266,7 @@
           color: setcolor("black", "dark1");
           margin-bottom: rem(10);
         }
+
         p:nth-of-type(2) {
           @extend .u-f--bold;
         }
@@ -315,9 +330,11 @@
     @include screen-sm {
       max-width: 70%;
     }
+
     @include screen-md {
       max-width: 60%;
     }
+
     @include screen-lg {
       max-width: 50%;
     }
@@ -353,10 +370,12 @@
         color: setcolor("black", "dark1");
         margin-bottom: $sm;
       }
+
       p:last-of-type {
         @extend .u-f--h4;
         font-weight: 400;
         color: #868b92;
+
         @include screen-sm {
           font-weight: 700;
         }
@@ -373,6 +392,7 @@
       @include screen-sm {
         justify-content: flex-start;
       }
+
       button {
         width: 100%;
         padding: $sm $md;
@@ -415,16 +435,12 @@
       }
     }
 
-    & > div {
+    &>div {
       display: flex;
       align-items: center;
     }
 
-    svg {
-      margin-right: $sm;
-    }
-
-    &--success {
+    &[data-status="success"] {
       &::after {
         content: url('/img/icons/icon-check-round.svg');
         width: 30px;
@@ -435,12 +451,9 @@
       p {
         color: setcolor("secondary");
       }
-      .spinner {
-        display: none;
-      }
     }
-  
-    &--loading {
+
+    &[data-status="loading"] {
       &::after {
         content: "";
         width: 30px;
@@ -455,42 +468,18 @@
       p {
         color: setcolor("black", "dark1");
       }
-      svg {
-        display: none;
-      }
-      .spinner {
-        display: block;
-      }
     }
-  
-    &--base {
-      p {
-        color: setcolor("black", "dark1");
-      }
-      svg {
-        display: none;
-      }
-      .spinner {
-        display: none;
-      }
-    }
-  
-    &--error {
+
+    &[data-status="error"] {
       p {
         color: setcolor("warning");
-      }
-      svg {
-        display: none;
-      }
-      .spinner {
-        display: none;
       }
     }
 
     &-backBtn a {
       height: (45);
       width: 100%;
-  
+
       img {
         transform: rotate(90deg);
       }
@@ -505,7 +494,7 @@
       padding: $md;
       border-bottom: 1px solid #c6c9cc;
 
-      & > p {
+      &>p {
         color: setcolor("black", "dark1");
         padding-bottom: $md;
       }
@@ -529,7 +518,7 @@
       padding: $md;
       border-bottom: 1px solid #c6c9cc;
 
-      & > p {
+      &>p {
         color: setcolor("black", "dark1");
       }
 
