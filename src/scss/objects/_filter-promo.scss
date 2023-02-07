@@ -2,47 +2,74 @@
 @use "../helper" as *;
 @use "../tools" as *;
 
-.promo__navbar {
-  
+.filter__promo {
   margin: $sm 0 $md;
-  display: flex;
-  justify-content: flex-start;
 
-  overflow-x: auto;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding-bottom: $sm;
- 
-  
-  @include mobile {
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include screen-sm {
+    margin-top: $sm;
+    margin-bottom: $md;
   }
-  
-  &--item {
-    padding: $sm;
-    background-color: setcolor("black");
-    cursor: pointer;
-    margin: 0 rem(1);
-    
-    @extend .u-f--bold;
-    color: setcolor("gray", "dark1");
-    
-    
-    &:hover, &:active {
-      color: setcolor("white", "base");
-      background-color: setcolor("black", "dark4");
+
+  .splide__track {
+    width: 100%;
+  }
+
+  &-mobile {
+    display: flex;
+
+    @include screen-sm {
+      display: none;
     }
-    &:first-of-type, a:first-of-type {
+  }
+
+  &-desktop {
+    display: none;
+
+    @include screen-sm {
+      display: flex;
+
+      button, a:link, a:visited {
+        padding: 0 $sm;
+        margin: 0 rem(2);
+      }
+    }
+  }
+
+  &-wrapper {
+    button, a:link, a:visited {
+      cursor: pointer;
+      background-color: setcolor("black");
+      height: rem(45);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: rem(14);
+
+      @extend .u-f--bold;
+      color: setcolor("gray", "dark1");
+
+      &:focus,
+      &:active,
+      &.mixitup-control-active {
+        background-color: setcolor("black", "dark4");
+        color: white;
+        outline: none;
+        border: none;
+      }
+    }
+
+    button:first-of-type, a:first-of-type {
       border-radius: rem(5) 0 0 rem(5);
     }
 
-    &:last-of-type, a:last-of-type {
+    button:last-of-type, a:last-of-type {
       border-radius: 0 rem(5) rem(5) 0;
-    }
-
-    .is-active {
-      color: setcolor("white", "base");
-      background-color: setcolor("black", "dark4");
     }
   }
 }
