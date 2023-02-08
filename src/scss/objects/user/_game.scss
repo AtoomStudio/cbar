@@ -51,6 +51,10 @@
         padding-bottom: $sm;
       }
 
+      .titleSm {
+        padding-bottom: rem(5);
+      }
+
       .title,
       .titleSm {
         @extend .u-f--bold;
@@ -59,6 +63,7 @@
 
       .body {
         color: setcolor("gray", "mid");
+        margin-bottom: rem(5);
       }
 
       .game__limitBtn, .saveBtn {
