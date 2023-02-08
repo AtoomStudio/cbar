@@ -5,39 +5,44 @@
 .pokerHowInstructions {
   @extend %margin_horizontal_main, %margin_top_medium;
 
- .title--sm {
-    @extend .u-f--bold;
-    padding-bottom: rem(5)
+  .body--sm {
+    color: setcolor('gray', 'mid');
+    padding-bottom: $sm;
   }
- .title--md {
+  .body--md {
     @extend .u-f--bold, .u-f--h3;
+    color: setcolor('gray', 'mid');
+    padding-bottom: $sm;
   }
- .title--lg {
-    @extend .u-f--bold, .u-f--h2;
-  }
- .title--xl {
+
+  h1 {
     @extend .u-f--bold, .u-f--h1;
   }
 
- .body--sm {
-    color: #a0a2a4;
-  }
- .body--md {
-    @extend .u-f--bold, .u-f--h3;
-    color: #a0a2a4;
-  }
+  &__wrapper {
+    margin-bottom: $sm;
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    p {
+      color: setcolor('gray', 'mid');
+      padding-bottom: $sm;
+    }
 
-  .padding--xs {
-    padding-bottom: rem(10);
-  }
-  .padding--sm {
-    padding-bottom: $sm;
-  }
-  .padding--md {
-    padding-bottom: $md;
-  }
-  .padding--lg {
-    padding-bottom: $lg;
+
+    h2 {
+      @extend .u-f--bold, .u-f--h2;
+      margin-top: 0;
+      margin-bottom: $sm;
+    }
+
+    h3 {
+      @extend .u-f--bold, .u-f--h3;
+      margin-top: 0;
+      margin-bottom: rem(4);
+
+    }
   }
 
   .bold {
