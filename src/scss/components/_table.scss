@@ -14,13 +14,17 @@
 	white-space: nowrap;
 	min-width: rem(400);
 
+	
 	&__wrapper {
 		overflow-x: auto;
 		border-radius: 5px 5px 0 0;
-
-		h3 {
+		
+		.table__title {
+			@extend .u-f--h2, .u-f--bold;
 			margin-top: 0;
+			color: setcolor('white');
 		}
+		
 	}
 
 	thead {
