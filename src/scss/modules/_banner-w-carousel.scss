@@ -74,15 +74,12 @@
       .bannerCarousel__slide-content {
         background-color: setcolor("black", "dark2");
         overflow: hidden;
-
-        p {
-          @extend .u-f--bold;
-        }
-
+        
         p:first-of-type {
+          @extend .u-f--bold;
           text-align: center;
           padding-bottom: $sm;
-          font-size: rem(34);
+          font-size: rem(28);
 
           @include screen-sm {
             text-align: left;
@@ -100,12 +97,12 @@
         }
 
         p:last-of-type {
-          display: none;
-          font-size: rem(22);
+          font-size: rem(14);
+          color: #a4a5a8;
+          padding-bottom: $sm;
 
           @include screen-sm {
-            display: block;
-            color: #a4a5a8;
+            font-weight: bold;
             padding-bottom: $md;
             font-size: rem(16);
           }
