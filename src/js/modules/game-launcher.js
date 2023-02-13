@@ -32,7 +32,7 @@ export default function gameLauncher() {
     if (heartBtn) {
         heartBtn.addEventListener('click', e => {
             heartBtn.classList.toggle('active');
-            setFavStatus(e.target.dataset.gameId, heartBtn.classList.contains('active'));
+            setFavStatus(e.currentTarget.dataset.gameId, heartBtn.classList.contains('active'));
         });
     }
 
