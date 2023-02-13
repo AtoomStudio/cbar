@@ -303,3 +303,15 @@
     color: setcolor("primary");
   }
 }
+
+.btn__download {
+  overflow-x: auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  a {
+    padding-left:$sm;
+      img {
+        padding-right: $sm;
+      }
+    }
+  }
