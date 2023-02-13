@@ -41,10 +41,12 @@ function searchGames() {
     }
 
     function parseResults({ hits, nbHits, query, queryID }) {
+        const imagePrefix = window.location.hostname === 'localhost' ? 'https://revamp.casinobarcelona.es' : '';
         searchResultsCount.innerHTML = hits.length;
         searchResultsQuery.innerHTML = `"${query}"`;
         let output = `<ul data-insights-index="${INDEX_NAME}">`;
         hits.map((hit, arrayIndex) => {
+            const imagename = hit.link.replace(/^.*\/(.*)\.html$/, "$1") + '.webp';
             output += `<li>
                             <a 
                                 data-algolia-hit
@@ -52,7 +54,7 @@ function searchGames() {
                                 data-insights-position="${arrayIndex + 1}"
                                 data-insights-query-id="${queryID}"
                                 href="${hit.link}" class="search-result">
-                                <img src="https://revamp.casinobarcelona.es${hit.image}" alt="${hit.name}" class="search-result__image">
+                                <img src="${imagePrefix}/img/cbar-logos/all/thumb/${imagename}" data-original="${imagePrefix}${hit.image}" alt="${hit.name}" class="search-result__image" onerror="this.onerror=null; this.src = this.dataset.original">
                                 <div class="search-result__info">
                                     <div class="search-result__name">${hit._highlightResult.name.value}</div>
                                     <div class="search-result__provider">${hit._highlightResult.provider.value}</div>
