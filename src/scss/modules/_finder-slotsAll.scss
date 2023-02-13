@@ -26,6 +26,25 @@
     @include screen-md {
       margin-left: $md;
     }
+
+    &__bar {
+      display: none;
+      align-items: end;
+      justify-content: flex-end;
+      padding: $sm;
+
+      @include screen-sm {
+        display: flex;
+      }
+    }
+    
+    &__counter {
+      font-family: $secondary_font_family;
+      
+      &-value {
+        font-size: 1.2em;
+      }
+    }
   }
 }
 

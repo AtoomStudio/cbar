@@ -1,6 +1,9 @@
 import mixitup from "mixitup";
 import mixitupMultifilter from "./mixitup-multifilter.js";
+
 mixitup.use(mixitupMultifilter);
+let mixerSlots = null;
+const counterValue = document.querySelectorAll('.gridGames__counter-value');
 
 const filterSlotsAll = () => {
   const tags = document.querySelectorAll(".filterSlots__tag");
@@ -10,7 +13,6 @@ const filterSlotsAll = () => {
   const filterSlotsMenu = document.querySelector(".filterSlotsM__menu");
   const filterSlotsActions = document.querySelectorAll(".filterSlotsM__action");
 
-  let mixerSlots = null;
 
   hearts.forEach((heart) => {
     heart.addEventListener("click", () => {
@@ -71,11 +73,14 @@ const filterSlotsAll = () => {
     });
   }
 
+  updateGameCount();
+
   const resetBtn = document.getElementById("resetSlots");
 
   container.addEventListener("mixEnd", () => {
     const state = mixerSlots.getState();
-    console.log(state)
+    updateGameCount();
+
     if (state.totalShow < state.totalTargets) {
       resetBtn.classList.add("visible");
     } else {
@@ -97,5 +102,12 @@ const filterSlotsAll = () => {
     });
   });
 };
+
+function updateGameCount() {
+  const state = mixerSlots.getState();
+  counterValue.forEach(value => {
+    value.innerText = state.totalShow;
+  })
+}
 
 export default filterSlotsAll;
