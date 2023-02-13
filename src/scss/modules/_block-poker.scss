@@ -101,15 +101,45 @@
       }
     }
 
-    .grid3Cols__btn {
-      height: rem(70);
-      width: 100%;
+    .container__btn--right {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      gap: $sm;
 
-      &:first-of-type {
+
+      img {
+        display:none;
+        @include mobile-sm {
+          display: block;
+        }
+      }
+
+      button,
+      a {
+        display: flex;
+        justify-content: center;
+        white-space: nowrap;
+        width: 100%;
+        height: rem(70);
+
+        @include mobile {
+          width: 80%;
+        }
+
+        @include tablet {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+        }
+      }
+
+        &:first-of-type {
         margin-bottom: rem(10);
 
         @include screen-sm {
-          margin-top: $lg;
+          margin-top: $md;
         }
       }
     }

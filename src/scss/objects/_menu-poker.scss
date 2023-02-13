@@ -68,6 +68,7 @@
     background-color: transparent;
     cursor: pointer;
 
+   
     &:hover,
     &.active {
       span {
@@ -88,7 +89,16 @@
         transition: all 0.5s ease;
         opacity: 1;
       }
+
+      .question-point{
+        
+        fill: setcolor("primary");
+        stroke: none;
+      }
+
     }
+
+
 
     span {
       @extend .u-f--bold;

@@ -11,10 +11,18 @@
 }
   
 .filterFavorites {
-	margin: $sm auto;
-	width: fit-content;
+	margin: $sm auto;	
+
+	overflow-x: auto;
+	display: flex;
+	justify-content: center;
 
 	&__types {
+		
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		padding-bottom: 1rem;
+
 		button {
 			padding: rem(12) $sm;
 			color: rgba(setcolor("white"), 0.6);
