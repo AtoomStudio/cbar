@@ -57,7 +57,7 @@ const LobbyApi = () => {
 
             item.dataset.gameId = room.roomId;
 
-            const imagename = room.name.toLowerCase().replace(/ /g, '-').replace(/'/g, '').replace(/"/g, '').replace(/:/g, '').replace('---', '-') + '.webp';
+            const imagename = room.link.replace(/^.*\/(.*)\.html$/, "$1") + '.webp';
             image.src = `${imagePrefix}/img/cbar-logos/all/thumb/${imagename}`;
             image.dataset.original = `${imagePrefix}${room.thumb}`;
             image.alt = room.name;

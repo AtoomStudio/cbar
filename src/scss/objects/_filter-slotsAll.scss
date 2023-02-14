@@ -73,9 +73,10 @@
   }
 
   &__navbar {
-    display: block;
-
+    display: flex;
     padding-bottom: $sm;
+    justify-content: space-between;
+    align-items: center;
 
     .btn__openFilterMenu {
       cursor: pointer;
