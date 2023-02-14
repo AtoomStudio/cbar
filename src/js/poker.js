@@ -7,7 +7,7 @@ adaptationModule(".card__bottom-content");
 document.addEventListener("DOMContentLoaded", () => {
   accordion();
 
-  const activeNav = document.querySelector('.menuPoker-home.active')
+  const activeNav = document.querySelector('.menuPoker__btn.active')
   if(!activeNav) return;
   activeNav.scrollIntoView({
     block: "center",
