@@ -14,9 +14,17 @@
 }
 
 .menuPoker {
-  padding: $sm 0;
+  padding-top: $sm;
+  padding-bottom: 0;
   background-color: setcolor("black", "dark1");
   box-shadow: rem(1) rem(17) rem(22) rem(2) rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: center;
+
+  @include screen-sm{
+    padding: $sm 0;
+
+  }
 
   &__wrapper {
     justify-content: center;
@@ -50,12 +58,21 @@
         padding: 0 $sm;
         margin: 0;
         width: 100%;
-
+    
         img {
           display: none;
         }
       }
     }
+  }
+
+  &__mobile { 
+    overflow-x: auto;
+    padding-bottom: $sm;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 80%;
+    justify-content: space-between;
   }
 
   &__btn {
@@ -64,6 +81,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    white-space: nowrap;
 
     background-color: transparent;
     cursor: pointer;
@@ -91,14 +110,11 @@
       }
 
       .question-point{
-        
         fill: setcolor("primary");
         stroke: none;
       }
 
     }
-
-
 
     span {
       @extend .u-f--bold;
