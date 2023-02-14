@@ -48,13 +48,15 @@
 
   .history__grid {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
     row-gap: $lg;
 
     @include screen-sm {
       grid-template-columns: 1fr 3fr;
-      grid-template-rows: auto;
       gap: $md;
+    }
+    
+    &--single-col {
+      grid-template-columns: 1fr;
     }
 
     .history__filter {
