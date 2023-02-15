@@ -1,4 +1,5 @@
 import closeMenuEvent from "./closeMenu";
+import eventDispatch from "./eventDispatch";
 
 function popUpSaldo() {
   const popUpOpenBtns = document.querySelectorAll(".popUpBalance__openBtn");
@@ -16,6 +17,7 @@ function popUpSaldo() {
       if(popUpMenu.classList.contains("menu-toggle--open")) return;
       
       popUpMenu.classList.add("menu-toggle--open");
+      eventDispatch('openMenu', popUpMenu);
       closeMenuEvent();
     })
   })
