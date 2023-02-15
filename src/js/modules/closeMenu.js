@@ -1,3 +1,5 @@
+import eventDispatch from "./eventDispatch";
+
 const menus = document.querySelectorAll('.menu-toggle');
 const menuCloseBtns = document.querySelectorAll(".menu-toggle__closeBtn");
 
@@ -12,7 +14,6 @@ function closeMenuEvent() {
 }
 
 function closeMenuOnClickOutside() {
-    console.log('closeMenu');
     if (!event.target.closest('.menu-toggle')) {
         closeMenu();
     }
@@ -20,7 +21,10 @@ function closeMenuOnClickOutside() {
 
 function closeMenu() {
     menus.forEach(menu => {
-        menu.classList.remove('menu-toggle--open')
+        if(menu.classList.contains('menu-toggle--open')) {
+            menu.classList.remove('menu-toggle--open')
+            eventDispatch('closeMenu', menu);
+        }
     });
     document.removeEventListener("click", closeMenuOnClickOutside);
 }

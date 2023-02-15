@@ -1,4 +1,5 @@
 import closeMenuEvent from "./closeMenu";
+import eventDispatch from "./eventDispatch";
 
 const menuHeaderMobile = () => {
   const menuHeaderOpenBtn = document.querySelectorAll(".menuHeader__openBtn");
@@ -9,6 +10,7 @@ const menuHeaderMobile = () => {
   menuHeaderOpenBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
       menuHeader.classList.add('menu-toggle--open')
+      eventDispatch('openMenu', menuHeader);
       closeMenuEvent();
     });
   });
