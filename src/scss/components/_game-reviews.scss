@@ -1,0 +1,75 @@
+@use "../settings" as *;
+@use "../helper" as *;
+@use "../tools" as *;
+
+.reviewsScreen {
+    margin: $md 0;
+    display: flex;
+    flex-direction: column;
+    gap: $xs;
+
+    &__stars {
+        display: flex;
+    }
+
+    &__star {
+        cursor: pointer;
+        opacity: .3;
+
+        &--active,
+        &:has(~ &--active) {
+            opacity: 1;
+
+            path {
+                // Red for other players score
+                fill: red;
+                .reviewsScreen--rated & {
+                    // White for user score
+                    fill: #fff;
+                }
+            }
+
+        }
+
+        &:hover,
+        &:has(~ &:hover) {
+            opacity: 1;
+
+            path {
+                fill: #fff;
+            }
+        }
+    }
+
+    &__rating,
+    &__user-rating {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        color: setcolor("gray", "mid");
+    }
+
+    &__score,
+    &__user-score {
+        display: flex;
+        align-items: flex-end;
+        gap: $xs;
+    }
+
+    &__average {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    &__user-rating {
+        display: none;
+    }
+
+    &--rated &__user-rating {
+        display: flex;
+    }
+
+
+}
