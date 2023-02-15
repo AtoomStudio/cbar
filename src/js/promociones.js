@@ -1,10 +1,12 @@
-import filterPromo from "./modules/filterPromo.js";
 import carouselPromociones from "./modules/carouselPromociones.js";
-//import adaptationModule from "./modules/adaptationModule.js";
-
-//adaptationModule(".grid__promo-card--bottom")
 
 document.addEventListener('DOMContentLoaded', () => {
-  filterPromo()
-  carouselPromociones()
+  carouselPromociones();
+
+  const activeNav = document.querySelector('.promo__navbar--item.is-active')
+  if(!activeNav) return;
+  activeNav.scrollIntoView({
+    block: "center",
+    inline: "center"
+  })
 })
