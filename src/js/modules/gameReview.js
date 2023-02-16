@@ -32,6 +32,9 @@ function gameReview() {
   }
 
   function sendScore(score) {
+    if(!player) window.location.href = "/login?postLoginUrl=" + window.location.pathname;
+    return;
+    
     const room = reviewEl.dataset.roomId;
     const url = "/servlet/RankingServlet";
     fetch(`${url}?room=${room}&ranking=${score}`)
