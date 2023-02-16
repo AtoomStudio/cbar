@@ -1,3 +1,4 @@
+import cookie from "./cookie";
 import dataLayer from "./dataLayer";
 
 
@@ -13,12 +14,12 @@ function itemListEvents() {
         const games = lobby.querySelectorAll('[data-game-id]');
         triggerViewListEvent(lobbyName, lobbyId, games);
 
-        lobby.addEventListener('click', e => {
-            if (e.target.tagName != 'A') return;
-
-            const index = e.target.closest('[data-game-id]').dataset.index;
-            const lobbyId = e.target.closest('[data-lobby]').dataset.lobbyId;
-            triggerSelectItemEvent(index, lobbyId);
+        games.forEach((game, index) => {
+            game.addEventListener('click', e => {
+                const index = e.currentTarget.closest('[data-game-id]').dataset.index;
+                const lobbyId = e.currentTarget.closest('[data-lobby]').dataset.lobbyId;
+                triggerSelectItemEvent(index, lobbyId);
+            });
         });
     });
 
@@ -47,13 +48,15 @@ function itemListEvents() {
     }
 
     function triggerSelectItemEvent(index, lobbyId) {
+        const item = ecommerceItems.find(item => item.index == index && item.item_list_id == lobbyId);
         dataLayer.push({ ecommerce: null });
         dataLayer.push({
             event: "select_item",
             ecommerce: {
-                items: [ecommerceItems.find(item => item.index == index && item.item_list_id == lobbyId)]
+                items: [item]
             }
         });
+        cookie.set('cbar-selected-item', JSON.stringify(item));
     }
 }
 
