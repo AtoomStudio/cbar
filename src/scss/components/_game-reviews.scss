@@ -13,7 +13,6 @@
     }
 
     &__star {
-        cursor: pointer;
         opacity: .3;
 
         &--active,
@@ -23,6 +22,7 @@
             path {
                 // Red for other players score
                 fill: red;
+
                 .reviewsScreen--rated & {
                     // White for user score
                     fill: #fff;
@@ -31,15 +31,9 @@
 
         }
 
-        &:hover,
-        &:has(~ &:hover) {
-            opacity: 1;
-
-            path {
-                fill: #fff;
-            }
-        }
     }
+
+
 
     &__rating,
     &__user-rating {
@@ -69,6 +63,22 @@
 
     &--rated &__user-rating {
         display: flex;
+    }
+
+    &:not(&--rated) {
+
+        .reviewsScreen__star {
+            cursor: pointer;
+
+            &:hover,
+            &:has(~ .reviewsScreen__star:hover) {
+                opacity: 1;
+
+                path {
+                    fill: #fff;
+                }
+            }
+        }
     }
 
 
