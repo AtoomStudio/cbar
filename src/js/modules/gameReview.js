@@ -32,8 +32,10 @@ function gameReview() {
   }
 
   function sendScore(score) {
-    if(!window.player) window.location.href = "/login?postLoginUrl=" + window.location.pathname;
-    return;
+    if(!player) {
+      window.location.href = "/login?postLoginUrl=" + window.location.pathname;
+      return;
+    }
 
     const room = reviewEl.dataset.roomId;
     const url = "/servlet/RankingServlet";
