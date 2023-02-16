@@ -30,10 +30,10 @@
         </div>
     <% } else { %>
         <div class="body__wrapper" data-accordion-content>
-            <div class="gridHalf__grid">
+            <div class="gridHalf__grid" data-lobby="grid-half" data-lobby-id="1">
             <% let n = 1; %>
             <% data.grid.forEach( item => { %>
-                <div class="gridHalf__grid-item" data-game-id="1">
+                <div class="gridHalf__grid-item" data-game-id="1" data-game-name="<%= item.title %>" data-game-provider="NetEnt" data-index="<%= n %>">
                         <img src="img/images/img-grid-<%= n %>.jpg" alt="">
                         <%- include ('../components/hover') %>
                 </div>

@@ -5,12 +5,14 @@ import Mpu from "../modules/mpu";
 import userMenuMobile from "../modules/userMenuMobile";
 import jsonpFetch from "../modules/jsonpFetch";
 import Alert from "../modules/alert";
+import itemListEvents from "../modules/itemListEvents";
 
 menuHeaderMobile();
 userMenuMobile();
 
 Mpu().mpuDataTriggers();
 ZenDesk().start();
+itemListEvents();
 
 window.Mpu = Mpu;
 window.mpu = Mpu().mpu;
