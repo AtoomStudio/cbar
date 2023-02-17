@@ -75,10 +75,11 @@
       }
     }
 
-    p {
+    h1 {
       @extend .u-f--h1, .u-f--bold;
       max-width: 80%;
       padding: $sm 0;
+      margin: 0;
     }
   }
 
