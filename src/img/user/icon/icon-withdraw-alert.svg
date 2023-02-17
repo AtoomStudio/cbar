@@ -1,0 +1,10 @@
+<svg id="Alert" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Background" fill="none" stroke="#fff" stroke-width="2">
+    <circle cx="12" cy="12" r="12" stroke="none"/>
+    <circle cx="12" cy="12" r="11" fill="none"/>
+  </g>
+  <g id="Grupo_607" data-name="Grupo 607" transform="translate(10.618 4.722)">
+    <circle id="Elipse_741" data-name="Elipse 741" cx="1.382" cy="1.382" r="1.382" transform="translate(0 11.794)" fill="#fff"/>
+    <path id="Trazado_5371" data-name="Trazado 5371" d="M-1,0H1.763L1.072,9.031H-.309Z" transform="translate(1)" fill="#fff"/>
+  </g>
+</svg>
