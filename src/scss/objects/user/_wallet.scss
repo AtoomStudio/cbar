@@ -205,22 +205,36 @@
     }
 
     .wallet__btns {
-      grid-area: btns;
-
       display: flex;
+      flex-direction: column;
+      gap: $sm;
 
       button {
-        display: block;
-        height: rem(45);
-        width: 50%;
+        width: 100%;
+      }
 
-        padding: 0 rem(45);
-        margin-right: $sm;
+      @include mobile-sm {
+        flex-direction: row;
+        grid-area: btns;
+        gap: 0;
+        
+        button {
+          display: block;
+          height: rem(45);
+          width: 50%;
 
-        @include screen-sm {
-          width: fit-content;
+          padding: 0 rem(45);
+          &:first-of-type {
+            margin-right: $sm;
+          }
+          @include screen-sm {
+            width: fit-content;
+          }
         }
       }
+
+
+
     }
 
     .wallet__free {
