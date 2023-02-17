@@ -39,25 +39,34 @@
   }
 
   &__wrapper {
+    width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  &__title {
+  .withdraw__title {
     @extend .u-f--bold, .u-f--h1;
     text-align: center;
     color: setcolor("black", "dark1");
   }
 
+
   &__grid {
     margin-top: $md;
-
-    display: grid;
-    grid-template-columns: min-content min-content;
-    grid-auto-flow: row;
+    display: flex;
+    flex-direction: column;
     gap: rem(10);
-
     justify-content: center;
+    margin-bottom: $sm;
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: row;
+      width: 50%;
+    }
+
   }
 
   &__item {
@@ -78,8 +87,37 @@
     img {
       max-width: rem(100);
     }
+
+    &:last-of-type {
+
+      grid-column-start: 1;
+      grid-column-end: 3;
+
+      grid-row-start: 4;
+      grid-row-end: 5;
+
+      display: flex;
+      align-items: flex-start;
+      grid-template-columns: 1fr;
+      background-color: #e99c00;
+      padding: $sm;
+
+      p {
+        color: white;
+      }
+      img {
+        margin-right: rem(10);
+
+
+      }
+    }
   }
-}
+
+  &__info--block{
+    display: flex;
+    flex-direction: column;
+  }
+ }
 
 .withdrawDetail {
   width: 100%;
@@ -96,6 +134,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    
   }
 
   &--top {
