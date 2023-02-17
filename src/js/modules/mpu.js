@@ -129,6 +129,9 @@ function Mpu() {
         mpuOpenBtns.forEach(btn => {
             btn.addEventListener("click", e => {
                 e.preventDefault();
+                if(e.currentTarget.dataset.depositId) {
+                    dataLayer.push({ event: 'deposit-click', "event-label": e.currentTarget.dataset.depositId })
+                }
                 mpu(e.currentTarget.dataset.mpuUrl);
             });
         });
