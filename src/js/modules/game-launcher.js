@@ -1,4 +1,5 @@
 import { setFavStatus } from "./favHeart";
+import dataLayer from "./dataLayer";
 
 export default function gameLauncher() {
     const playBtns = document.querySelectorAll('.play-btn');
@@ -10,6 +11,7 @@ export default function gameLauncher() {
     const gameIframe = document.querySelector('#gameIframe');
     const toggleAside = document.querySelector('#toggle-aside__btn');
     const screens = document.querySelector('.screens');
+    const toRealBtn = document.querySelector('.demo-bar__action--real');
 
     playBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -28,6 +30,12 @@ export default function gameLauncher() {
             startGame(opener, roomId, extra, true);
         });
     });
+
+    if (toRealBtn) {
+        toRealBtn.addEventListener('click', () => {
+            dataLayer.push({ event: 'demo-to-real' });
+        });
+    }
 
     if (heartBtn) {
         heartBtn.addEventListener('click', e => {
@@ -64,6 +72,13 @@ export default function gameLauncher() {
                 openUniversalDemo(opener, roomId, "");
                 return;
             }
+            dataLayer.push({
+                event: 'demo-start',
+            });
+        } else {
+            dataLayer.push({
+                event: 'game-start',
+            });
         }
 
         if (typeof openUniversal === "function") {

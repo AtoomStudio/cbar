@@ -1,0 +1,94 @@
+@use "../settings" as *;
+@use "../helper" as *;
+@use "../tools" as *;
+
+.reviewsScreen {
+    display: flex;
+    flex-direction: column;
+    gap: $xs;
+    margin: $sm;
+
+    @include tablet {
+      margin: $md;
+    }
+
+    @include screen-sm {
+      margin: 0;
+      margin-top: $md;
+    }
+
+    &__stars {
+        display: flex;
+    }
+
+    &__star {
+        opacity: .3;
+
+        &--active,
+        &:has(~ &--active) {
+            opacity: 1;
+
+            path {
+                // Red for other players score
+                fill: red;
+
+                .reviewsScreen--rated & {
+                    // White for user score
+                    fill: #fff;
+                }
+            }
+
+        }
+
+    }
+
+
+
+    &__rating,
+    &__user-rating {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        color: setcolor("gray", "mid");
+    }
+
+    &__score,
+    &__user-score {
+        display: flex;
+        align-items: flex-end;
+        gap: $xs;
+    }
+
+    &__average {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    &__user-rating {
+        display: none;
+    }
+
+    &--rated &__user-rating {
+        display: flex;
+    }
+
+    &:not(&--rated) {
+
+        .reviewsScreen__star {
+            cursor: pointer;
+
+            &:hover,
+            &:has(~ .reviewsScreen__star:hover) {
+                opacity: 1;
+
+                path {
+                    fill: #fff;
+                }
+            }
+        }
+    }
+
+
+}

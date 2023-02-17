@@ -1,5 +1,6 @@
 import { goTop } from "../scrollTo";
 import Alert from '../alert';
+import dataLayer from "../dataLayer";
 
 export default function validateRegister() {
     const textInputs = document.querySelectorAll('.register__fieldset--text input');
@@ -58,6 +59,11 @@ export default function validateRegister() {
 
     function manageInputError(e) {
         const field = e.target;
+        dataLayer.push({
+            "event":"register",
+            "status":"Error", 
+            "error": "validation: " + field.name
+        });
         const errorWrapper = field.dataset.messagesTarget ?
             document.querySelector(field.dataset.messagesTarget)
             :
@@ -88,6 +94,11 @@ export default function validateRegister() {
         register()
             .then(async response => {
                 if (response.redirected) {
+                    dataLayer.push({
+                        "event":"register",
+                        "status":"Exito", 
+                        "error": ""
+                    });
                     window.location.href = response.url
                 } else {
                     setLoading(false);
