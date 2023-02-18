@@ -6,6 +6,7 @@ function carouselLandingSEO() {
 		arrows: true,
 		perPage: 5,
 		padding: 0,
+		rewind:true,
 		perMove: 1,
 		gap: 30,
 		breakpoints: {
