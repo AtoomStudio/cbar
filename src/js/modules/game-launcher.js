@@ -91,6 +91,9 @@ export default function gameLauncher() {
     }
 
     function closeGame() {
+        if(document.fullscreenEnabled) {
+            document.exitFullscreen();
+        }
         document.body.classList.remove('game-mode', 'game-mode--demo', 'game-mode--maximized');
         gameIframe.src = "";
     }
