@@ -9,14 +9,12 @@
 
   a {
     margin-top: 30px;
-    height: 65px;
+    padding: $sm;
     width: 90%;
 
-    @include screen-sm {
+    @include tablet {
       margin-top: 30px;
-      height: 100px;
-      padding: 0 120px;
-      width: fit-content;
+      width: 30%;
     }
   }
 }
