@@ -33,7 +33,10 @@ export default function gameLauncher() {
     });
 
     if (toRealBtn) {
-        toRealBtn.addEventListener('click', () => {
+        toRealBtn.addEventListener('click', e => {
+            e.preventDefault();
+            closeGame();
+            playBtns[0].click();
             dataLayer.push({ event: 'demo-to-real' });
         });
     }
