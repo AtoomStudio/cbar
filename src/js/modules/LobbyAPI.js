@@ -54,6 +54,11 @@ const LobbyApi = () => {
             const image = item.querySelector('.item__image');
             const links = item.querySelectorAll('a');
             const hoverTitle = item.querySelector('.gridHover__title');
+            console.log(room)
+
+            if(room.tags.includes('Jackpot')) {
+                item.dataset.jackpot = "";
+            }
 
             item.dataset.gameId = room.roomId;
 
