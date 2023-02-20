@@ -81,7 +81,7 @@ function LiveRoulette() {
     
         for (var i = 0; i < event.casinoIds.length; i++) {
             var casinoId = event.casinoIds[i];
-            var rouletteElm = document.querySelector('[data-lobby-id="' + casinoId + '"]');
+            var rouletteElm = document.querySelector('[data-game-id="' + casinoId + '"]');
             if(!rouletteElm) return;
 
             switch (type) {
