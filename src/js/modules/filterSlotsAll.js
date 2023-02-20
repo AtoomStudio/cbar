@@ -1,8 +1,10 @@
 import mixitup from "mixitup";
 import mixitupMultifilter from "./mixitup-multifilter.js";
+import dataLayer from "./dataLayer.js";
 
 mixitup.use(mixitupMultifilter);
 let mixerSlots = null;
+let searchValue = "";
 const counterValue = document.querySelectorAll('.gridGames__counter-value');
 
 const filterSlotsAll = () => {
@@ -27,51 +29,53 @@ const filterSlotsAll = () => {
 
   const container = document.querySelector(".slotsFinder");
 
-  if (window.innerWidth < 1280) {
-    mixerSlots = mixitup(container, {
-      multifilter: {
-        enable: true,
-        parseOn: "submit",
-      },
-      controls: {
-        enable: true,
-      },
-      animation: {
-        enable: false,
-      },
-      callbacks: {
-        onMixClick: function () {
-          // Reset the search if a filter is clicked
+  const mixitUpOptions = {
+    multifilter: {
+      enable: true,
+    },
+    controls: {
+      enable: true,
+    },
+    animation: {
+      enable: false,
+    },
+    callbacks: {
+      onMixClick: function (e) {
+        if (this.classList.contains('mixitup-control-active')) return;
 
-          if (this.matches("[data-filter]")) {
-            inputSearch.value = "";
-          }
-        },
-      },
-    });
-  } else {
-    mixerSlots = mixitup(container, {
-      multifilter: {
-        enable: true,
-      },
-      controls: {
-        enable: true,
-      },
-      animation: {
-        enable: false,
-      },
-      callbacks: {
+        const category = this.closest('.filterSlots__filter, .filterSlotsM__filter').querySelector('.filterSlots__title, .filterSlotsM__title').innerText;
+        const value = this.innerText;
 
-        onMixClick: function () {
-          // Reset the search if a filter is clicked
+        dataLayer.push({
+          'event': 'slots-filter',
+          'filterType': category,
+          'filterValue': value
+        });
 
-          if (this.matches("[data-filter]")) {
-            inputSearch.value = "";
-          }
-        },
       },
-    });
+      onMixEnd: function (state) {
+        const newSearchValue = getSearchValueFromSelector(state.activeFilter.selector);
+        if (newSearchValue && searchValue !== newSearchValue) {
+          dataLayer.push({
+            'event': 'slots-filter',
+            'filterType': 'name',
+            'filterValue': value
+          });
+        }
+      }
+    },
+  };
+
+  function getSearchValueFromSelector(selector) {
+    const regex = /\[data-name\*="(.*?)"]/;
+    const match = regex.exec(selector);
+    if (match && match[1]) {
+      console.log(match[1]);
+    }
+    return false;
   }
+
+  mixerSlots = mixitup(container, mixitUpOptions);
 
   updateGameCount();
 

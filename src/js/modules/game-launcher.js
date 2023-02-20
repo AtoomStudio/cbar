@@ -12,6 +12,7 @@ export default function gameLauncher() {
     const toggleAside = document.querySelector('#toggle-aside__btn');
     const screens = document.querySelector('.screens');
     const toRealBtn = document.querySelector('.demo-bar__action--real');
+    const gameLauncherContainer = document.querySelector('.pageContainer > section');
 
     playBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -90,17 +91,26 @@ export default function gameLauncher() {
     }
 
     function closeGame() {
+        if(document.fullscreenEnabled) {
+            document.exitFullscreen();
+        }
         document.body.classList.remove('game-mode', 'game-mode--demo', 'game-mode--maximized');
         gameIframe.src = "";
     }
 
     function maximize() {
+        if(document.fullscreenEnabled) {
+            gameLauncherContainer.requestFullscreen();
+        }
         document.body.classList.add('game-mode--maximized');
         window.dispatchEvent(new Event('resize'));
         triggerResize();
     }
 
     function minimize() {
+        if(document.fullscreenEnabled) {
+            document.exitFullscreen();
+        }
         document.body.classList.remove('game-mode--maximized');
         triggerResize();
     }
