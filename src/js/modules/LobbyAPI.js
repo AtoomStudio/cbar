@@ -63,6 +63,7 @@ const LobbyApi = () => {
                 const jackpotContainer = document.createElement('div');
                 jackpotContainer.classList.add('jackpot__container');
                 jackpotContainer.id = `jackpot-counter-${room.roomId}`;
+                jackpotContainer.innerText = "1000 €";
                 item.appendChild(jackpotContainer);
             }
 
