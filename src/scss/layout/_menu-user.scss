@@ -64,9 +64,19 @@
             @extend .u-f--bold;
           }
 
-          &--unverified {
+          &--unverified, &--documentExpired {
             p {
               color: setcolor("danger");
+            }
+          }
+          
+          &--documentAboutToExpire {
+            path{
+              stroke: setcolor("warning")
+            }
+
+            p{
+              color: setcolor("warning")
             }
           }
         }
