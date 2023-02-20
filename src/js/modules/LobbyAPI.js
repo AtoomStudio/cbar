@@ -36,6 +36,9 @@ const LobbyApi = () => {
 
     function postFetchApi(element) {
         carouselGrid(element.closest('.splide'));
+        if(typeof JackpotTicker !== "undefined") {
+            JackpotTicker();
+        }
     }
 
     function getTemplate() {
@@ -54,10 +57,13 @@ const LobbyApi = () => {
             const image = item.querySelector('.item__image');
             const links = item.querySelectorAll('a');
             const hoverTitle = item.querySelector('.gridHover__title');
-            console.log(room)
 
             if(room.tags.includes('Jackpot')) {
                 item.dataset.jackpot = "";
+                const jackpotContainer = document.createElement('div');
+                jackpotContainer.classList.add('jackpot__container');
+                jackpotContainer.id = `jackpot-counter-${room.roomId}`;
+                item.appendChild(jackpotContainer);
             }
 
             item.dataset.gameId = room.roomId;
