@@ -78,7 +78,18 @@
 
     @include tablet {
       width: calc(50% - $lg/2);
+
+      p {
+        font-size: 0.7rem;
+      }
     }
+    
+    @include tablet-h {
+      p {
+        font-size: unset;
+      }
+    }
+
     @include screen-sm {
       width: calc(25% - $md/2);
     }
