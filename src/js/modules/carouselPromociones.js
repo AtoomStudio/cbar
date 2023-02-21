@@ -5,6 +5,7 @@ function carouselPromociones() {
         arrows: true,
         pagination: false,
         perPage: 3,
+        rewind:true,
         perMove: 1,
         breakpoints: {
           1280: {
