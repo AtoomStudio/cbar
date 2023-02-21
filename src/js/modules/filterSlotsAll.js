@@ -43,7 +43,8 @@ const filterSlotsAll = () => {
       onMixClick: function (e) {
         if (this.classList.contains('mixitup-control-active')) return;
 
-        const category = this.closest('.filterSlots__filter, .filterSlotsM__filter').querySelector('.filterSlots__title, .filterSlotsM__title').innerText;
+        const wrapper = this.closest('.filterSlots__filter, .filterSlotsM__filter')
+        const category = wrapper ? wrapper.querySelector('.filterSlots__title, .filterSlotsM__title').innerText : 'main';
         const value = this.innerText;
 
         dataLayer.push({

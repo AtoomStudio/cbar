@@ -18,7 +18,8 @@
   }
 
   &__trama {
-    padding: 0 $sm;
+    margin: 0 $sm;
+    
     img {
       object-fit: cover;
       width: 100%;
