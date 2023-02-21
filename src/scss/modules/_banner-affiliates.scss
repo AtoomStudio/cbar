@@ -6,7 +6,10 @@
 .bannerAffiliates {
 	position: relative;
 	padding-top: rem(100);
-
+	padding-bottom: rem(40);
+	background-image: url("/img/images/img-affiliates-header-bg-desktop.jpg");
+	background-size: cover;
+	
 	@include mobile {
 		padding-top: rem(60);
 		padding-bottom: rem(90);
@@ -20,8 +23,7 @@
 
 
 	&__content {
-		position: absolute;
-		z-index: 1;
+		
 		margin-top: rem(-40);
 		@extend %margin_horizontal_main;
 

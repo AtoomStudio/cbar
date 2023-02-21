@@ -25,7 +25,7 @@
   // Card
 
   &__card {
-    margin-top: $lg;
+    margin-top: $md;
     margin-right: auto;
     margin-left: auto;
     padding: $sm;
@@ -37,11 +37,22 @@
 
     @include screen-sm {
       margin-top: 0;
-	  padding: $md;
+	    padding: $md;
     }
 
     &-image {
-      margin: rem(-60) auto $md;
+      max-width: 100px;
+      margin: rem(-30) auto $md;
+
+
+      @include mobile {
+        margin: rem(-60) auto $md;
+        max-width: 200px;
+      }
+
+      @include tablet {
+        margin: rem(-60) auto $md;
+      }
     }
 
     &-title {
@@ -50,6 +61,14 @@
     }
 
     &-text {
+
+      @include tablet-h {
+        font-size: 0.8rem;
+      }
+
+      @include screen-sm {
+        font-size: unset;
+      }
       margin-top: $sm;
       margin-bottom: $md;
     }
@@ -59,6 +78,7 @@
       gap: $sm;
       grid-template-columns: $sm 1fr $sm;
       justify-items: center;
+      align-items: center;
       padding: $sm;
       border-radius: rem(5);
       background-color: setcolor("black", "dark5");
@@ -70,6 +90,14 @@
       &-span {
         @extend .u-f--h4;
         @extend .u-f--bold;
+
+        @include tablet-h {
+          font-size: 0.8rem;
+        }
+
+        @include screen-sm {
+          font-size: unset;
+        }
       }
     }
   }
