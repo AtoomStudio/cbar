@@ -8,16 +8,16 @@ function ZenDesk() {
         const closeChatBtns = document.querySelectorAll("[data-close-chat]");
 
         zE(function () {
-            if (player.email) {
+            if (player) {
                 zE.identify({
-                    name: name + " " + middleName + " " + lastName,
-                    email: email,
+                    name: player.name + " " + player.middleName + " " + player.lastName,
+                    email: player.email,
                 });
             }
             zE.setLocale("es");
             zE.hide();
 
-            if (windowHref.includes("preguntas-frecuentes.html") || windowHref.includes("/members/") || windowHref.includes("atencion-al-cliente.html")) {
+            if (windowHref.includes("preguntas-frecuentes.html") || windowHref.includes("/members/") || windowHref.includes("atencion-al-cliente.html") || windowHref.includes("register.html")) {
                 zE.show();
             }
 
