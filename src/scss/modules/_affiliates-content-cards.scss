@@ -25,7 +25,7 @@
   // Card
 
   &__card {
-    margin-top: $md;
+    margin-top: $lg;
     margin-right: auto;
     margin-left: auto;
     padding: $sm;
@@ -63,7 +63,7 @@
     &-text {
 
       @include tablet-h {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
       }
 
       @include screen-sm {
