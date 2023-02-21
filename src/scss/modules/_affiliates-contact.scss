@@ -4,11 +4,13 @@
 
 
 .affiliatesContact {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	gap: rem(40);
 	@extend %margin_top_medium, %margin_horizontal_main;
-
+	
 	@include screen-sm {
+		display: grid;
 		column-gap: rem(60);
 		grid-template-columns: repeat( 2, 2fr );
 	}
