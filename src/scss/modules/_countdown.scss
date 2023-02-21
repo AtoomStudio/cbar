@@ -66,6 +66,16 @@
     background-color: setcolor("black");
     padding: 0 $md $md;
 
+    a {
+      padding-top: $sm;
+      padding-bottom: $sm;
+      display: flex;
+      justify-content: space-around;
+    }
+    span {
+      text-align: center;
+    }
+
     @include tablet {
       width: calc(50% - $lg/2);
     }
