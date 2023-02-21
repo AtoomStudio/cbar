@@ -138,7 +138,6 @@
         align-items: center;
 
         @include screen-sm {
-          box-shadow: 0px 0px rem(20) 0px setcolor("primary");
           transform: translateY(0);
         }
       }
