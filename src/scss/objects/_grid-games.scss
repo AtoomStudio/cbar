@@ -31,7 +31,7 @@
     overflow: hidden;
     aspect-ratio: 1;
     background: url("/img/icons/icon-stars.svg") no-repeat 50% 50% setcolor("black");
-    border-radius: 7px;
+    border-radius: rem(10);
 
     & > a {
       & > img {
