@@ -31,6 +31,7 @@
 // OBJECTS
 // Contenedores, wrappers o layouts
 @use '../objects/card';
+@use '../objects/hide-countries';
 @use '../objects/user/deposit';
 @use '../objects/user/deposit__step1';
 @use '../objects/user/deposit__step2';
