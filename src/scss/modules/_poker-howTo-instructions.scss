@@ -10,7 +10,7 @@
     padding-bottom: $sm;
   }
   .body--md {
-    @extend .u-f--bold, .u-f--h3;
+    @extend .u-f--bold, .u-f--h4;
     color: setcolor('gray', 'mid');
     padding-bottom: $sm;
   }
