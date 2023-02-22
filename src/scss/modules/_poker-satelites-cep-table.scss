@@ -9,7 +9,7 @@
 
 	&-inner {
 		@extend %margin_horizontal_main, %margin_top_medium;
-		padding-top: rem(80);
+		padding-top: rem(40);
 		padding-bottom: rem(80);
 	}
 
@@ -19,7 +19,7 @@
 		@extend .u-f--bold;
 
 		&:not(:first-child) {
-			margin-top: rem(80);
+			margin-top: rem(30);
 		}
 	}
 

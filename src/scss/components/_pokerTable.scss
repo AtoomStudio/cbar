@@ -69,13 +69,13 @@
             }
 
             td:last-child{
-                @extend .u-f--h3;
+                @extend .u-f--h4;
                 @extend .u-f--bold;
                 text-align: right;
                 padding-right: rem(20);
 
                 @include tablet {
-                    width: rem(360);
+                    width: rem(300);
                 }
             }
 
@@ -94,21 +94,34 @@
         .option {
             &__heading {
                 text-align: right;  
+                @include mobile {
+                    padding-right: 0;
+                }
             } 
             &__price {
-                @extend .u-f--h3;
+                @extend .u-f--h4;
                 @extend .u-f--bold;
                 text-align: right;
+               
+                padding-right: 0;
+                
             }
         }
         .spacer {
+            width: 0;
           
+            @include mobile-sm {
+              width: rem(40)
+            }
+            @include tablet {
+                width: rem(500)
+            }
             @include screen-sm {
-                width: 28rem;
+                width: rem(800)
             }
-            @include screen-lg {
-                width: 32rem;
-            }
+            // @include screen-lg {
+            //     width: 32rem;
+            // }
         }
     }  
 }
@@ -129,16 +142,25 @@
 
 
 	&__row {
-		display: grid;
+        display: flex;
+        justify-content: space-between;
 		gap: rem(20);
-		grid-template-columns: repeat( 5, auto );
 		align-items: center;
 		padding: 35px 30px;
 		border-radius: rem(10);
 		background-color: setcolor('black', 'dark4');
+        
+        @include tablet {
+            display: grid;
+            grid-template-columns: repeat( 5, auto );
+
+        }
+
 
 		@include screen-sm {
-			grid-template-columns: 2fr 1fr 1fr 5fr 6fr;
+            grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
+            
+
 		}
 
 		& + & {
@@ -149,7 +171,7 @@
 		span {
 
 			&:nth-of-type(1) {
-				@extend .u-f--h3;
+				@extend .u-f--h4;
 				@extend .u-f--bold;
 			}
 
@@ -160,13 +182,13 @@
 			
 
 			&:nth-of-type(4) {
-				@extend .u-f--h3;
+				@extend .u-f--h4;
 				@extend .u-f--bold;
 				text-align: right;
 			}
 
 			&:nth-of-type(5) {
-				@extend .u-f--h3;
+				@extend .u-f--h4;
 				@extend .u-f--bold;
 				text-align: right;
 			}
