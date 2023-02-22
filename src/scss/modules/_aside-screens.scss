@@ -147,7 +147,7 @@
       justify-content: center;
       align-items: center;
 
-      p {
+      h1 {
         @extend .u-f--h3, .u-f--bold;
       }
     }
@@ -179,6 +179,14 @@
 
     @include screen-sm {
       margin: 0;
+    }
+
+    .headerScreen__breadcrumbs {
+      display: none;
+
+      @include screen-sm {
+        display: block;
+      }
     }
 
     &__grid {
