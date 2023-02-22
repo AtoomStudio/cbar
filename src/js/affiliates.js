@@ -14,7 +14,7 @@ function manageAffiliatesForm() {
     const sendMail = async (data) => {
         submitBtn.classList.toggle('btn--loading')
         const alertMgr = Alert();
-        const response = await fetch("https://api_casino.lndo.site/mail/affiliates/send", {
+        const response = await fetch("https://api.casinobarcelona.es/mail/affiliates/send", {
             method: "post",
             body: JSON.stringify(data),
         })
