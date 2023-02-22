@@ -1,3 +1,4 @@
+import eventDispatch from "./eventDispatch";
 
 const ANIMATION_DURATION = 200;
 const ANIMATION_DELAY = 50;
@@ -93,6 +94,7 @@ function Mpu() {
             mpu.querySelector('.mpu__btn-close').remove();
         }
 
+        eventDispatch('openMpu', querySelector('.mpu'));
         document.body.classList.toggle('mpu-open', true);
         document.body.appendChild(mpu);
         setTimeout(() => {
@@ -123,6 +125,7 @@ function Mpu() {
             mpu.remove();
             document.body.classList.toggle('mpu-open', false);
             if (typeof settings.onClose === "function") settings.onClose();
+            eventDispatch('closeMpu');
         }, ANIMATION_DURATION);
     }
 
