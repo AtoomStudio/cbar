@@ -19,12 +19,12 @@
 		<p class="affiliatesContact__content-text">Obtendrás un % de comisión previamente pactado como resultado del
 			beneficio neto generado por tus referidos.</p>
 	</div>
-	<form class="affiliatesContact__form" action="">
+	<form class="affiliatesContact__form" action="" id="affiliates-form">
 
 		<p class="affiliatesContact__form-title">Alguna Duda?</p>
 		<p class="affiliatesContact__form-text">Si tienes alguna duda, rellena este formulario y le responderemos con la
 			mayor brevedad posible. Si lo prefiere, también puede enviar un mail a afiliados@casinobarcelona.es</p>
-		<div class="validation validation--alert">
+		<!-- <div class="validation validation--alert">
 			<p class="validation__text">HA OCURRIDO UN ERROR</p>
 			<img src="img/icons/icon-verifyBanner-cross.svg" alt="">
 		</div>
@@ -35,19 +35,21 @@
 		<div class="validation validation--warning">
 			<p class="validation__text">SE RECOMIENDA QUE EL CAMPO CONTRASEÑA TENGA TRES CARACTERES ESPECIALES</p>
 			<img src="img/icons/icon-verifyBanner-cross.svg" alt="">
-		</div>
-		<input type="text" placeholder="Nombre">
-		<select name="soy" id="soySelect">
-			<option class="placeholder" value="" disabled selected>Soy...</option>
-			<option value="empresa">Empresa</option>
-			<option value="autonomo">Autónomo</option>
-			<option value="ninguno">Ni Empresa Ni Autónomo</option>
-		</select>
-		<input type="text" placeholder="Web, Canal o Red Social Principal">
-		<input type="text" placeholder="Email">
-		<input type="text" placeholder="Asunto">
-		<textarea name="" id="" cols="20" rows="10" placeholder="Mensaje"></textarea>
-		<button class="btn__red">
+		</div> -->
+		<div class="alert__wrapper"></div>
+		<div class="fields__wrapper"></div>
+		<input type="text" name="name" placeholder="Nombre" required>
+        <select name="type" id="soySelect" required>
+            <option class="placeholder" value="" disabled selected>Soy...</option>
+            <option value="empresa">Empresa</option>
+            <option value="autonomo">Autónomo</option>
+            <option value="ninguno">Ni Empresa Ni Autónomo</option>
+        </select>
+        <input type="text" name="channel" placeholder="Web, Canal o Red Social Principal" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="subject" placeholder="Asunto" required>
+        <textarea name="message" id="" cols="30" rows="10" placeholder="Mensaje" required></textarea>
+		<button class="btn__red" id="submit-btn">
 			<img src="img/icons/icon-affiliates-send-red.svg" alt="">
 			<span>ENVIAR</span>
 		</button>
