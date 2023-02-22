@@ -5,6 +5,10 @@
 .affiliatesContentCards {
   position: relative;
 
+  @include tablet-h {
+    margin-top: rem(-60);
+  }
+
   @include screen-sm {
     margin-top: rem(-60);
   }
@@ -17,7 +21,11 @@
     grid-template-columns: repeat(1, 1fr);
     @extend %margin_horizontal_main;
 
+    @include mobile {
+      margin-top: rem(40);
+    }
     @include tablet-h {
+      margin-top: unset;
       grid-template-columns: repeat(3, 1fr);
     }
   }
@@ -25,7 +33,8 @@
   // Card
 
   &__card {
-    margin-top: $lg;
+   
+    margin-top: $md;
     margin-right: auto;
     margin-left: auto;
     padding: $sm;
@@ -35,8 +44,9 @@
     border-radius: rem(10);
     background-color: setcolor("black", "dark4");
 
+   
     @include screen-sm {
-      margin-top: 0;
+      margin-top: rem(-30);
 	    padding: $md;
     }
 

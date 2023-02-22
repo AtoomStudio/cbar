@@ -7,7 +7,8 @@
 	display: grid;
 	gap: $sm;
 	@extend %padding_medium, %margin_horizontal_main;
-
+	padding-bottom: 0;
+	
 	@include screen-sm {
 		column-gap: $lg;
 		grid-template-columns: 1fr 2fr;
@@ -29,6 +30,7 @@
 		@extend .u-f--h4;
 		@extend .u-f--bold;
 		opacity: .6;
+		margin-bottom: $sm;
 
 		@include screen-sm {
 			grid-column: 1 / 2;
@@ -40,6 +42,10 @@
 	&__benefits {
 		display: grid;
 		gap: $md;
+
+		@include mobile {
+			grid-template-columns: 1fr 1fr;
+		}
 
 		@include screen-sm {
 			grid-column: 2 / 3;
