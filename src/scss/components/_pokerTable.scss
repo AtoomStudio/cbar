@@ -48,11 +48,6 @@
 
             th {
                 padding-left: rem(40);
-
-                @include mobile {
-                padding-left: 0;
-
-                }
             }
         }
 
@@ -84,10 +79,6 @@
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 padding-left: rem(40);
-
-                @include mobile {
-                padding-left: 0;
-                }
             }
         }
 
@@ -119,9 +110,6 @@
             @include screen-sm {
                 width: rem(800)
             }
-            // @include screen-lg {
-            //     width: 32rem;
-            // }
         }
     }  
 }
@@ -150,20 +138,7 @@
 		border-radius: rem(10);
 		background-color: setcolor('black', 'dark4');
         
-        @include tablet {
-            display: grid;
-            grid-template-columns: repeat( 5, auto );
-
-        }
-
-
-		@include screen-sm {
-            grid-template-columns: 1fr 1fr 1fr 2fr 1fr;
-            
-
-		}
-
-		& + & {
+        & + & {
 			margin-top: 5px;
 		}
 
