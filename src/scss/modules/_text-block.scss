@@ -9,12 +9,30 @@
 	@extend %margin_horizontal_main, %margin_top_large;
 
 	h1 {
-		color: setcolor('white','base')
+		color: setcolor('white','base');
+		font-size: 1.5rem;
+	}
+
+	h2 {
+		font-size: 1.4rem;
+	}
+
+	h3 {
+		font-size: 1.3rem;
+	}
+
+	h4 {
+		font-size: 1.2rem;
+	}
+
+	h5 {
+		font-size: 1.1rem;
 	}
 
 	p {
 		padding-bottom: $sm;
 		color: #939598;
+		font-size: 0.8rem;
 	}
 
 	a, li {
