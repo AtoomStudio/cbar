@@ -25,13 +25,12 @@ function Mpu() {
             mpu.remove();
         }
         mpu = getTemplate();
-        console.log(mpu);
 
         if (!mpu) return;
 
         const defaults = {
             url: '',
-            fullscreen: true,
+            popupMode: false,
             closeBtn: true,
             title: '',
             body: '',
@@ -56,6 +55,9 @@ function Mpu() {
         } else {
             mpu.querySelector('.mpu__title').innerHTML = settings.title;
             mpu.querySelector('.mpu__body').innerHTML = settings.body;
+            if(settings.popupMode) {
+                mpu.querySelector('.mpu').classList.add('mpu--popup');
+            }
             if (!settings.confirmText && !settings.cancelText && !settings.denyText) {
                 mpu.querySelector('.mpu__actions').classList.remove('mpu__actions--open');
             } else {
