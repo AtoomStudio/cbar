@@ -18,6 +18,25 @@
 	&__wrapper {
 		overflow-x: auto;
 		border-radius: 5px 5px 0 0;
+
+		/* width */
+		&::-webkit-scrollbar {
+			background-color: rgb(133 133 133 / 20%);
+			border-radius: 1rem;
+			width: 0.6rem;
+			height: 0.6rem;
+		}
+		
+		/* Handle */
+		&::-webkit-scrollbar-thumb {
+			background: #888;
+			border-radius: 1rem;
+		}
+		
+		/* Handle on hover */
+		&::-webkit-scrollbar-thumb:hover {
+			background: #555;
+		}
 		
 		.table__title {
 			@extend .u-f--h2, .u-f--bold;

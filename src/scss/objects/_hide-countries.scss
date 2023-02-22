@@ -1,0 +1,6 @@
+// Hide games with class .and-forb for countries with class .country-5 (Andorra)
+.country-5 {
+    .and-forb {
+        display: none;
+    }
+}

@@ -181,6 +181,14 @@
       margin: 0;
     }
 
+    .headerScreen__breadcrumbs {
+      display: none;
+
+      @include screen-sm {
+        display: block;
+      }
+    }
+
     &__grid {
       margin-top: $md;
 
