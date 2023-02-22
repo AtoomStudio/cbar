@@ -27,7 +27,7 @@ function carouselGrid(gridFull) {
     [3, 3],
   ];
 
-  arrDim.splice(order, 0, item);
+  // arrDim.splice(order, 0, item);
 
   const splide = new Splide(gridFull, {
     perPage: 4,
