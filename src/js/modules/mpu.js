@@ -94,7 +94,7 @@ function Mpu() {
             mpu.querySelector('.mpu__btn-close').remove();
         }
 
-        eventDispatch('openMpu', querySelector('.mpu'));
+        eventDispatch('openMpu', document.querySelector('.mpu'));
         document.body.classList.toggle('mpu-open', true);
         document.body.appendChild(mpu);
         setTimeout(() => {
