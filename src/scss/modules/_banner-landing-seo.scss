@@ -18,9 +18,11 @@
 	&__image {
 		margin-right: auto;
 		margin-left: auto;
-		max-width: 100%;
-
+		width: 100%;
+		max-width: rem(200);
+		
 		@include screen-sm {
+			max-width: unset;
 			grid-column: 2 / 3;
 			grid-row: 1 / 2;
 		}
