@@ -22,7 +22,7 @@
 		max-width: rem(200);
 		
 		@include screen-sm {
-			max-width: unset;
+			max-width: rem(400);
 			grid-column: 2 / 3;
 			grid-row: 1 / 2;
 		}
