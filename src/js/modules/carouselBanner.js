@@ -29,6 +29,7 @@ function carouselBanner() {
       perPage: 1,
       arrow: true,
       rewind:true,
+      autoplay:true,
       pagination: false,
     });
 

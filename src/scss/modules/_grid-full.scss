@@ -3,6 +3,7 @@
 @use "../tools" as *;
 
 .slotsBtn {
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +15,9 @@
 
     @include tablet {
       margin-top: 30px;
-      
+      &:first-of-type {
+       display: none;
+     }
     }
   }
 }
