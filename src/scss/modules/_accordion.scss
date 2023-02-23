@@ -4,10 +4,10 @@
 
 .faq,
 .pokerHowAccord {
-  @extend %margin_horizontal_main, %margin_top_medium;
+  @extend %margin_horizontal_main, %margin_top_small;
 
   &__title {
-    @extend .u-f--h2, .u-f--bold;
+    @extend .u-f--h3, .u-f--bold;
     padding-bottom: $sm;
   }
 
