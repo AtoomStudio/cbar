@@ -29,11 +29,11 @@
   }
 
   &__title {
-    @extend .u-f--h3;
+    font-size: 1.2rem;
   }
 
   &__subtitle {
-    @extend .u-f--h4;
+    font-size: 1rem;
     color: setcolor("gray", "mid");
     padding-bottom: $sm;
 
