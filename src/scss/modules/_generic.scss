@@ -5,7 +5,7 @@
 // Layout
 
 .generic {
-  @extend %margin_horizontal_main, %margin_top_medium;
+  @extend %margin_horizontal_main, %margin_top_small;
 
   h1 {
     font-size: rem(28);

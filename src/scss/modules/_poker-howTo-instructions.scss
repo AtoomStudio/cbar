@@ -3,20 +3,22 @@
 @use "../tools" as *;
 
 .pokerHowInstructions {
-  @extend %margin_horizontal_main, %margin_top_medium;
+  @extend %margin_horizontal_main, %margin_top_small;
 
   .body--sm {
     color: setcolor('gray', 'mid');
     padding-bottom: $sm;
   }
   .body--md {
-    @extend .u-f--bold, .u-f--h4;
+    @extend .u-f--bold;
     color: setcolor('gray', 'mid');
-    padding-bottom: $sm;
+    padding-bottom: rem(6);
+    font-size: 0.8rem;
   }
 
   h1 {
-    @extend .u-f--bold, .u-f--h1;
+    @extend .u-f--bold;
+    font-size: 1.5rem;
   }
 
   &__wrapper {
@@ -24,21 +26,30 @@
     ul {
       list-style: none;
       padding: 0;
+      margin-top: rem(5);
+    }
+
+    li {
+      font-size: 0.8rem;
+      padding-bottom: rem(2);
     }
     p {
       color: setcolor('gray', 'mid');
       padding-bottom: $sm;
+      font-size: 0.8rem;
     }
 
 
     h2 {
-      @extend .u-f--bold, .u-f--h2;
+      @extend .u-f--bold;
+      font-size: 1.4rem;
       margin-top: 0;
       margin-bottom: $sm;
     }
 
     h3 {
-      @extend .u-f--bold, .u-f--h3;
+      @extend .u-f--bold;
+      font-size: 1.3rem;
       margin-top: 0;
       margin-bottom: rem(4);
 
@@ -54,7 +65,7 @@
   }
 
   li {
-    padding-bottom: rem(5);
+    padding-bottom: rem(2);
   }
 
   &__image {
