@@ -28,16 +28,12 @@
 
   &__header {
     width: 100%;
-    display: none;
+    display: flex;
     justify-self: flex-end;
     align-self: flex-start;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    
-    @include tablet {
-      display: flex;
-    }
   }
 
   &__title {
