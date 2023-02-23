@@ -12,12 +12,11 @@
     margin-top: 30px;
     padding: $sm;
     
+  }
 
-    @include tablet {
-      margin-top: 30px;
-      &:first-of-type {
-       display: none;
-     }
+  &--cta {
+    @include screen-sm {
+      display: none;
     }
   }
 }
