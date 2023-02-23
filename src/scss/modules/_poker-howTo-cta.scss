@@ -47,7 +47,12 @@
     flex-direction: column;
     row-gap: rem(10);
 
+    @include tablet {
+      align-items: center;
+    }
+
     @include screen-sm {
+      align-items: unset;
       flex-direction: row;
       column-gap: rem(10);
     }
@@ -55,6 +60,9 @@
     &-btn {
       width: 100%;
 
+      @include tablet {
+        width: 50%;
+      }
       @include screen-sm {
         width: 50%;
       }
