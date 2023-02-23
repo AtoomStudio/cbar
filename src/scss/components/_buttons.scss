@@ -22,9 +22,9 @@
   }
 }
 
-.btn__red--glow {
-  box-shadow: 0px 0px rem(20) 0px setcolor("primary");
-}
+// .btn__red--glow {
+//   box-shadow: 0px 0px rem(20) 0px setcolor("primary");
+// }
 
 .btn__blue {
   @extend %buttons;
