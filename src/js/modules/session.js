@@ -87,7 +87,7 @@ function Session() {
                         console.log("Sending OPENING message");
                         parent.postMessage({ "method": "OPENING" }, "https://apuestas.casinobarcelona.es/");
                     }
-                    let table = "<table class='table' id='resumenSession'><thead>";
+                    let table = "<div class='table__wrapper'><table class='table' id='resumenSession'><thead>";
                     table += "<tr><th>Juego</th><th>Apostado</th><th>Ganado</th></tr></thead><tbody>";
                     for (var i = 0; i < json.data.length; i++) {
                         var wagers = json.data[i].wagers;
@@ -95,7 +95,7 @@ function Session() {
 
                         table += "<tr><td title='Juego'>" + json.data[i].room_name + "</td><td title='Apostado'>" + formatMoney(wagers) + "</td><td title='Ganado'>" + formatMoney(winnings) + "</td></tr>";
                     }
-                    table += "</tbody></table>";
+                    table += "</tbody></table></div>";
                     mpu({
                         title: 'Resumen de la sesión',
                         body: table,
