@@ -23,24 +23,22 @@
   .userContent {
     margin-left: 0;
     min-height: calc(100vh - 85px);
-    padding: $md $sm 12vh $sm;
+    padding: $md $sm 8rem $sm;
 
     background-color: setcolor("gray", "light2");
     overflow: hidden;
 
-   
-
     @include mobile {
-      padding: $md $md 12vh $md;
+      padding: $md $md 8rem $md;
     }
     @include tablet {
-      padding: $md $lg 12vh $lg;
+      padding: $md $lg 8rem $lg;
     }
     @include screen-sm {
       width: 80%;
       margin-left: 20%;
 
-      padding: $md;
+      padding: $md $md 4rem $md;
     }
 
     .dataBlock,
