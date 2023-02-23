@@ -3,7 +3,7 @@
 @use "../tools" as *;
 
 @use '../components/alert';
-@use '../components/userTable';
+@use '../components/table';
 
 body.mpu-open {
     height: 100vh;
