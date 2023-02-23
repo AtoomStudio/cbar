@@ -28,6 +28,10 @@
       position: sticky;
     }
 
+    &__title {
+      text-align: center;
+    }
+
     &__image {
       object-fit: contain;
       width: 100%;

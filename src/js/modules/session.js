@@ -87,15 +87,15 @@ function Session() {
                         console.log("Sending OPENING message");
                         parent.postMessage({ "method": "OPENING" }, "https://apuestas.casinobarcelona.es/");
                     }
-                    let table = "<div id='tablecontainer'><table class='tables' id='resumenSession'><thead>";
+                    let table = "<table class='table' id='resumenSession'><thead>";
                     table += "<tr><th>Juego</th><th>Apostado</th><th>Ganado</th></tr></thead><tbody>";
                     for (var i = 0; i < json.data.length; i++) {
                         var wagers = json.data[i].wagers;
                         var winnings = json.data[i].winnings;
 
-                        table += "<tr><td title='Juego'>" + json.data[i].room_name + "</td><td title='Apostado'>" + wagers.formatMoney(2) + "</td><td title='Ganado'>" + winnings.formatMoney(2) + "</td></tr>";
+                        table += "<tr><td title='Juego'>" + json.data[i].room_name + "</td><td title='Apostado'>" + formatMoney(wagers) + "</td><td title='Ganado'>" + formatMoney(winnings) + "</td></tr>";
                     }
-                    table += "</tbody></table></div>";
+                    table += "</tbody></table>";
                     mpu({
                         title: 'Resumen de la sesión',
                         body: table,
@@ -108,6 +108,14 @@ function Session() {
                 }
             });
     }
+
+    function formatMoney(value, locale = "es-ES", currency = "EUR") {
+        const formatted = new Intl.NumberFormat(locale, {
+            style: "currency",
+            currency: currency,
+        }).format(value);
+        return formatted;
+    };
 
     return {
         startTimeWeb1,
