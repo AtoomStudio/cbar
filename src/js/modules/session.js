@@ -93,7 +93,7 @@ function Session() {
                         var wagers = json.data[i].wagers;
                         var winnings = json.data[i].winnings;
 
-                        table += "<tr><td title='Juego'>" + json.data[i].room_name + "</td><td title='Apostado'>" + wagers.formatMoney(2) + "</td><td title='Ganado'>" + winnings.formatMoney(2) + "</td></tr>";
+                        table += "<tr><td title='Juego'>" + json.data[i].room_name + "</td><td title='Apostado'>" + formatMoney(wagers) + "</td><td title='Ganado'>" + formatMoney(winnings) + "</td></tr>";
                     }
                     table += "</tbody></table></div>";
                     mpu({
@@ -108,6 +108,14 @@ function Session() {
                 }
             });
     }
+
+    function formatMoney(locale = "es-ES", currency = "EUR") {
+        const formatted = new Intl.NumberFormat(locale, {
+            style: "currency",
+            currency: currency,
+        }).format(this);
+        return formatted;
+    };
 
     return {
         startTimeWeb1,
