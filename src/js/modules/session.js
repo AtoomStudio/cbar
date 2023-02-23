@@ -109,11 +109,11 @@ function Session() {
             });
     }
 
-    function formatMoney(locale = "es-ES", currency = "EUR") {
+    function formatMoney(value, locale = "es-ES", currency = "EUR") {
         const formatted = new Intl.NumberFormat(locale, {
             style: "currency",
             currency: currency,
-        }).format(this);
+        }).format(value);
         return formatted;
     };
 
