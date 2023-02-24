@@ -113,7 +113,7 @@
 
     &-item {
       position: relative;
-
+      
       & > img {
         width: 100%;
         aspect-ratio: 1;
@@ -121,12 +121,15 @@
         border-radius: rem(10);
       }
 
+      @include tablet {
       &:hover {
         .gridHover {
           opacity: 1;
           transition: all 0.3s ease;
+          justify-content: center;
         }
       }
+    }
 
       &--hover {
         position: absolute;
