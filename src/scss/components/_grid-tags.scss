@@ -83,3 +83,13 @@
     max-width: 50%;
   }
 }
+
+.slot-disabled {
+  @extend .tag;
+
+  &::before {
+    content: "NO DISPONIBLE";
+    background-color: setcolor('gray','mid');
+    padding: rem(5);
+  }
+}

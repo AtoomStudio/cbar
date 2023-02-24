@@ -5,7 +5,7 @@
 .bannerLandingA {
   position: relative;
   z-index: 1;
-  height: 60vh;
+  height: 35vh;
   
 
   background-image: url("../img/images/landing-AFILIADOS-slots-header.jpg");
@@ -14,12 +14,13 @@
   background-repeat: no-repeat;
   background-color: setcolor("black", "dark2");
 
+
   @include screen-sm {
-    height: calc(100vh - 12vh - 85px);
+    // height: calc(100vh - 12vh - 85px);
     // background-image: url("../img/images/landing-AFILIADOS-slots-header.jpg");
     // background-position: bottom right;
   }
-
+ 
   &::before {
     content: "";
     position: absolute;
@@ -64,15 +65,24 @@
 
     &-title {
       @extend .u-f--h1;
+      @include mobile {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
 
     &-subtitle {
       @extend .u-f--h2;
       color: setcolor("gray", "mid");
+      @include mobile {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
 
     &-btn {
       width: max-content;
+      margin-top: $sm;
     }
 
     ul{

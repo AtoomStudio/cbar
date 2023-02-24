@@ -53,7 +53,17 @@
         display: inline;
       }
     }
+
+    &--half {
+      span {
+        display: none;
+        @include screen-xl {
+          display: inline;
+        }
+      }    
+    }
   }
+
 }
 
 .gridHover--ruleta {
