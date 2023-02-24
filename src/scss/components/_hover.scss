@@ -56,6 +56,7 @@
 
     &--half {
       span {
+        display: none;
         @include screen-xl {
           display: inline;
         }
