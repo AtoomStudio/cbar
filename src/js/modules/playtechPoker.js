@@ -69,7 +69,7 @@ export default function PlaytechPoker({ isMobile, externalId, sessionId }) {
     }
 
     function calloutLogin(response) {
-        if (response.errorCode !== 0 && window.location.href.includes('startWebclient')) {
+        if (response.errorCode !== 0 && window.location.href.includes('startWebClient')) {
             window.location.href = 'https://games.casinobarcelona.es/poker/web/WebLauncher.html';
         }
     }
