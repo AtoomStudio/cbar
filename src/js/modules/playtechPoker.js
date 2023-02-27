@@ -67,16 +67,16 @@ export default function PlaytechPoker({ isMobile, externalId, sessionId }) {
         iapiSetAuthenticationType("externalToken");
         iapiLogin(user, session, realMode, "en");
     }
-    
-    function calloutLogin(response){
-        if(!response.errorCode && window.location.href.includes('startWebclient')){
+
+    function calloutLogin(response) {
+        if (response.errorCode !== 0 && window.location.href.includes('startWebclient')) {
             window.location.href = 'https://games.casinobarcelona.es/poker/web/WebLauncher.html';
         }
     }
-    
+
     iapiSetCallout('Login', calloutLogin);
 
-    if(isMobile) iapiSetClientPlatform('mobile');
+    if (isMobile) iapiSetClientPlatform('mobile');
 
     login(externalId, sessionId);
 
