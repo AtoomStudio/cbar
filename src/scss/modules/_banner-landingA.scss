@@ -15,8 +15,11 @@
   background-color: setcolor("black", "dark2");
 
 
-  @include screen-sm {
-    height: calc(100vh - 12vh - 85px);
+  @include tablet {
+    height: 60vh;
+  } 
+  
+  @include screen-sm {    height: calc(100vh - 12vh - 85px);
     // background-image: url("../img/images/landing-AFILIADOS-slots-header.jpg");
     // background-position: bottom right;
   }
