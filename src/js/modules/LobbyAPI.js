@@ -49,7 +49,7 @@ const LobbyApi = () => {
 
     function renderData(element, rooms) {
 
-        const imagePrefix = window.location.hostname === 'localhost' ? 'https://revamp.casinobarcelona.es' : '';
+        const imagePrefix = window.location.hostname === 'localhost' ? 'https://www.casinobarcelona.es' : '';
 
         const roomsHtml = rooms.map(room => {
             const itemTemplate = getTemplate();

@@ -1,4 +1,4 @@
-const ENDPOINT = "https://revamp.casinobarcelona.es/servlet/PreRegisterServlet";
+const ENDPOINT = "https://www.casinobarcelona.es/servlet/PreRegisterServlet";
 
 function setPreregisterUser() {
     const user = {

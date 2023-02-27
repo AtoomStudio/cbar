@@ -41,7 +41,7 @@ function searchGames() {
     }
 
     function parseResults({ hits, nbHits, query, queryID }) {
-        const imagePrefix = window.location.hostname === 'localhost' ? 'https://revamp.casinobarcelona.es' : '';
+        const imagePrefix = window.location.hostname === 'localhost' ? 'https://www.casinobarcelona.es' : '';
         searchResultsCount.innerHTML = hits.length;
         searchResultsQuery.innerHTML = `"${query}"`;
         let output = `<ul data-insights-index="${INDEX_NAME}">`;
