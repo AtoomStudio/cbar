@@ -16,7 +16,7 @@
 
 
   @include screen-sm {
-    // height: calc(100vh - 12vh - 85px);
+    height: calc(100vh - 12vh - 85px);
     // background-image: url("../img/images/landing-AFILIADOS-slots-header.jpg");
     // background-position: bottom right;
   }
@@ -82,7 +82,6 @@
 
     &-btn {
       width: max-content;
-      margin-top: $sm;
     }
 
     ul{
