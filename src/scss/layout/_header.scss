@@ -14,9 +14,18 @@
 
   padding: rem(10);
   background-color: setcolor("warning");
+  
+  
 
   &--show {
     display: flex;
+    @media screen and (orientation: landscape) {
+      display: none;
+  
+      @include tablet-h {
+        display: flex;
+      }
+    }
   }
 
   &__text {
@@ -203,6 +212,10 @@
 .header__mobile {
   position: relative;
   width: 100%;
+
+  @media screen and (orientation: landscape) {
+      display: none;
+  }
 
   @include tablet-h {
     display: none;
