@@ -7,48 +7,10 @@
 .generic {
   @extend %margin_horizontal_main, %margin_top_small;
 
-  h1 {
-    font-size: rem(28);
-    @include tablet {
-      font-size: rem(32);
-    }
-    @include screen-sm {
-      font-size: rem(40);
-    }
-  }
-
-  h2 {
-    font-size: rem(24);
-    @include tablet {
-      font-size: rem(28);
-    }
-    @include screen-sm {
-      font-size: rem(36);
-    }
-  }
-
-  h3 {
-    font-size: rem(20);
-    @include tablet {
-      font-size: rem(24);
-    }
-    @include screen-sm {
-      font-size: rem(32);
-    }
-  }
-
-  h4,
-  h5,
-  h6 {
-    font-size: rem(16);
-    @include tablet {
-      font-size: rem(20);
-    }
-    @include screen-sm {
-      font-size: rem(28);
-    }
-  }
-
+  a, li {
+    font-weight: 100;
+	}
+  
   p {
     padding-bottom: $sm;
     color: setcolor("gray", "dark1");
@@ -69,5 +31,16 @@
 
   &__table {
     margin-top: 0;
+  }
+
+
+  &__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .faq__accordion {
+      width: -webkit-fill-available;
+    }
   }
 }

@@ -55,59 +55,72 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     margin-bottom: $h1_margin;
-    font-size: rem(28);
-    @include tablet {
-        font-size: rem(36);
-    }
-    @include screen-sm {
-        font-size: rem(46);
-    }
+    font-size: 1.5rem;
+  
+    // font-size: rem(28);
+    // @include tablet {
+    //     font-size: rem(36);
+    // }
+    // @include screen-sm {
+    //     font-size: rem(46);
+    // }
 }
 
 h2 {
     margin-top: $h2_margin;
     margin-bottom: $h2_margin;
-    font-size: rem(24);
-    @include tablet {
-        font-size: rem(32);
-    }
-    @include screen-sm {
-        font-size: rem(42);
-    }
+    font-size: 1.4rem;
+
+    // font-size: rem(24);
+    // @include tablet {
+    //     font-size: rem(32);
+    // }
+    // @include screen-sm {
+    //     font-size: rem(42);
+    // }
 }
 
 h3 {
     margin-top: $h3_margin;
     margin-bottom: $h3_margin;
-    font-size: rem(20);
-    @include tablet {
-        font-size: rem(24);
-    }
-    @include screen-sm {
-        font-size: rem(30);
-    }
+    font-size: 1.3rem;
+   
+   
+    // font-size: rem(20);
+    // @include tablet {
+    //     font-size: rem(24);
+    // }
+    // @include screen-sm {
+    //     font-size: rem(30);
+    // }
 }
 
 h4 {
     margin-top: $h4_margin;
     margin-bottom: $h4_margin;
-    font-size: rem(18);
-    @include tablet {
-        font-size: rem(22);
-    }
-    @include screen-sm {
-        font-size: rem(28);
-    }
+    font-size: 1.2rem;
+
+    // font-size: rem(18);
+    // @include tablet {
+    //     font-size: rem(22);
+    // }
+    // @include screen-sm {
+    //     font-size: rem(28);
+    // }
 }
 
 h5 {
     margin-top: $h5_margin;
     margin-bottom: $h5_margin;
-    font-size: rem(16);
-    @include tablet {
-        font-size: rem(20);
-    }
-    @include screen-sm {
-        font-size: rem(26);
-    }
+    font-size: 1.1rem;
+   
+    // font-size: rem(16);
+    // @include tablet {
+    //     font-size: rem(20);
+    // }
+    // @include screen-sm {
+    //     font-size: rem(26);
+    // }
 }
+
+
