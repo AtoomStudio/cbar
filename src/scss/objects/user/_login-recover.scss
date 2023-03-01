@@ -70,11 +70,7 @@
       }
 
       button {
-        width: 100%;
-
-        @include tablet {
-          width: fit-content;
-        }
+        width: fit-content;
       }
     }
 
