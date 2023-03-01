@@ -9,6 +9,7 @@
     </div>
     <section class="login__layout">
         <form action="/" method="post" class="login__form">
+            <input type="hidden" id="securityQuestion" name="securityQuestion" value="">
             <div class="password__container">
                 <img src="img/icons/icon-lock-password.svg" alt="" class="password__header">
                 <h1>Olvidaste tu contraseña?</h1>
@@ -18,6 +19,14 @@
                 <div class="password__input password__fields--wrapper">
                     <input type="text" name="email" id="email" required placeholder="escribe tu email">
                 </div>
+
+                <div class="password__input password__fields--wrapper step2">
+                    <input disabled="" id="e_securityQuestion" name="e_securityQuestion" type="text" value="¿Nombre de tu mascota?">
+                </div>
+                <div class="password__input password__fields--wrapper step2">
+                    <input id="securityResponse" name="securityResponse" type="text" value="" placeholder="Respuesta">
+                </div>
+
                 <button type="submit" class="btn__white">
                     <span>RECORDAR CONTRASEÑA</span>
                     <img src="img/icons/icon-arrow-circle-black.svg" alt="">
