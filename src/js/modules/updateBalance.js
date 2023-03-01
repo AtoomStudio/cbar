@@ -1,3 +1,5 @@
+import eventDispatch from "./eventDispatch";
+
 async function updateBalance() {
     const shortBalances = document.querySelectorAll(".deposits__balance-value");
     const popupBalances = document.querySelector(".popUpBalance__grid");
@@ -8,13 +10,27 @@ async function updateBalance() {
     }
 
     function bindEvents() {
-        document.addEventListener("updateBalance", init);
+        document.addEventListener("updateBalance", update);
+
+        
+        const gameUrls = [
+            '/casino/',
+            '/ruleta-en-vivo/',
+            '/apuestas-virtuales/',
+            '/slots/'
+        ];
+        // Check if window.location.pathname contains any of the gameUrls
+        if (gameUrls.some(url => window.location.pathname.includes(url))) {
+            setTimeout(() => {
+                eventDispatch('updateBalance');
+            }, 60000);
+        }
     }
 
-    async function init() {
+    async function update() {
         const balances = await fetchBalances();
         parseShortBalances(balances);
-            parsePopupBalances(balances);
+        parsePopupBalances(balances);
     }
 
     function parseShortBalances(balances) {
