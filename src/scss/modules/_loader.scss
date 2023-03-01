@@ -1,0 +1,18 @@
+@use "../settings" as *;
+@use "../helper" as *;
+@use "../tools" as *;
+
+
+.loader-container {
+    position: absolute;
+    z-index: 2;
+    padding-right: 0.2rem;
+    margin-top: -2rem;
+     
+    .btn--loading {
+        &::before {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+}
