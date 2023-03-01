@@ -77,4 +77,12 @@
         }
       }
     }
+
+    .step2 {
+      display: none;
+    }
+
+    .login__form--step2 .step2 {
+      display: block;
+    }
   }
