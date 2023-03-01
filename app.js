@@ -68,6 +68,7 @@ import mpuPayoutPaysafe from "./routes/mpuPayoutPaysafe.js";
 import mpuPayoutSkrill from "./routes/mpuPayoutSkrill.js";
 import mpuPayoutTransfer from "./routes/mpuPayoutTransfer.js";
 import mpuPayoutOk from "./routes/mpuPayoutOk.js";
+import api from "./routes/api.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -82,6 +83,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // routes
 app.use("/", home);
+app.use("/api", api);
 app.use("/about", about);
 app.use("/layout", layout);
 app.use("/slots", slots);
