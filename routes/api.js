@@ -32,7 +32,7 @@ api.push(router.get("/playerBalances.json.html", async function (req, res, next)
       "amount": "0.0"
     },
     {
-      "typeId": "-1",
+      "typeId": -1,
       "name": "total",
       "amount": "125.33"
     }

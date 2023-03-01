@@ -16,6 +16,7 @@ function popUpSaldo() {
       event.preventDefault();
       if(popUpMenu.classList.contains("menu-toggle--open")) return;
       
+      eventDispatch('updateBalance');
       popUpMenu.classList.add("menu-toggle--open");
       eventDispatch('openMenu', popUpMenu);
       closeMenuEvent();
