@@ -18,7 +18,7 @@ const LobbyApi = () => {
     function fetchApi(element) {
         const filters = JSON.parse(element.dataset.filters);
         const filtersString = new URLSearchParams(filters).toString();
-        const baseUrl = `${API_URL}/room_slots?${filtersString}&page=`;
+        const baseUrl = `${API_URL}/rooms?${filtersString}&page=`;
         let currentPage = 1;
 
         fetch(`${baseUrl + currentPage}`, { 'headers': { 'Accept': 'application/json' } })
@@ -58,7 +58,7 @@ const LobbyApi = () => {
             const links = item.querySelectorAll('a');
             const hoverTitle = item.querySelector('.gridHover__title');
 
-            if(room.tags.includes('Jackpot')) {
+            if(room.tags.includes('Jackpot') || room.type.includes('Jackpot')) {
                 item.dataset.jackpot = "";
                 const jackpotContainer = document.createElement('div');
                 jackpotContainer.classList.add('jackpot__container');
