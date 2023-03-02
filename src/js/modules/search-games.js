@@ -13,7 +13,7 @@ function searchGames() {
     const searchResultsQuery = searchResults.querySelector('#search-query');
     const index = searchClient.initIndex(INDEX_NAME);
 
-    const debouncedOnInput = debounce((e) => onInput(e));
+    const debouncedOnInput = debounce((e) => onInput(e), 750);
     
     searchBox.addEventListener('input', debouncedOnInput);
 
