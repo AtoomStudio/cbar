@@ -3,8 +3,7 @@
 @use "../tools" as *;
 
 .alert {
-
-  padding: $sm $md;
+  padding: $sm $lg $sm $sm;
   font-family: setfont("family", "secondary");
   font-weight: setfont("weight", "bold");
   font-size: .75rem;

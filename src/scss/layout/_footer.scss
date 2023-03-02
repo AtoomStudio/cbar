@@ -235,6 +235,7 @@
       @include screen-sm {
         flex-direction: row;
         flex-wrap: nowrap;
+        align-items: flex-end;
       }
 
       li {
@@ -255,6 +256,11 @@
           width: auto;
           height: auto;
           margin: 0 rem(10);
+        }
+
+        a {
+          display: flex;
+          justify-content: center;
         }
 
         img {
