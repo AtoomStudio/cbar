@@ -30,13 +30,15 @@ function getMonths(endDate) {
 }
 
 function fillRtpReal() {
+    const accordion = document.querySelector('#rtp-real')
+    accordion.classList.add('accordion--loading')
+
     var maxDate = formatDate(new Date(0));
     var minDate = formatDate(new Date());
     fetch('https://api.casinobarcelona.es/api/slots?pagination=false', { headers: { 'Accept': 'application/json' } })
         .then(response => response.json())
         .then(data => {
             data.sort(compare);
-            document.querySelector('.rtp-loading').remove();
             for (var i = 0; i < data.length; i++) {
                 for (var j = 0; j < data[i].rtp.length; j++) {
                     if (data[i].rtp[j].date < minDate) {
@@ -63,8 +65,12 @@ function fillRtpReal() {
                     }
                 }
                 rows += "</tr>"
-            }
-            document.querySelector('#rtp-real-content').innerHTML = rows;
+            }            
+
+            document.querySelector('.rtp-loading').remove();
+            document.querySelector('#rtp-real-content').innerHTML = rows;       
+            accordion.classList.remove('accordion--loading')
+   
         })
 }
 

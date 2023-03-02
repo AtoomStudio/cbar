@@ -58,7 +58,11 @@
       }
     }
     margin-bottom: $md;
+
+
+ 
   }
+
 }
 
 .accordion {
@@ -79,5 +83,27 @@
 
   &--active &__content {
     max-height: initial;
+  }
+
+  &--loading {
+    pointer-events: none;
+    position: relative;
+    
+    &::before {
+      content: "";
+      background-image: url(../img/icons/icon-spinner.svg);
+      background-size: contain;
+      height: 2em;
+      width: 2em;
+      position: absolute;
+      top: 50%;
+      right:0.2rem ;
+      transform: translate(-50%, -50%);
+      animation: spin 1s linear infinite;
+    }
+
+    .accordion__arrow {
+      display: none;
+    }
   }
 }
