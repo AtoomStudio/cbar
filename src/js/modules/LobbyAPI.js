@@ -58,7 +58,7 @@ const LobbyApi = () => {
             const links = item.querySelectorAll('a');
             const hoverTitle = item.querySelector('.gridHover__title');
 
-            if(room.tags.includes('Jackpot')) {
+            if(room.tags.includes('Jackpot') || room.type.includes('Jackpot')) {
                 item.dataset.jackpot = "";
                 const jackpotContainer = document.createElement('div');
                 jackpotContainer.classList.add('jackpot__container');
