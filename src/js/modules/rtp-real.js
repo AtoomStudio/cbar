@@ -29,39 +29,12 @@ function getMonths(endDate) {
     }
 }
 
-const loaderContainer = document.querySelector('.loader-container');
-const arrowBtn = document.querySelector('.accordion__arrow--real');
-const accordions = document.querySelectorAll('[data-accordion]');
-
-const setAttribute = () => {
-        accordions.forEach(accordion => {
-        accordion.setAttribute('isLoading','')
-    });
-}
-
-const resetAttribute = () => {
-    accordions.forEach(accordion => {
-        accordion.removeAttribute('isLoading')
-    });
-}
-
-const displayLoading = () => {
-    loaderContainer.style.display = 'block';
-    arrowBtn.style.display = 'none';
-    setAttribute();
-};
-
-const hideLoading = () => {
-    loaderContainer.style.display = 'none';
-    arrowBtn.style.display = 'block';
-    resetAttribute();
-};
-
-
 function fillRtpReal() {
+    const accordion = document.querySelector('#rtp-real')
+    accordion.classList.add('accordion--loading')
+
     var maxDate = formatDate(new Date(0));
     var minDate = formatDate(new Date());
-    displayLoading();
     fetch('https://api.casinobarcelona.es/api/slots?pagination=false', { headers: { 'Accept': 'application/json' } })
         .then(response => response.json())
         .then(data => {
@@ -95,11 +68,10 @@ function fillRtpReal() {
             }            
 
             document.querySelector('.rtp-loading').remove();
-            document.querySelector('#rtp-real-content').innerHTML = rows;           
-            hideLoading(); 
+            document.querySelector('#rtp-real-content').innerHTML = rows;       
+            accordion.classList.remove('accordion--loading')
+   
         })
-
-           
 }
 
 export default fillRtpReal;
