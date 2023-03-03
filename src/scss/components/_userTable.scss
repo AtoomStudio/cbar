@@ -4,27 +4,17 @@
 
 .table__wrapper {
     overflow-x: auto;
-  
+    border-radius: rem(10);
+    
     .table {
       padding: rem(10) 0;
       text-align: left;
-      margin-right: $sm;
       width: 100%;
       border: none;
       background-color: #fafafb;
       
       
-      
-      @include mobile {
-        margin-right: $md;
-      }
-      @include tablet {
-        margin-right: $lg;
-      }
-      @include screen-sm {
-        margin-right: 0;
-      }
-      
+         
       &__head td {
         @extend .u-f--bold;
         color: setcolor("black", "dark1"); 
@@ -33,6 +23,7 @@
       
       th {
         padding: 0 rem(10);
+        white-space: nowrap;
       }
       
       &__td {
