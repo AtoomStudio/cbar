@@ -3,17 +3,7 @@
 @use "../tools" as *;
 
 .history {
-  margin-right: rem(-15);
-
-  @include mobile {
-    margin-right: rem(-30);
-  }
-  @include tablet {
-    margin-right: rem(-60);
-  }
-  @include screen-sm {
-    margin-right: 0;
-  }
+  width: 100%;
 
   .history__navbar {
     margin: $md 0;
@@ -61,19 +51,7 @@
 
     .history__filter {
       padding-bottom: 0 !important;
-      margin-right: $sm;
-
-      @include mobile {
-        margin-right: $md;
-        
-      }
-      @include tablet {
-        margin-right: $lg;
-      }
-      @include screen-sm {
-        margin-right: 0;
-      }
-
+ 
       .history__content {
         padding: $md $sm;
 
@@ -81,17 +59,13 @@
         justify-content: center;
         flex-direction: column;
         text-align: center;
-        margin-right: $sm;
 
         @include tablet {
           display: flex;
           justify-content:left;
           text-align: left;
-          margin-right: $lg;
         }
-        @include screen-sm {
-          margin-right: 0;
-        }
+    
 
         p:first-of-type {
           @extend .u-f--h3, .u-f--bold;

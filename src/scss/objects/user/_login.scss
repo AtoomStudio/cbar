@@ -38,7 +38,8 @@
     align-items: center;
 
     margin-top: rem(120);
-    min-width: 100%;
+    width: 35rem;
+    max-width: 100%;
 
     @include screen-sm {
       min-width: 30%;

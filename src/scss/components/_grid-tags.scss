@@ -88,7 +88,7 @@
   @extend .tag;
 
   &::before {
-    content: "NO DISPONIBLE";
+    content: "No disponible";
     background-color: setcolor('gray','mid');
     padding: rem(5);
   }

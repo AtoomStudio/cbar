@@ -354,17 +354,19 @@
     }
 
     button {
-      
-      &:first-of-type {
-        margin-right: rem(5);
-        width: 30%;
-      }
-
       &:last-of-type {
         margin-left: rem(5);
         width: 70%;
         & > span {
           color: white;
+        }
+      }
+
+      &:first-of-type {
+        margin-right: rem(5);
+        width: 30%;
+        & > span {
+        color: setcolor("black", "dark1");
         }
       }
     }

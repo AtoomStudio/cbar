@@ -147,7 +147,8 @@
     }
 
     &__title {
-      @extend .u-f--h2, .u-f--bold;
+      @extend .u-f--bold;
+      font-size: 1.25rem;
     }
   }
 }

@@ -308,10 +308,21 @@
   overflow-x: auto;
   text-overflow: ellipsis;
   white-space: nowrap;
+  
+  margin-top: $sm;
+  
   a {
+    span{
+      @extend .u-f--bold;
+    }
+    
     padding-left:$sm;
       img {
         padding-right: $sm;
       }
-    }
   }
+  
+  @include tablet {
+    width: rem(250);
+  }
+}
