@@ -99,7 +99,7 @@ export default function validateRegister() {
                         "status":"Exito", 
                         "error": ""
                     });
-                    window.location.replace(response.url);
+                    window.location.replace('/welcome.html');
                 } else {
                     setLoading(false);
                     const data = await response.json();
