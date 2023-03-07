@@ -9,7 +9,7 @@ function manageAffiliatesForm() {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
         sendMail(data);
-    });
+    }); 
 
     const sendMail = async (data) => {
         submitBtn.classList.toggle('btn--loading')
