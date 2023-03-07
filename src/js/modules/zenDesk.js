@@ -10,7 +10,7 @@ function ZenDesk() {
         zE(function () {
             if (player) {
                 zE.identify({
-                    name: player.name + " " + player.middleName + " " + player.lastName,
+                    name: player.firstName + " " + player.middleName + " " + player.lastName,
                     email: player.email,
                 });
             }
