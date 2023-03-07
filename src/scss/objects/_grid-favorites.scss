@@ -23,6 +23,10 @@
   @include screen-lg {
     grid-template-columns: repeat(6, 1fr);
   }
+  
+  ul {
+    list-style: none;
+  }
 
   &__item {
     position: relative;
