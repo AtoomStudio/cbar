@@ -58,12 +58,17 @@ export default function validateRegister() {
     }
 
     function manageInputError(e) {
+            
         const field = e.target;
-        dataLayer.push({
-            "event":"register",
-            "status":"Error", 
-            "error": "validation: " + field.name
-        });
+        if(field.id !== 'day' || field.id !== 'month' || field.id !== 'year' ) {
+            dataLayer.push({
+                "event":"register",
+                "status":"Error", 
+                "error": "validation: " + field.name
+            });
+
+        } 
+
         const errorWrapper = field.dataset.messagesTarget ?
             document.querySelector(field.dataset.messagesTarget)
             :
