@@ -6,8 +6,9 @@ const ANIMATION_DELAY = 50;
 
 function Mpu() {
     let settings = {};
-
+    
     function mpu(params) {
+        console.log(params)
         if (typeof params === 'undefined') return false;
         if (typeof params === 'string') return openMpuUrl(params);
         if (typeof params === 'object') return openMpuOptions(params);
