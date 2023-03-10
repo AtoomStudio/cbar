@@ -60,7 +60,7 @@ export default function validateRegister() {
     function manageInputError(e) {
             
         const field = e.target;
-        if(field.id !== 'day' || field.id !== 'month' || field.id !== 'year' ) {
+        if(field.id !== 'day' && field.id !== 'month' && field.id !== 'year' ) {
             dataLayer.push({
                 "event":"register",
                 "status":"Error", 
@@ -99,11 +99,11 @@ export default function validateRegister() {
         register()
             .then(async response => {
                 if (response.redirected) {
-                    dataLayer.push({
-                        "event":"register",
-                        "status":"Exito", 
-                        "error": ""
-                    });
+                    // dataLayer.push({
+                    //     "event":"register",
+                    //     "status":"Exito", 
+                    //     "error": ""
+                    // });
                     window.location.replace('/welcome.html');
                 } else {
                     setLoading(false);
