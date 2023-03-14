@@ -184,7 +184,7 @@ body.mpu-open {
 
         &--confirm {
             background-color: setcolor("secondary");
-            width: 100%;
+            
             &:hover {
                 background-color: setcolor("secondary", "dark");
             }
@@ -192,7 +192,7 @@ body.mpu-open {
 
         &--deny {
             background-color: setcolor("warning");
-            width: 100%;
+            
             &:hover {
                 background-color: setcolor("warning", "dark");
             }

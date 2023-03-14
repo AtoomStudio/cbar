@@ -10,7 +10,7 @@
 
       margin-bottom: $sm;
 
-      p {
+      p, a {
         @extend .u-f--bold;
         color: setcolor("black", "dark1");
       }
